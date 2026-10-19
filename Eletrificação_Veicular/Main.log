@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  19 OCT 2026 10:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  19 OCT 2026 12:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1492,7 +1492,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 102.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (Capitulos/resumo.tex) (Capitulos/introducao.tex) (Capitulos/definicao_problema.tex) [1
+) (Capitulos/introducao.tex) (Capitulos/definicao_problema.tex) [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 {C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
@@ -1511,15 +1511,15 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51880 strings out of 467871
- 1239529 string characters out of 5417408
- 2240719 words of memory out of 5000000
- 79900 multiletter control sequences out of 15000+600000
- 685497 words of font info for 145 fonts, out of 8000000 for 9000
+ 51864 strings out of 467871
+ 1239157 string characters out of 5417408
+ 2238719 words of memory out of 5000000
+ 79893 multiletter control sequences out of 15000+600000
+ 685248 words of font info for 142 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,108p,1063b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
-Output written on Main.pdf (1 page, 106443 bytes).
+Output written on Main.pdf (1 page, 103619 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

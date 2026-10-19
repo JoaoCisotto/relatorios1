@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber Main"] 1792417657.80005 "Main.bcf" "Main.bbl" "Main" 1792417667.86394 0
-  "Main.bcf" 1792417667 108150 833a7700a8671c30336357d6b8e11f77 "pdflatex"
+["biber Main"] 1792417657.80005 "Main.bcf" "Main.bbl" "Main" 1792423693.35221 0
+  "Main.bcf" 1792423692 108150 833a7700a8671c30336357d6b8e11f77 "pdflatex"
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1792417664.13528 "c:/Users/Samsung/Documents/Relatórios1/Sistemas_Inteligentes/Main.tex" "Main.pdf" "Main" 1792417667.86487 0
+["pdflatex"] 1792423689.79837 "c:/Users/Samsung/Documents/Relatórios1/Sistemas_Inteligentes/Main.tex" "Main.pdf" "Main" 1792423693.35303 0
   "C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1789587001 82849 5ca6a81b0dcd164ef988e78cb6258ffe ""
   "C:/Users/Samsung/AppData/Local/MiKTeX/fonts/tfm/public/esvect/vect10.tfm" 1789587003 372 07da2e555f4c8dac959d0bb59cacb4dc ""
   "C:/Users/Samsung/AppData/Local/MiKTeX/fonts/tfm/public/esvect/vect5.tfm" 1789587006 372 28e18d88a38be26cb20dc1302f0fdc04 ""
@@ -312,12 +312,11 @@
   "C:/Users/Samsung/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "Capitulos/definicao_problema.tex" 1789855151 34 9d2057b47b696c0a1536ff4ed78e659c ""
   "Capitulos/introducao.tex" 1789855151 24 ecf6c127758068d70d4d8782a6689b5e ""
-  "Capitulos/resumo.tex" 1789855151 454 4562e338be8b3df168dfd20b77b17a4c ""
-  "Main.aux" 1792417667 723 0f7e49b89d3b30f115e608490500145b "pdflatex"
+  "Main.aux" 1792423692 723 0f7e49b89d3b30f115e608490500145b "pdflatex"
   "Main.bbl" 1792417660 486 76d65a242ec496c9b4361af646ff12cb "biber Main"
-  "Main.run.xml" 1792417667 2307 5b2fd713ae8573fb4bafc94f489736de "pdflatex"
-  "Main.tex" 1792417652 3635 253e90b2b5045743a753fce15bccd8bd ""
-  "c:/Users/Samsung/Documents/Relatórios1/Sistemas_Inteligentes/Main.tex" 1792417652 3635 253e90b2b5045743a753fce15bccd8bd ""
+  "Main.run.xml" 1792423692 2307 5b2fd713ae8573fb4bafc94f489736de "pdflatex"
+  "Main.tex" 1792423689 3636 1529936c54aeccfa8746c7a055696e1b ""
+  "c:/Users/Samsung/Documents/Relatórios1/Sistemas_Inteligentes/Main.tex" 1792423689 3636 1529936c54aeccfa8746c7a055696e1b ""
   "images/Logo EESC-USP_top.png" 1789855151 34498 dd1760e071d0093d5a2f01c036ea5e39 ""
   "images/SEL.png" 1789855151 8750 286ffaeb0794e1925917842f6e058287 ""
   "mcode.sty" 1789855151 10954 2c2db50283d6a5cecb73ce94707ab515 ""
