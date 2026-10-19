@@ -1,0 +1,146 @@
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{amssymb,amsfonts,bezier,amstext,amsthm,amsmath,graphicx,makeidx,caption,subfigure,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{stackengine}
+\newcommand{\pr}{\hspace*{15mm}}
+\newcommand{\n}{\noindent}
+\usepackage{lipsum}
+\usepackage{gensymb}
+%\usepackage{authblk}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\graphicspath{ {./images/} }
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{color}	
+\usepackage{chemfig,chemmacros} 
+\usepackage{microtype} 			
+\usepackage{pdfpages}
+\usepackage{lastpage}
+\usepackage{lmodern}
+\usepackage{esvect}
+\def\figureautorefname{Figura}
+\def\equationautorefname{Equação}
+\usepackage{comment}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+\usepackage[title]{appendix}
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage[portuguese]{babel}
+\usepackage{csquotes}
+\usepackage{biblatex}
+
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\lstset{
+        literate=                    
+        {á}{{\'a}}1
+        {â}{{\^a}}1
+        {ã}{{\~a}}1
+        {à}{{\`a}}1
+        {é}{{\'e}}1
+        {ê}{{\^e}}1
+        {í}{{\'i}}1
+        {ó}{{\'o}}1
+        {ô}{{\^o}}1
+        {õ}{{\~o}}1
+        {ú}{{\'u}}1
+        {ç}{{\c{c}}}1
+}
+\addbibresource{relatorio.bib}
+
+\setlocalecaption{portuguese}{contents}{\centering Sumário}
+\providecommand{\keywords}[1]{\textbf{\textit{Palavras-chave---}} #1}
+
+
+\begin{document}
+% -----------------------------------------------------------
+% 1. TÍTULO e 2. AUTORES 
+% Adaptado para economizar espaço e caber nas 2 páginas
+% -----------------------------------------------------------
+\title{\vspace{-2.0cm} 
+    \begin{minipage}{0.2\textwidth}
+        \raggedright
+        \includegraphics[width=1.5cm]{images/SEL.png}
+    \end{minipage}%
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \normalsize
+        Sistemas Inteligentes - SEL0421 \\
+        Prof. Ivan Nunes da Silva
+    \end{minipage}%
+    \begin{minipage}{0.2\textwidth}
+        \raggedleft
+        \includegraphics[width=3.2cm]{images/Logo EESC-USP_top.png}
+    \end{minipage} \\[0.8cm]
+    \textbf{\Large Projeto Parcial: [Insira o Título do Projeto Aqui]}
+}
+
+\author{
+    \normalsize
+    \begin{tabular}{c}
+        Vitor Gabriel Saturnino de Melo - N° USP: 14611599 \\
+        João Pedro Muto Cisotto - N° USP: 14761684 \\
+        Brunno Santos Orquisa de Carvalho - Nº USP: 14562188 \\
+        João Augusto Marcon de Castro - Nº USP: 14747152
+    \end{tabular}
+}
+\date{} % Deixar este campo vazio remove a data do documento
+
+\maketitle
+
+
+
+
+
+% ==========================================
+% PROJETO PARCIAL (PARTE I) - SEÇÕES ATIVAS
+% ==========================================
+
+% 3. Resumo
+\input{Capitulos/resumo}
+
+% 4. Introdução
+\input{Capitulos/introducao}
+
+% 5. Definição do Problema
+\input{Capitulos/definicao_problema} % Renomeie seu arquivo "Desenvolvimento.tex" para "definicao_problema.tex" ou altere aqui
+
+
+% ==========================================
+% PROJETO COMPLETO (PARTE II) - COMENTADOS
+% ==========================================
+
+% 6. Solução do Problema
+%\input{Capitulos/solucao_problema}
+
+% 7. Resultados de Implementação
+%\input{Capitulos/resultados_implementacao}
+
+% 8. Análises dos Resultados
+%\input{Capitulos/analise_resultados}
+
+% 9. Conclusões
+%\input{Capitulos/conclusoes}
+
+% 10. Referências
+%\input{Capitulos/referencia} 
+
+% 11. Anexos
+%\input{Capitulos/anexos}
+
+\end{document}

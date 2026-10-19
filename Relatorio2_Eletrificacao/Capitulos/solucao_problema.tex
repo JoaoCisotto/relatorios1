@@ -1,0 +1,168 @@
+\section{Desenvolvimento}
+\label{Desenvolvimento}
+O desenvolvimento teórico apresentado adiante terá como base os livros \cite{nise2015} e \cite{Vilma}, além dos slides disponibilizados pelo docente da disciplina.
+
+\subsection{Descrição de sistemas discretos e sua aplicação em controladores}
+
+Os sistemas discretos são sistemas dinâmicos, cujas variáveis de interesse são definidas em determinados instantes de tempo e em intervalos regulares, como ocorre em dados amostrados em laboratórios. Sendo esse comportamento contrastante com sistemas contínuos, tendo em vista que estes últimos são descritos para qualquer intervalo de tempo.
+
+Na prática, os sistemas discretos são os mais avaliados, tendo em vista que aparelhos de medição, no geral, apresentam limitações físicas; então, os dados coletados por eles são apresentados de forma discreta. Sendo assim, são necessárias ferramentas como a transformada Z para lidar com esses dados.
+
+Além disso, quando se trata de controladores, a análise de sistemas discretos é fundamental, tendo em vista que, na modernidade, a maioria deles é implementada digitalmente. Alguns exemplos que se pode citar dessa prática são: controladores em tempo real com sistemas embarcados, onde sensores obtêm as variáveis do processo, algoritmos computam a ação de controle e os atuadores recebem o sinal processado para a realização da tarefa determinada; além desse exemplo, também é realizado o controle preditivo e adaptativo de sistemas para evitar possíveis falhas em sistemas mais complexos e que, na maioria das vezes, é tratado com o processamento digital de sinais e modelos discretos.
+
+\subsection{Representação de funções discretas}
+\label{representacao_frac_parcial}
+As funções discretas são aquelas que apresentam valores somente em determinados instantes de tempo, sendo muito comuns em amostragens em laboratórios, ou seja, elas são definidas apenas em instantes de tempo específicos. Em vez de \( x(t) \), que é uma função contínua no tempo, será utilizado, como convenção, \( x[k] \), onde \( k \in \mathbb{Z} \), representando o valor da função no instante de tempo $T_s$\( k \), onde $T_s$ é o período de amostragem e \( k \) o número da amostra, caso \( x[k] \) apresente um número muito elevado de amostras, seu modelo pode, até mesmo, convergir para o valor de \( x(t) \), porém essa convergência em muitos casos não é possível de ser obtida devido a limitações físicas de instrumentos de medição. Essas funções são comuns em sistemas digitais, onde os sinais são amostrados em intervalos regulares, como em processadores digitais de sinais e sistemas de controle discretos.
+
+\subsection{Transformada Z}
+Para analisar e projetar sistemas que operam com sinais discretos, utiliza-se a transformada Z, que é uma ferramenta matemática análoga à transformada de Laplace usada em sistemas contínuos. Assim como a transformada de Laplace permite transformar uma função \( x(t) \) do domínio do tempo contínuo para o domínio da frequência complexa \( s \), a transformada Z converte uma sequência discreta \( x[k] \) para o domínio da frequência complexa \( z \).
+
+A transformada Z de uma função \( x[k] \) é definida como:
+
+\begin{equation}
+X(z) = \sum_{n=0}^{\infty} x[k] z^{-k},
+\label{eq:tz_def}
+\end{equation}
+
+Onde \( z \) é a frequência complexa dada por
+\begin{equation}
+z = r\cdot e^{j\omega},
+\label{eq:z_complex}
+\end{equation}
+
+Onde \( r \) é a magnitude do número complexo e \( e^{j\omega} \) é a rotação no plano complexo.
+Essa transformação facilita a análise de sistemas lineares invariantes no tempo (LTI), permitindo o estudo da estabilidade, resposta em frequência e comportamento dinâmico de sistemas discretos, sendo essas informações de interesse para o desenvolvimento e análise de sistemas e modelos.
+
+Um dos casos mais importantes da transformada Z, tendo em vista que muitos sistemas apresentam esse comportamento, é sua aplicação à função exponencial discreta, definida por:
+
+\begin{equation}
+x[n] = a^n u[n],
+\label{eq:expo_discreta}
+\end{equation}
+
+Onde ‘\( a \)' é uma constante real ou complexa, e \( u[n] \) é a função degrau unitário. A transformada Z dessa função é:
+
+\begin{equation}
+X(z) = \sum_{n=0}^{\infty} a^n z^{-n}u[n] = \frac{z}{z - a}, \quad \text{para } |z| > |a|
+\label{eq:tz_expo}
+\end{equation}
+
+
+
+
+Essa expressão é fundamental, pois muitas outras funções podem ser construídas a partir de combinações de exponenciais, além de representar a resposta de sistemas a entradas exponenciais — o que está diretamente relacionado à análise de polos e estabilidade.
+
+\subsection{Representação em Frações Parciais}
+
+A representação em frações parciais é uma técnica utilizada para decompor funções, que é a razão de polinômios, em uma soma com termos mais simples, ou seja, busca-se transformar uma multiplicação de termos de fração em uma soma. Essa técnica é muito útil na análise de sistemas lineares, tanto no domínio contínuo (com a transformada de Laplace) quanto no domínio discreto (com a transformada Z, que será abordada neste relatório). Tendo como base a função abaixo, que apresenta como polos \( p_1 \) e \( p_2 \), pode-se transformá-la utilizando a expansão em frações parciais em uma soma de frações:
+
+\begin{equation}
+Y(t)=\frac{t+1}{(t-p_1)(t-p_2)} = \frac{A}{t-p_1} + \frac{B}{t-p_2},
+\label{eq:frac_real}
+\end{equation}
+
+Aplicando o limite nos dois termos da equação \ref{eq:frac_real}, tem-se as seguintes igualdades:
+
+\begin{equation}
+    \lim_{t \to p_1}\frac{t+1}{(t-p_1)(t-p_2)} (t-p_1)= lim_{t \to p_1} \left(\frac{A}{t-p_1} + \frac{B}{t-p_2}\right) \cdot(t - p_1),
+\end{equation}
+
+\begin{equation}
+    \lim_{t \to p_2}\frac{t+1}{(t-p_1)(t-p_2)} (t-p_2)= lim_{t \to p_2} \left(\frac{A}{t-p_1} + \frac{B}{t-p_2}\right) \cdot(t - p_2),
+\end{equation}
+
+O que resulta em: 
+
+\begin{equation}
+\lim_{t \to p_1} Y(t) \cdot (t - p_1) = A,
+\label{eq:lim_real_1}
+\end{equation}
+
+\begin{equation}
+\lim_{t \to p_2} Y(t) \cdot (t - p_2) = B,
+\label{eq:lim_real_2}
+\end{equation}
+
+Desse modo, pode-se representar frações racionais como soma de frações de polos simples cuja transformada Z é tabelada, demonstrada pela equação \ref{eq:tz_expo}.
+
+Já para funções com polos complexos e conjugados, a obtenção das frações parciais é de forma semelhante, porém trabalhando com números complexos. Além disso, os coeficientes serão conjugados, pois estamos tratando com números reais no sistema e, portanto, a parte imaginária deve se cancelar. Partindo da seguinte função racional:
+
+\begin{equation}
+Y(t)=\frac{t+1}{t^2+p_1^2}=\frac{B}{t - jp_1}+\frac{\overline{B}}{t + jp_1},
+\label{eq:frac_complex}
+\end{equation}
+
+Para esse caso, tem-se que os polos são \( \pm \space jp_1 \).
+
+O cálculo da constante \( B \) é igual a do polo real, isto é, aplicando-se o limite em ambos os lados da equação \ref{eq:frac_complex}, obtendo, desse modo, a seguinte equação:
+
+\begin{equation}
+\lim_{t \to jp_1} Y(t)\cdot (t - jp_1) = B,
+\label{eq:lim_complex}
+\end{equation}
+
+Utilizando essas equações, é possível transformar as funções de transferência no domínio \( z \) para o \( k \) (equivalente de transformar da frequência para o tempo, porém para funções discretas). 
+
+\subsection{Teorema do Valor Final e Inicial}
+\label{teorema_valor_in.fin}
+\subsubsection{Teorema do Valor Inicial}
+
+Sabe-se que a forma da Transformada Z é dada pela equação \ref{eq:tz_def}.
+Fazendo o limite da transformada com \( z \to \infty \), tem-se a seguinte expressão:
+
+\begin{equation}
+\lim_{z \to \infty}X(z) = \lim_{z \to \infty}(x[0] + x[1]z^{-1} + x[2]z^{-2} + \ldots),
+\label{eq:valor_inicial_exp}
+\end{equation}
+
+Para existir o valor inicial, o grau do polinômio do numerador de \( X(z) \) deve ser menor que o do denominador. Caso contrário, o sistema iria divergir para o infinito, aplicando-se o limite descrito na equação \ref{eq:valor_inicial_exp}.
+
+Como \( z^{-n} \to 0 \), quando se aplica o limite presente na equação \ref{eq:valor_inicial_exp}, para \( n \geqslant 1 \). Logo, obtém-se a seguinte relação:
+
+\begin{equation}
+x[0] = \lim_{z \to \infty}X(z),
+\label{eq:valor_inicial}
+\end{equation}
+
+\subsubsection{Teorema do Valor Final}
+
+Além disso, a transformada Z tem a seguinte propriedade:
+
+\begin{equation}
+\mathcal{Z}\{x[k+1] - x[k]\} = (z - 1)X(z) - zx[0],
+\label{eq:prop_zn_diff}
+\end{equation}
+
+Ao olhar para \( x[k+1] - x[k] \), que é a variação entre dois pontos consecutivos da sequência (que tende a 0 em valores muito grandes, no caso de convergência), pode-se reescrever a relação anterior, transportar para o domínio \( Z \), e fazer o limite com \( z \to 1 \), obtendo assim a equação do teorema do valor final:
+
+\begin{equation}
+\lim_{k \to \infty} x[k] = \lim_{z \to 1} (1-z^{-1})X(z),
+\label{eq:valor_final}
+\end{equation}
+
+
+Para a existência de valor final,os polos devem possuir magnitude menor que 1, ou seja, o valor deve estar dentro do raio unitário, pois como visto na definição da transformada $Z$ na equação \ref{eq:tz_def}, tem-se que se r>1 logo $\lim_{n\to \infty} x[k] \to \infty$ e, portanto, não há convergência nem estabilidade.
+
+\subsection{Estabilidade no domínio ‘z’}
+\label{estabilidade}
+Para realizar a análise da estabilidade de um sistema descrito no domínio z, deve-se avaliar seus polos. Tendo em vista que os polos dentro do círculo de raio unitário irão contribuir para termos exponenciais decrescentes para uma resposta ao impulso e os polos fora do círculo de raio unitário irão gerar termos exponenciais crescentes. 
+
+Tal comportamento pode ser visualizado através da equação \ref{eq:tz_expo}, na qual a exponencial é representada através de uma série e essa série só irá convergir para valores finitos caso o módulo de ‘a’ seja menor que 1, sendo assim, o sistema só apresentará uma saída que converge caso o polo esteja dentro do círculo unitário.
+
+
+\subsection{Equação de Bhaskhara:}
+
+A equação de Bhaskhara é uma equação utilizada para encontrar as raízes de um polinômio de segunda ordem, da seguinte forma:
+
+\begin{equation}
+    ax^2+bx+c = 0,
+\end{equation}
+
+As raízes para esse polinômio serão:
+
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2-4ac}}{2a},
+    \label{bhaskhara}
+\end{equation}
+
+Ela é essencial para achar os polos de um sistema com comportamento de segunda ordem e será de extrema importância para achar os polos de um dos sistemas.
