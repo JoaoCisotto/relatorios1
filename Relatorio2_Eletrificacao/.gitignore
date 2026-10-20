@@ -1,0 +1,26 @@
+# Arquivos auxiliares gerados pelo LaTeX e pela bibliografia
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.loa
+*.lol
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.dvi
+*.bcf
+*.bbl
+*.blg
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# PDF compilado do relatorio; PDFs usados como figuras continuam permitidos
+/Main.pdf
