@@ -1,144 +1,91 @@
-\documentclass[10pt, a4paper, twocolumn]{article}
+\documentclass[conference]{IEEEtran}
 
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
-\usepackage{amssymb,amsfonts,bezier,amstext,amsthm,amsmath,graphicx,makeidx,caption,subfigure,mathtools}
+% ---------- Pacotes ----------
 \usepackage[utf8]{inputenc}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{stackengine}
-\newcommand{\pr}{\hspace*{15mm}}
-\newcommand{\n}{\noindent}
-\usepackage{lipsum}
-\usepackage{gensymb}
-%\usepackage{authblk}
-\usepackage{blindtext}
 \usepackage[T1]{fontenc}
-\graphicspath{ {./images/} }
-\usepackage{indentfirst}
-\usepackage{float}
-\usepackage{color}	
-\usepackage{chemfig,chemmacros} 
-\usepackage{microtype} 			
-\usepackage{pdfpages}
-\usepackage{lastpage}
-\usepackage{lmodern}
-\usepackage{esvect}
-\def\figureautorefname{Figura}
-\def\equationautorefname{Equação}
-\usepackage{comment}
-\usepackage{url}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-\pgfplotsset{plot coordinates/math parser=false}
-\newlength\figureheight
-\newlength\figurewidth
-\usepackage[title]{appendix}
-\usepackage{placeins}
-\usepackage{multirow}
 \usepackage[portuguese]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{gensymb}
 \usepackage{csquotes}
-\usepackage{biblatex}
+\usepackage{mcode}
+\usepackage[style=ieee,backend=biber,sorting=none]{biblatex}
 
-\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
-\lstset{
-        literate=                    
-        {á}{{\'a}}1
-        {â}{{\^a}}1
-        {ã}{{\~a}}1
-        {à}{{\`a}}1
-        {é}{{\'e}}1
-        {ê}{{\^e}}1
-        {í}{{\'i}}1
-        {ó}{{\'o}}1
-        {ô}{{\^o}}1
-        {õ}{{\~o}}1
-        {ú}{{\'u}}1
-        {ç}{{\c{c}}}1
-}
+\graphicspath{{./images/}}
 \addbibresource{relatorio.bib}
 
-\setlocalecaption{portuguese}{contents}{\centering Sumário}
-\providecommand{\keywords}[1]{\textbf{\textit{Palavras-chave---}} #1}
+% Ajuste de rótulos para o português
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabela}
 
+\def\figureautorefname{Figura}
+
+% Listagens de código (mantidas do modelo original)
+\lstset{
+    literate=
+    {á}{{\'a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {à}{{\`a}}1
+    {é}{{\'e}}1 {ê}{{\^e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
+    {ô}{{\^o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1
+}
+
+% ---------- Título e autores ----------
+\title{Relatório 1: Eletrificação veicular%
+\thanks{Fundamentos em eletrificação veicular -- SEL0466. Prof. Ricardo Quadros Machado.}}
+
+\author{%
+    \IEEEauthorblockN{Vitor Gabriel Saturnino de Melo}
+    \IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
+    N° USP: 14611599}
+    \and
+    \IEEEauthorblockN{João Pedro Muto Cisotto}
+    \IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
+    N° USP: 14761684}
+}
 
 \begin{document}
-% -----------------------------------------------------------
-% 1. TÍTULO e 2. AUTORES 
-% Adaptado para economizar espaço e caber nas 2 páginas
-% -----------------------------------------------------------
-\title{\vspace{-2.0cm} 
-    \begin{minipage}{0.2\textwidth}
-        \raggedright
-        \includegraphics[width=1.5cm]{images/SEL.png}
-    \end{minipage}%
-    \begin{minipage}{0.6\textwidth}
-        \centering
-        \normalsize
-        Fundamentos em eletrificação veicular - SEL0466 \\
-        Prof. Ricardo Quadros Machado
-    \end{minipage}%
-    \begin{minipage}{0.2\textwidth}
-        \raggedleft
-        \includegraphics[width=3.2cm]{images/Logo EESC-USP_top.png}
-    \end{minipage} \\[0.8cm]
-    \textbf{\Large Relatório 1:Eletrificação veicular}
-}
-
-\author{
-    \normalsize
-    \begin{tabular}{c}
-        Vitor Gabriel Saturnino de Melo - N° USP: 14611599 \\
-        João Pedro Muto Cisotto - N° USP: 14761684 
-    \end{tabular}
-}
-\date{} % Deixar este campo vazio remove a data do documento
 
 \maketitle
 
+% ---------- Resumo ----------
+\begin{abstract}
+Resumo do relatório. Descreva em poucas linhas o problema, a solução adotada e os principais resultados obtidos.
+\end{abstract}
 
+\begin{IEEEkeywords}
+eletrificação veicular, palavra-chave 2, palavra-chave 3
+\end{IEEEkeywords}
 
-
-
-% ==========================================
-% PROJETO PARCIAL (PARTE I) - SEÇÕES ATIVAS
-% ==========================================
-
-% 3. Resumo
-%\input{Capitulos/resumo}
-
-% 4. Introdução
+% ---------- Seções ----------
+% Introdução
 \input{Capitulos/introducao}
 
-% 5. Definição do Problema
-\input{Capitulos/definicao_problema} % Renomeie seu arquivo "Desenvolvimento.tex" para "definicao_problema.tex" ou altere aqui
+% Definição do problema
+\input{Capitulos/definicao_problema}
 
-
-% ==========================================
-% PROJETO COMPLETO (PARTE II) - COMENTADOS
-% ==========================================
-
-% 6. Solução do Problema
+% Solução do problema (opcional)
 %\input{Capitulos/solucao_problema}
 
-% 7. Resultados de Implementação
-%\input{Capitulos/resultados_implementacao}
+% Resultados de implementação
+\input{Capitulos/resultados_implementacao}
 
-% 8. Análises dos Resultados
+% Análise dos resultados (opcional)
 %\input{Capitulos/analise_resultados}
 
-% 9. Conclusões
+% Conclusões (opcional)
 %\input{Capitulos/conclusoes}
 
-% 10. Referências
-%\input{Capitulos/referencia} 
+% ---------- Referências ----------
+\printbibliography
 
-% 11. Anexos
+% ---------- Anexos (opcional) ----------
+%\appendices
 %\input{Capitulos/anexos}
 
 \end{document}
