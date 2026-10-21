@@ -1,31 +1,38 @@
 \section{Desenvolvimento}
 \label{Desenvolvimento}
-\subsection{Sinal 1: rampa crescente de 0 a A}:
-
+\subsection{Sinais Unipolares}
+\subsubsection{Sinal 1: rampa crescente de 0 a $A$}
+\label{subsection_rampa_crescente}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{images/rampa_crescente.png}
-    \caption{Sinal de entrada rampa crescente de 0 a P}
+    \caption{Sinal de entrada rampa crescente de 0 a $A$.}
     \label{fig:sinal1}
 \end{figure}
 
-Para o sinal de entrada rampa crescente de 0 a A, ela pode ser representada por
-uma reta que liga o ponto (0,0) ao ponto (P,A). Seu coeficiente angular é dado 
+Para o sinal de entrada rampa crescente de 0 a $A$, ela pode ser representada por
+uma reta que liga o ponto $(0,0)$ ao ponto $(P,A)$. Seu coeficiente angular é dado
 por $\frac{A}{P}$, e a equação da reta é dada por:
 
 \begin{equation}
-    v_1(x) = \frac{A}{P}x, 0\leq x < P, v_1(x+P)= v_1(x)
+    \begin{aligned}
+        v_1(x) &= \frac{A}{P}x, \qquad 0 \leq x < P, \\
+        v_1(x+P) &= v_1(x).
+    \end{aligned}
 \end{equation}
 
-O valor médio dessa função pode ser calculado pela integral da função em um 
-período, dividida pelo período, dessa forma, pode-se calcular esse valor com a 
-equação abaixo: 
+O valor médio dessa função pode ser calculado pela integral da função em um
+período, dividida pelo período, dessa forma, pode-se calcular esse valor com a
+equação abaixo:
 
 \begin{equation}
-    a_0 = \frac{1}{P} \int_{0}^{P} v_1(x) dx = \frac{1}{P} \int_{0}^{P} \frac{A}{P}x dx = \frac{A}{2}
+    \begin{aligned}
+        a_0 &= \frac{1}{P} \int_{0}^{P} v_1(x)\,dx \\
+            &= \frac{1}{P} \int_{0}^{P} \frac{A}{P}x\,dx = \frac{A}{2}.
+    \end{aligned}
 \end{equation}
 
-Ademais, para construir sua representação em série de Fourier, é necessário 
+Ademais, para construir sua representação em série de Fourier, é necessário
 calcular os coeficientes $a_n$ e $b_n$, que são dados pelas equações abaixo:
 
 \begin{equation}
@@ -42,5 +49,260 @@ calcular os coeficientes $a_n$ e $b_n$, que são dados pelas equações abaixo:
             \frac{P^2}{4\pi^2 n^2}\cos(2\pi n)
             - \frac{P^2}{4\pi^2 n^2}\cos(0)\right] \\
             &= 0.
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        b_n &= \frac{2A}{P^2} \int_{0}^{P} x
+            \sin\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= \frac{2A}{P^2} \left[
+            -\frac{Px}{2\pi n}\cos\left(\frac{2\pi nx}{P}\right)\right. \\
+            &\qquad \left.{}+ \frac{P^2}{4\pi^2 n^2}
+            \sin\left(\frac{2\pi nx}{P}\right)\right]_{0}^{P} \\
+            &= -\frac{A}{\pi n}.
+    \end{aligned}
+\end{equation}
+
+Utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, a série de Fourier
+até o sétimo termo é dada por:
+
+\begin{equation}
+    \begin{aligned}
+        v_{1,7}(x) &= \frac{A}{2} - \frac{A}{\pi}\biggl[
+            \sin\left(\frac{2\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{2}\sin\left(\frac{4\pi x}{P}\right)
+             + \frac{1}{3}\sin\left(\frac{6\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{4}\sin\left(\frac{8\pi x}{P}\right)
+             + \frac{1}{5}\sin\left(\frac{10\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{6}\sin\left(\frac{12\pi x}{P}\right)
+             + \frac{1}{7}\sin\left(\frac{14\pi x}{P}\right)\biggr].
+    \end{aligned}
+\end{equation}
+
+\subsubsection{Sinal 2: rampa decrescente de $A$ a 0}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/rampa_decrescente.png}
+    \caption{Sinal de entrada rampa decrescente de $A$ a 0.}
+    \label{fig:sinal_rampa_decrescente}
+\end{figure}
+
+Assim como na seção \ref{subsection_rampa_crescente}, o sinal de rampa pode ser descrita como
+uma reta entre dois pontos. Nesse caso os pontos são $(0,A)$ e $(P,0)$, e o coeficiente angular é dado por $-\frac{A}{P}$.
+Dessa forma, a equação da reta é dada por:
+
+\begin{equation}
+    \begin{aligned}
+        v_2(x) &= A - \frac{A}{P}x \\
+               &= A - v_1(x), \qquad 0 \leq x < P, \\
+        v_2(x+P) &= v_2(x).
+    \end{aligned}
+\end{equation}
+
+Assim como realizado anteriormente, o valor médio dessa função pode ser calculado pela integral da função em um período, dividida pelo período, dessa forma, pode-se calcular esse valor com a equação abaixo:
+
+\begin{equation}
+    \begin{aligned}
+        a_0 &= \frac{1}{P} \int_{0}^{P} v_2(x)\,dx \\
+            &= \frac{1}{P} \int_{0}^{P}
+            \left(A - \frac{A}{P}x\right)\,dx \\
+            &= \frac{A}{2}.
+    \end{aligned}
+\end{equation}
+
+Além disso, para construir sua representação em série de Fourier, é necessário calcular os coeficientes $a_n$ e $b_n$, que são dados pelas equações abaixo:
+
+\begin{equation}
+    \begin{aligned}
+        a_n^{(2)} &= \frac{2}{P} \int_{0}^{P} v_2(x)
+            \cos\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= \frac{2A}{P} \int_{0}^{P}
+            \left(1 - \frac{x}{P}\right)
+            \cos\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= 0.
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        b_n^{(2)} &= \frac{2A}{P} \int_{0}^{P}
+            \left(1 - \frac{x}{P}\right)
+            \sin\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= \frac{2A}{P} \left[
+            -\frac{P-x}{2\pi n}\cos\left(\frac{2\pi nx}{P}\right)\right. \\
+            &\qquad \left.{}- \frac{P}{4\pi^2 n^2}
+            \sin\left(\frac{2\pi nx}{P}\right)\right]_{0}^{P} \\
+            &= \frac{A}{\pi n}.
+    \end{aligned}
+\end{equation}
+
+Desssa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, os sete primeiros termos
+da série de Fourier são dados por:
+
+\begin{equation}
+    \begin{aligned}
+        v_{2,7}(x) &= \frac{A}{2} + \frac{A}{\pi}\biggl[
+            \sin\left(\frac{2\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{2}\sin\left(\frac{4\pi x}{P}\right)
+             + \frac{1}{3}\sin\left(\frac{6\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{4}\sin\left(\frac{8\pi x}{P}\right)
+             + \frac{1}{5}\sin\left(\frac{10\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{6}\sin\left(\frac{12\pi x}{P}\right)
+             + \frac{1}{7}\sin\left(\frac{14\pi x}{P}\right)\biggr].
+    \end{aligned}
+\end{equation}
+
+\subsubsection{Sinal triangular unipolar de 0 a $A$}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/triangular_unipolar.png}
+    \caption{Sinal de entrada triangular unipolar de 0 a $A$.}
+    \label{fig:sinal_triangular}
+\end{figure}
+
+Um sinal triangular unipolar, como o demonstrado na figura \ref{fig:sinal_triangular}, pode ser descrito por uma rampa crescente na primeira metade do período e uma rampa decrescente na segunda metade. Dessa forma, a equação do sinal triangular é dada por:
+
+\begin{equation}
+    \resizebox{\dimexpr\linewidth-2.5em\relax}{!}{$\displaystyle
+        v_3(x) = \begin{cases}
+            \dfrac{2Ax}{P}, & 0 \leq x < \dfrac{P}{2}, \\[6pt]
+            \dfrac{2A(P-x)}{P}, & \dfrac{P}{2} \leq x < P.
+        \end{cases}
+        \quad v_3(x+P) = v_3(x).
+    $}
+\end{equation}
+
+A componente contínua dessa função, pode ser obtida como a média da função em um período, sendo ela dada por:
+
+\begin{equation}
+    \begin{aligned}
+        a_0 &= \frac{1}{P} \int_{0}^{P} v_3(x)\,dx \\
+            &= \frac{1}{P} \left[
+            \int_{0}^{P/2} \frac{2Ax}{P}\,dx \right. \\
+            &\qquad \left.{}+ \int_{P/2}^{P}
+            \frac{2A(P-x)}{P}\,dx \right] \\
+            &= \frac{2A}{P^2} \left[
+            \left.\frac{x^2}{2}\right|_{0}^{P/2} \right. \\
+            &\qquad \left.{}+ \left(Px - \frac{x^2}{2}\right)
+            \bigg|_{P/2}^{P} \right] \\
+            &= \frac{2A}{P^2}
+            \left(\frac{P^2}{8} + \frac{P^2}{8}\right)
+            = \frac{A}{2}.
+    \end{aligned}
+\end{equation}
+
+Após isso, para obter-se os resultados dos coeficientes $a_n$ e $b_n$, é necessário calcular as integrais correspondentes, que são dadas pelas equações abaixo:
+
+Definindo $k_n = 2\pi n/P$, com $n = 1,2,\ldots$, obtém-se:
+
+\begin{equation}
+    \begin{aligned}
+        a_n &= \frac{4A}{P^2} \int_{0}^{P/2}
+            x\cos(k_n x)\,dx \\
+            &\quad {}+ \frac{4A}{P^2} \int_{P/2}^{P}
+            (P-x)\cos(k_n x)\,dx \\
+            &= \frac{4A}{P^2} \left[
+            \frac{x\sin(k_n x)}{k_n}
+            + \frac{\cos(k_n x)}{k_n^2}\right]_{0}^{P/2} \\
+            &\quad {}+ \frac{4A}{P^2} \left[
+            \frac{(P-x)\sin(k_n x)}{k_n}
+            - \frac{\cos(k_n x)}{k_n^2}\right]_{P/2}^{P} \\
+            &= \frac{8A}{P^2 k_n^2}\left[(-1)^n - 1\right] \\
+            &= \frac{2A\left[(-1)^n - 1\right]}{\pi^2 n^2}.
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        b_n &= \frac{4A}{P^2} \int_{0}^{P/2}
+            x\sin(k_n x)\,dx \\
+            &\quad {}+ \frac{4A}{P^2} \int_{P/2}^{P}
+            (P-x)\sin(k_n x)\,dx \\
+            &= 0.
+    \end{aligned}
+\end{equation}
+
+Dessa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, os sete primeiros termos da série de Fourier são dados por:
+
+\begin{equation}
+    \begin{aligned}
+        v_{3,7}(x) &= \frac{A}{2} - \frac{4A}{\pi^2}\biggl[
+            \cos\left(\frac{2\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{3^2}\cos\left(\frac{6\pi x}{P}\right)
+             + \frac{1}{5^2}\cos\left(\frac{10\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{7^2}\cos\left(\frac{14\pi x}{P}\right)\biggr].
+    \end{aligned}
+\end{equation}
+
+\subsection{Sinais bipolares}
+
+\subsubsection{Sinal 4: rampa crescente de $-A$ a $A$}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/rampa_bipolar.png}
+    \caption{Sinal de entrada rampa bipolar de $-A$ a $A$.}
+    \label{fig:rampa_bipolar}
+\end{figure}
+
+Um sinal rampa bipolar, como o demonstrado na figura \ref{fig:rampa_bipolar}, pode ser descrito por uma rampa crescente de $-A$ a $A$. Dessa forma, a equação do sinal rampa bipolar é dada por:
+
+\begin{equation}
+    \begin{aligned}
+        v_4(x) &= -A + \frac{2Ax}{P}, \qquad 0 \leq x < P, \\
+        v_4(x+P) &= v_4(x).
+    \end{aligned}
+\end{equation}
+
+Calculando o valor médio dessa função, obtém-se:
+
+\begin{equation}
+    \begin{aligned}
+        a_0 &= \frac{1}{P} \int_{0}^{P} v_4(x)\,dx \\
+            &= \frac{1}{P} \int_{0}^{P}
+            \left(-A + \frac{2Ax}{P}\right)\,dx \\
+            &= 0.
+    \end{aligned}
+\end{equation}
+
+Já para os coeficientes $a_n$ e $b_n$ da série de Fourier, obtém-se:
+
+\begin{equation}
+    \begin{aligned}
+        a_n &= \frac{2}{P} \int_{0}^{P} v_4(x)
+            \cos\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= \frac{2}{P} \int_{0}^{P}
+            \left(-A + \frac{2Ax}{P}\right)
+            \cos\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= 0.
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        b_n &= \frac{2}{P} \int_{0}^{P} v_4(x)
+            \sin\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= \frac{2}{P} \int_{0}^{P}
+            \left(-A + \frac{2Ax}{P}\right)
+            \sin\left(\frac{2\pi nx}{P}\right)\,dx \\
+            &= -\frac{2A}{\pi n}.
+    \end{aligned}
+\end{equation}
+
+Assim, a série de Fourier até o sétimo termo é dada por:
+
+\begin{equation}
+    \begin{aligned}
+        v_{4,7}(x) &= -\frac{2A}{\pi}\biggl[
+            \sin\left(\frac{2\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{2}\sin\left(\frac{4\pi x}{P}\right)
+             + \frac{1}{3}\sin\left(\frac{6\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{4}\sin\left(\frac{8\pi x}{P}\right)
+             + \frac{1}{5}\sin\left(\frac{10\pi x}{P}\right) \\
+            &\qquad {}+ \frac{1}{6}\sin\left(\frac{12\pi x}{P}\right)
+             + \frac{1}{7}\sin\left(\frac{14\pi x}{P}\right)\biggr].
     \end{aligned}
 \end{equation}
