@@ -431,3 +431,116 @@ os harmônicos ímpares:
             &\qquad {}+ \frac{1}{7^2}\cos\left(\frac{14\pi x}{P}\right)\biggr].
     \end{aligned}
 \end{equation}
+
+\subsection{Sinais Retangulares}
+\subsubsection{Sinal 7: Retangular Unipolar}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Retângulo_Unipolar.png}
+    \caption{Sinal de entrada retangular unipolar.}
+    \label{fig:sinal_retangular_unipolar}
+\end{figure}
+
+No sinal retangular unipolar da figura \ref{fig:sinal_retangular_unipolar},
+$\delta$ é a largura do pulso de amplitude $A>0$, enquanto $\phi$ e $\theta$
+são os intervalos em nível zero antes e depois do pulso. Para
+$\phi,\theta\geq0$ e $0\leq\delta\leq P$, definem-se o período $P>0$,
+o ciclo de trabalho $D$ e o centro do pulso $m$:
+\begin{equation}
+    \begin{aligned}
+        P &= \phi+\delta+\theta, \\
+        D &= \frac{\delta}{P}, \qquad m = \phi+\frac{\delta}{2}.
+    \end{aligned}
+\end{equation}
+
+Então, o sinal retangular unipolar pode ser descrito como:
+
+\begin{equation}
+    \begin{aligned}
+        v_7(x) &= \begin{cases}
+            0, & 0 \leq x < \phi, \\
+            A, & \phi \leq x < \phi+\delta, \\
+            0, & \phi+\delta \leq x < P,
+        \end{cases} \\
+        v_7(x+P) &= v_7(x).
+    \end{aligned}
+    \label{eq:representacao_retangulo_unipolar}
+\end{equation}
+
+A partir da equação \ref{eq:representacao_retangulo_unipolar},
+o valor médio é:
+
+\begin{equation}
+    \begin{aligned}
+        a_0^{(7)} &= \frac{1}{P}\int_0^P v_7(x)\,dx \\
+            &= \frac{A}{P}\int_\phi^{\phi+\delta}\,dx
+             = \frac{A\delta}{P} = AD.
+    \end{aligned}
+\end{equation}
+
+Definindo $k_n=2\pi n/P$, para $n=1,2,\ldots$, os coeficientes
+da série de Fourier são:
+
+\begin{equation}
+    \begin{aligned}
+        a_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+\delta}
+            \cos(k_nx)\,dx \\
+            &= \frac{2A}{Pk_n}\left[\sin(k_nx)\right]_\phi^{\phi+\delta} \\
+            &= \frac{2A}{\pi n}\sin\left(\frac{k_n\delta}{2}\right)
+                \cos(k_nm) \\
+            &= \frac{2A}{\pi n}\sin(\pi nD)
+                \cos\left(\frac{2\pi nm}{P}\right).
+    \end{aligned}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        b_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+\delta}
+            \sin(k_nx)\,dx \\
+            &= -\frac{2A}{Pk_n}\left[\cos(k_nx)\right]_\phi^{\phi+\delta} \\
+            &= \frac{2A}{\pi n}\sin\left(\frac{k_n\delta}{2}\right)
+                \sin(k_nm) \\
+            &= \frac{2A}{\pi n}\sin(\pi nD)
+                \sin\left(\frac{2\pi nm}{P}\right).
+    \end{aligned}
+\end{equation}
+
+A amplitude de cada harmônico é não negativa e independe da posição $m$:
+\begin{equation}
+    \begin{aligned}
+        C_n^{(7)} &= \sqrt{\bigl(a_n^{(7)}\bigr)^2
+            +\bigl(b_n^{(7)}\bigr)^2} \\
+            &= \frac{2A}{\pi n}\lvert\sin(\pi nD)\rvert.
+    \end{aligned}
+\end{equation}
+
+Para $\phi=\theta=(P-\delta)/2$, o pulso está centrado em $m=P/2$.
+Como $\cos(k_nm)=(-1)^n$ e $\sin(k_nm)=0$, obtém-se:
+
+\begin{equation}
+    \begin{aligned}
+        a_0^{(7)} &= AD, \\
+        a_n^{(7)} &= \frac{2A}{\pi n}(-1)^n\sin(\pi nD), \\
+        b_n^{(7)} &= 0.
+    \end{aligned}
+\end{equation}
+
+Para $\phi\neq\theta$, mantém-se $m=\phi+\delta/2$ e utilizam-se
+as expressões gerais:
+
+\begin{equation}
+    \begin{aligned}
+        a_0^{(7)} &= AD, \\
+        a_n^{(7)} &= \frac{2A}{\pi n}\sin(\pi nD)\cos(k_nm), \\
+        b_n^{(7)} &= \frac{2A}{\pi n}\sin(\pi nD)\sin(k_nm).
+    \end{aligned}
+\end{equation}
+
+\subsection{Sinal 8: Retangular bipolar}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/retangular_bipolar.png}
+    \caption{Sinal de entrada retangular bipolar.}
+    \label{fig:sinal_retangular_bipolar}
+\end{figure}
