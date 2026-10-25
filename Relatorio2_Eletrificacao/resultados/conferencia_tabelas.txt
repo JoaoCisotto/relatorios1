@@ -1,45 +1,51 @@
-﻿Conferencia integral: 40 tabelas presentes no PDF.
-39 tabelas numericas; 1098 valores conferidos contra os CSV, respeitando o arredondamento.
-Todos os 24 cenarios possuem 7 pares de coeficientes, energia, percentuais, onda e espectro.
-Mapa de cobertura em cobertura_sinais.csv.
+﻿45 tabelas presentes no PDF: 44 numericas e uma simbolica.
+1392 valores tabulados conferidos contra os dados, respeitando o arredondamento.
+Todos os 24 cenarios possuem sete pares, erro, energia, percentuais, THD, onda e espectro.
+Modelo Simulink: diagrama, solver, aquisicao e janela documentados.
+Mapa de cobertura: cobertura_sinais.csv. Auditoria: conferencia_numerica.txt.
 Identificacao e pagina de cada tabela:
 tab:ret1: tabela 1, pagina 7
 tab:ret2: tabela 2, pagina 7
 tab:ret3: tabela 3, pagina 8
-tab:deslocamentos: tabela 4, pagina 9
-tab:fft: tabela 5, pagina 12
-tab:fft_P: tabela 6, pagina 12
-tab:fft_08P: tabela 7, pagina 12
-tab:fft_ret: tabela 8, pagina 12
-tab:coef_comp1: tabela 9, pagina 12
-tab:coef_comp2: tabela 10, pagina 12
-tab:coef_comp3: tabela 11, pagina 12
-tab:coef_comp4: tabela 12, pagina 12
-tab:coef_comp5: tabela 13, pagina 12
-tab:coef_comp6: tabela 14, pagina 13
-tab:coef_comp7: tabela 15, pagina 13
-tab:coef_comp8: tabela 16, pagina 13
-tab:coef_comp9: tabela 17, pagina 13
-tab:coef_comp10: tabela 18, pagina 13
-tab:coef_comp11: tabela 19, pagina 13
-tab:coef_comp12: tabela 20, pagina 13
-tab:coef_comp13: tabela 21, pagina 13
-tab:coef_comp14: tabela 22, pagina 13
-tab:coef_comp15: tabela 23, pagina 13
-tab:coef_comp16: tabela 24, pagina 14
-tab:coef_comp17: tabela 25, pagina 14
-tab:coef_comp18: tabela 26, pagina 14
-tab:coef_comp19: tabela 27, pagina 14
-tab:coef_comp20: tabela 28, pagina 14
-tab:coef_comp21: tabela 29, pagina 14
-tab:coef_comp22: tabela 30, pagina 14
-tab:coef_comp23: tabela 31, pagina 14
-tab:coef_comp24: tabela 32, pagina 14
-tab:energia_abs1: tabela 33, pagina 15
-tab:energias: tabela 34, pagina 15
-tab:energia_abs2: tabela 35, pagina 15
-tab:energias_P: tabela 36, pagina 15
-tab:energia_abs3: tabela 37, pagina 15
-tab:energias_08P: tabela 38, pagina 15
-tab:energia_abs4: tabela 39, pagina 16
-tab:energias_ret: tabela 40, pagina 16
+tab:deslocamentos: tabela 4, pagina 8
+tab:aquisicao_fft: tabela 5, pagina 11
+tab:fft: tabela 6, pagina 12
+tab:fft_P: tabela 7, pagina 12
+tab:fft_08P: tabela 8, pagina 12
+tab:fft_ret: tabela 9, pagina 12
+tab:coef_comp1: tabela 10, pagina 12
+tab:coef_comp2: tabela 11, pagina 13
+tab:coef_comp3: tabela 12, pagina 13
+tab:coef_comp4: tabela 13, pagina 13
+tab:coef_comp5: tabela 14, pagina 13
+tab:coef_comp6: tabela 15, pagina 13
+tab:coef_comp7: tabela 16, pagina 13
+tab:coef_comp8: tabela 17, pagina 13
+tab:coef_comp9: tabela 18, pagina 13
+tab:coef_comp10: tabela 19, pagina 13
+tab:coef_comp11: tabela 20, pagina 13
+tab:coef_comp12: tabela 21, pagina 14
+tab:coef_comp13: tabela 22, pagina 14
+tab:coef_comp14: tabela 23, pagina 14
+tab:coef_comp15: tabela 24, pagina 14
+tab:coef_comp16: tabela 25, pagina 14
+tab:coef_comp17: tabela 26, pagina 14
+tab:coef_comp18: tabela 27, pagina 14
+tab:coef_comp19: tabela 28, pagina 14
+tab:coef_comp20: tabela 29, pagina 14
+tab:coef_comp21: tabela 30, pagina 14
+tab:coef_comp22: tabela 31, pagina 15
+tab:coef_comp23: tabela 32, pagina 15
+tab:coef_comp24: tabela 33, pagina 15
+tab:energia_abs1: tabela 34, pagina 15
+tab:energias: tabela 35, pagina 15
+tab:energia_abs2: tabela 36, pagina 15
+tab:energias_P: tabela 37, pagina 15
+tab:energia_abs3: tabela 38, pagina 16
+tab:energias_08P: tabela 39, pagina 16
+tab:energia_abs4: tabela 40, pagina 16
+tab:energias_ret: tabela 41, pagina 16
+tab:thd1: tabela 42, pagina 17
+tab:thd2: tabela 43, pagina 17
+tab:thd3: tabela 44, pagina 17
+tab:thd4: tabela 45, pagina 17

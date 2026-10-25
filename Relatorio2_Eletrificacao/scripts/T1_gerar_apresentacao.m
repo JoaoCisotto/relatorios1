@@ -1,6 +1,9 @@
-function T1_gerar_apresentacao(pasta,coef,E,R,dados,temSimulink)
+function T1_gerar_apresentacao(pasta,coef,E,R,dados,temSimulink,gerarFiguras)
 % Tabelas teoria/simulacao e imagens vetoriais dos dados calculados no MATLAB.
 % A renderizacao em LaTeX dispensa o motor grafico interativo do MATLAB.
+if nargin<7, gerarFiguras=true; end
+[coef,E,R,M]=T1_calcular_metricas(coef,E,R);
+writetable(M,fullfile(pasta,'metricas_erro_thd.csv'));
 fid=fopen(fullfile(pasta,'resumo_validacao.tex'),'w');
 fprintf(fid,['Foram simulados 24 cenários, com $N=65536$ amostras por período real. ' ...
     'As tabelas apresentam lado a lado os valores da teoria (T) e da simulação (S). ']);
@@ -37,15 +40,44 @@ for j=1:height(R)
     f=coef(coef.Caso==R.Caso(j),:);
     assert(height(f)==7 && isequal(f.n,(1:7)'),'Cobertura harmonica incompleta.');
     legenda=[nomeGrafico(j),': coeficientes em V, teoria (T) e FFT da simulação (S).'];
-    inicioTabela(fid,legenda,sprintf('tab:coef_comp%d',j),'crrrr');
-    fprintf(fid,'$n$ & $a_{n,\\mathrm T}$ & $a_{n,\\mathrm S}$ & $b_{n,\\mathrm T}$ & $b_{n,\\mathrm S}$ \\\\ \\hline\n');
+    inicioTabela(fid,legenda,sprintf('tab:coef_comp%d',j),'crrrrr',true);
+    fprintf(fid,'$n$ & $a_{n,\\mathrm T}$ & $a_{n,\\mathrm S}$ & $b_{n,\\mathrm T}$ & $b_{n,\\mathrm S}$ & $e_n$ (V) \\\\ \\hline\n');
     for n=1:7
-        fprintf(fid,'%d & %s & %s & %s & %s \\\\\n',n, ...
+        fprintf(fid,'%d & %s & %s & %s & %s & %s \\\\\n',n, ...
             decimal(f.a_teo(n),6),decimal(f.a_fft(n),6), ...
-            decimal(f.b_teo(n),6),decimal(f.b_fft(n),6));
+            decimal(f.b_teo(n),6),decimal(f.b_fft(n),6),cientifico(f.erro_par_V(n)));
     end
     fimTabela(fid);
 end
+fclose(fid);
+
+% THD parcial e total, e erro de energia para todos os cenarios.
+fid=fopen(fullfile(pasta,'tabela_erro_thd.tex'),'w');
+for j=1:4
+    textos={'ondas básicas','deslocadas, $\delta=P$', ...
+        'deslocadas, $\delta=0{,}8P$','retangulares'};
+    inicioTabela(fid,['Erro relativo da energia total e THD (\%): ',textos{j},'.'], ...
+        sprintf('tab:thd%d',j),'lrrrrr',true);
+    fprintf(fid,['Caso & $\\varepsilon_E$ & $\\mathrm{THD}_{7,\\mathrm T}$ & ' ...
+        '$\\mathrm{THD}_{7,\\mathrm S}$ & $\\mathrm{THD}_{\\infty,\\mathrm T}$ & ' ...
+        '$\\widehat{\\mathrm{THD}}_{\\mathrm{tot},\\mathrm S}$ \\\\ \\hline\n']);
+    for r=grupos{j}
+        fprintf(fid,'%s & %s & %s & %s & %s & %s \\\\\n',rotulo(r), ...
+            cientifico(M.erro_Etotal_pct(r)),decimal(M.THD7_teo_pct(r),4), ...
+            decimal(M.THD7_sim_pct(r),4),decimal(M.THD_total_teo_pct(r),4), ...
+            decimal(M.THD_total_sim_pct(r),4));
+    end
+    fimTabela(fid);
+end
+fclose(fid);
+fid=fopen(fullfile(pasta,'metricas_resumo.tex'),'w');
+macro(fid,'ErroCoefMax',max(M.erro_coef_max_V),true);
+macro(fid,'ErroMediaMax',max(M.erro_a0_V),true);
+macro(fid,'ErroCUmMax',max(M.erro_C1_pct),false);
+macro(fid,'ErroEnergiaMax',max(M.erro_Etotal_pct),false);
+macro(fid,'ErroEnergiaUmMax',max(M.erro_E1_pct),false);
+macro(fid,'ErroEnergiaSeteMax',max(M.erro_E1_7_pct),false);
+macro(fid,'DiferencaTHDMax',max(M.diferenca_THD_total_pp),false);
 fclose(fid);
 
 % Energia absoluta e participacao percentual: resultados teoricos E e
@@ -93,12 +125,39 @@ for j=1:3
     end
     fimTabela(fid); fclose(fid);
 end
-gerarImagens(pasta,dados);
+if gerarFiguras, gerarImagens(pasta,dados); end
+ids=(1:height(E))'; grupos6=ceil(ids/6); grupos3=ceil(ids/3);
+percentuais=["tab:energias";"tab:energias_P";"tab:energias_08P";"tab:energias_ret"];
+cobertura=table(ids,E.Caso,repmat("1 a 7",height(E),1), ...
+    compose("tab:coef_comp%d",ids),compose("tab:energia_abs%d",grupos6), ...
+    percentuais(grupos6),compose("tab:thd%d",grupos6), ...
+    compose("fig:comparacao%d",grupos3),compose("onda_%02d.csv",ids), ...
+    compose("espectro_caso_%02d.csv",ids),'VariableNames', ...
+    {'Cenario','Caso','Ordens','Tabela_coeficientes','Tabela_energia', ...
+    'Tabela_percentuais','Tabela_erro_THD','Figura','Onda','Espectro'});
+writetable(cobertura,fullfile(pasta,'cobertura_sinais.csv'));
 end
 
-function inicioTabela(fid,caption,label,cols)
-fprintf(fid,'\\begin{table}[H]\n\\centering\\small\n\\setlength{\\tabcolsep}{3.5pt}\n');
+function inicioTabela(fid,caption,label,cols,compacta)
+if nargin<5, compacta=false; end
+fprintf(fid,'\\begin{table}[H]\n\\centering\n');
+if compacta
+    fprintf(fid,'\\scriptsize\\setlength{\\tabcolsep}{2pt}\n');
+else
+    fprintf(fid,'\\small\\setlength{\\tabcolsep}{3.5pt}\n');
+end
 fprintf(fid,'\\caption{%s}\\label{%s}\n\\begin{tabular}{%s}\\hline\n',caption,label,cols);
+end
+
+function t=cientifico(x)
+if x==0, t='$0$'; return; end
+s=sprintf('%.2e',x); partes=strsplit(s,'e');
+t=['$',strrep(partes{1},'.','{,}'),'\!\times\!10^{',num2str(str2double(partes{2})),'}$'];
+end
+
+function macro(fid,nome,x,ciencia)
+if ciencia, t=cientifico(x); else, t=decimal(x,6); end
+fprintf(fid,'\\newcommand{\\%s}{%s}\n',nome,t(2:end-1));
 end
 
 function fimTabela(fid)

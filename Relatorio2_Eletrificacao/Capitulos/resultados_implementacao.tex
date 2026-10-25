@@ -1,11 +1,62 @@
 \FloatBarrier
 \raggedbottom
 \section{Resultados}
+\input{resultados/metricas_resumo}
 A comparação abrange as seis ondas básicas da Figura 1,
 as seis ondas da Figura 2 em cada condição $\delta=P$ e
 $\delta=0{,}8P$, com $\phi=P/10$, e as duas retangulares
 nos casos simétrico, assimétrico e alternado. Os 24 cenários
 têm seus coeficientes, energias e gráficos apresentados a seguir.
+
+\subsection{Modelo Simulink e aquisição para a FFT}
+\input{resultados/resumo_validacao}
+O fluxo de informação do modelo pode ser representado pelo diagrama da
+Figura \ref{fig:modelo_simulink}. O bloco \textit{Onda} calcula as
+equações por trechos de cada cenário, sem sintetizar a entrada a
+partir dos coeficientes teóricos. O bloco \textit{Amostras} exporta
+os valores como \texttt{timeseries}; a FFT do MATLAB é aplicada
+diretamente a essa saída do Simulink.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[font=\scriptsize]
+        \node[draw,align=center,text width=17mm,minimum height=12mm]
+            (tempo) at (0,0) {Tempo\\Digital Clock};
+        \node[draw,align=center,text width=23mm,minimum height=12mm]
+            (onda) at (2.8,0) {Onda\\MATLAB Function};
+        \node[draw,align=center,text width=20mm,minimum height=12mm]
+            (amostras) at (5.8,0) {Amostras\\To Workspace};
+        \draw[->] (tempo) -- (onda);
+        \draw[->] (onda) -- (amostras);
+    \end{tikzpicture}
+    \caption{Diagrama do modelo Simulink utilizado na geração
+    das amostras dos 24 cenários.}
+    \label{fig:modelo_simulink}
+\end{figure}
+
+Usa-se o solver \texttt{FixedStepDiscrete}, com passo fixo
+$T_s=T_0/N=L/(\omega N)$ e $N=65536$. Ademais, as fontes são funções periódicas
+algébricas. O clock fornece $t_j=jT_s$, com $j=0,\ldots,N-1$;
+o bloco avalia $x_j=\omega(t_j+T_s/2)$, isto é, o ponto médio
+de cada intervalo. O tempo final do modelo é $(N-1)T_s$.
+
+\begin{table}[H]
+    \centering\small
+    \setlength{\tabcolsep}{3pt}
+    \caption{Aquisição de um ciclo completo em cada período efetivo.}
+    \label{tab:aquisicao_fft}
+    \begin{tabular}{crrr}\hline
+        $L$ & $f_0$ (Hz) & $T_0$ (ms) & $T_s$ (ns) \\\hline
+        $P$ & 60 & $16{,}666667$ & $254{,}313151$ \\
+        $0{,}8P$ & 75 & $13{,}333333$ & $203{,}450521$ \\
+        $2P$ & 30 & $33{,}333333$ & $508{,}626302$ \\\hline
+    \end{tabular}
+\end{table}
+
+A janela da FFT contém exatamente um ciclo, $NT_s=T_0$, com
+pesos retangulares $w_j=1$, sem preenchimento de zeros.
+A resolução é $\Delta f=1/T_0=f_0$, de modo que a ordem $n$
+ocupa o bin $n$. 
 
 \subsection{Grandezas extraídas da simulação}
 Sejam $y_j$ as amostras simuladas. A FFT normalizada e a correção
@@ -40,10 +91,6 @@ com seus próprios denominadores.
 
 \subsection{Média e amplitude da fundamental}
 
-Foram simulados 24 cenários, com $N=65536$ amostras por período real.
- As tabelas apresentam lado a lado os valores da teoria (T) e da simulação (S).
-  Os valores S foram obtidos aplicando a FFT do MATLAB às amostras geradas.
-
 Nas tabelas, S1 a S6 identificam as seis formas de onda já definidas;
 as abreviações \textit{uni.} e \textit{bi.} indicam retangulares
 unipolares e bipolares, e \textit{sim.}, \textit{assim.} e \textit{alt.}
@@ -66,6 +113,26 @@ FFT lado a lado. A ordem é: seis sinais básicos, seis deslocados
 com $\delta=P$, seis com $\delta=0{,}8P$ e seis retangulares.
 Estão incluídas todas as rampas crescentes e decrescentes,
 os triângulos e as variantes unipolares e bipolares.
+
+A última coluna apresenta o erro absoluto do par de coeficientes,
+calculado antes do arredondamento:
+\begin{equation}
+    e_n=\sqrt{(\widehat a_n-a_n)^2+(\widehat b_n-b_n)^2}.
+    \label{eq:erro_coeficientes}
+\end{equation}
+
+Essa medida, em V, também é definida para as ordens teoricamente
+nulas. Os erros relativos da amplitude fundamental e da energia
+total, em porcentagem, são:
+\begin{equation}
+    \begin{aligned}
+        \varepsilon_1&=100\frac{|\widehat C_1-C_1|}{C_1}, \\
+        \varepsilon_E&=100\frac{|\widehat E_L^{(x)}-E_L^{(x)}|}{E_L^{(x)}}.
+    \end{aligned}
+\end{equation}
+
+Os denominadores são positivos nos 24 exemplos. Todos os erros
+comparam a teoria com a análise das amostras simuladas.
 
 \input{resultados/tabela_coeficientes_comparacao}
 
@@ -95,6 +162,38 @@ As tabelas dos sinais deslocados confirmam os mesmos percentuais
 de suas formas básicas. Quando $\delta=0{,}8P$, suas energias angulares
 por período são multiplicadas por $0{,}8$, e as frequências passam
 de 60 para 75 Hz.
+
+\subsection{Distorção harmônica e erro da energia}
+A distorção harmônica exclui a componente contínua. Para manter
+a mesma faixa de ordens, calcula-se o THD até a
+sétima ordem e, separadamente, o THD teórico completo por Parseval:
+\begin{equation}
+    \begin{aligned}
+        \mathrm{THD}_7&=100\frac{\sqrt{\sum_{n=2}^{7}C_n^2}}{C_1}
+            =100\sqrt{\frac{E_{1:7}-E_1}{E_1}}, \\
+        \mathrm{THD}_{\infty}&=100\sqrt{\frac{E_L^{(x)}-E_{\mathrm{CC}}-E_1}{E_1}}.
+    \end{aligned}
+    \label{eq:thd}
+\end{equation}
+
+Na simulação, $\widehat{\mathrm{THD}}_7$ usa os coeficientes da
+FFT até a ordem 7. A estimativa total utiliza as energias medidas:
+\begin{equation}
+    \widehat{\mathrm{THD}}_{\mathrm{tot}}
+        =100\sqrt{\frac{\widehat E_L^{(x)}-\widehat E_{\mathrm{CC}}-\widehat E_1}
+            {\widehat E_1}}.
+\end{equation}
+
+Por Parseval discreto, essa última expressão inclui todo o
+espectro amostrado, até Nyquist, excluindo a média e a fundamental;
+ela estima o THD completo com a limitação da amostragem finita.
+Não se confunde essa estimativa com o THD restrito à ordem 7.
+
+As Tabelas \ref{tab:thd1}--\ref{tab:thd4} apresentam as duas
+medidas e a coluna de erro da energia para todos os cenários.
+Os valores são percentuais; diferenças entre valores de THD
+são expressas em pontos percentuais.
+\input{resultados/tabela_erro_thd}
 
 \subsection{Comparação gráfica}
 As Figuras \ref{fig:comparacao1}--\ref{fig:comparacao8} abrangem

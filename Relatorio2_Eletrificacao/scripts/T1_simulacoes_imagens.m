@@ -113,6 +113,14 @@ for j=1:numel(selecionados)
         'E_total_teoria','E_total_simulacao','E1_teoria','E1_simulacao', ...
         'E1_7_teoria','E1_7_simulacao','eta1_teoria','eta1_simulacao', ...
         'eta1_7_teoria','eta1_7_simulacao','etaCC_7_teoria','etaCC_7_simulacao'});
+    linhaCoef.erro_par_V=hypot(afft-a,bfft-b);
+    linhaCoef.erro_C_V=abs(Cfft-C);
+    linhaEnergia.erro_Etotal_pct=100*abs(Etotalfft-Etotal)/Etotal;
+    linhaEnergia.erro_C1_pct=100*abs(Cfft(1)-C(1))/C(1);
+    linhaEnergia.THD7_teoria_pct=100*sqrt(sum(C(2:7).^2))/C(1);
+    linhaEnergia.THD7_simulacao_pct=100*sqrt(sum(Cfft(2:7).^2))/Cfft(1);
+    linhaEnergia.THD_total_teoria_pct=100*sqrt(max(0,Etotal-Ecc-En(1))/En(1));
+    linhaEnergia.THD_total_simulacao_pct=100*sqrt(max(0,Etotalfft-Eccfft-Enfft(1))/Enfft(1));
     coeficientes=[coeficientes;linhaCoef]; %#ok<AGROW>
     energias=[energias;linhaEnergia]; %#ok<AGROW>
     q.a0=a0; q.a=a; q.b=b; q.a0_fft=a0fft; q.a_fft=afft; q.b_fft=bfft;

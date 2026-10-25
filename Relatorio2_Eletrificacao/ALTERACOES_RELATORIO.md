@@ -1,5 +1,39 @@
 # Alterações e justificativas
 
+## Revisão das equações, documentação da FFT e indicadores
+
+Esta seção registra a revisão mais recente. As seções seguintes preservam
+o histórico das ampliações anteriores.
+
+| Arquivos | Alteração e motivo |
+|---|---|
+| `Capitulos/solucao_problema.tex` | Completada a Eq. (36) com a avaliação dos limites e a identidade da diferença de senos; também explicitados os limites na integral de b_n. Os resultados finais já estavam corretos. |
+| `Capitulos/complemento_calculos.tex` | Explicitada na Eq. (82) a simplificação `G=3-sqrt(6)=0,550510257`; preservados os percentuais corretos 6,6934% e 11,1557%. Corrigida a descrição de S2, que soma todas as ordens de 1 a 7; a soma apenas de ímpares se aplica aos triângulos. Explicitadas a periodicidade das ondas deslocadas e a determinação do centro m do pulso assimétrico. |
+| `Capitulos/fundamentos_fourier.tex` | Repostas as definições de x, omega, amplitude, períodos e frequências, pois o capítulo de definição do problema está desativado no Main. |
+| `Capitulos/resultados_implementacao.tex` | Adicionados diagrama do modelo Simulink, solver, sample time, tempo final, número de ciclos e janela retangular da FFT; explicitada a FFT do MATLAB aplicada à saída real do Simulink. Definidos o erro absoluto dos pares, o erro relativo da energia e da fundamental, o THD até a ordem 7 e o THD total. |
+| `Capitulos/análise_resultados.tex` e `Capitulos/conclusoes.tex` | Acrescentados os máximos de erro e resultados de energia/THD para fundamentar a análise e a conclusão com números. |
+| `scripts/T1_calcular_metricas.m` | Centralizado o cálculo de erros entre teoria e simulação e de THD; o erro absoluto do par evita dividir por coeficientes nulos. |
+| `scripts/T1_gerar_apresentacao.m` | Adicionada a coluna de erro nas 24 tabelas de coeficientes e criadas quatro tabelas de erro/THD. Os máximos usados na análise são gerados dos dados sem arredondamento. Atualizado o mapa de cobertura. |
+| `scripts/T1_Fourier_MATLAB.m` | Incorporadas as métricas aos CSV/MAT e exportada a configuração de aquisição por cenário. Adicionado o modo `tabelas`, que reaproveita as amostras salvas sem refazer as figuras. |
+| `scripts/T1_simulacoes_imagens.m` | Incluídos erros e THD também nos CSV do script independente de geração de imagens. |
+| `scripts/T1_verificar_resultados.m` | Criada auditoria independente por integração das ondas por trechos, novo cálculo da FFT, Parseval, soma do espectro completo, parâmetros do SLX e conferência dos números arredondados das tabelas e dos dados das figuras. |
+| `resultados/` | Atualizadas as tabelas e os CSV/MAT; acrescentados `tabela_erro_thd.tex`, `metricas_resumo.tex`, `metricas_erro_thd.csv`, `configuracao_simulacao.csv` e `conferencia_numerica.txt`. |
+| `README_VALIDACAO.md` e `scripts/COMO_GERAR_IMAGENS_MATLAB.md` | Documentadas as métricas, a auditoria e a aquisição. Retirada a exigência de Biber das instruções de compilação, pois a bibliografia foi removida. |
+
+A auditoria recalcula a FFT das amostras de Simulink já salvas nos 24 cenários;
+essa atualização não substituiu as ondas por uma síntese teórica. O modelo
+salvo foi aberto e seus parâmetros foram conferidos. A quadratura por trechos
+confirmou as médias, os 168 pares de coeficientes e as energias analíticas,
+com diferença máxima de 2,85e-14. Os CSV dos 24 gráficos de ondas e dos 24
+espectros também foram conferidos. A versão atual contém 45 tabelas: 44
+numéricas e uma simbólica. As equações e tabelas permanecem em uma coluna,
+sem novos ambientes minipage.
+
+Os máximos obtidos foram: erro por par de coeficientes de 4,06901045e-5 V,
+erro relativo de C1 de 0,00184508%, da energia total de 0,00305176%, de E1
+de 0,00369019% e de E1:7 de 0,00186253%. A maior diferença do THD total
+foi 0,00234805 ponto percentual. Esses erros são entre teoria e simulação.
+
 ## Cobertura integral dos sinais
 
 A comparação foi ampliada para incluir todos os sinais no corpo do PDF. A seleção anterior de três exemplos foi removida.

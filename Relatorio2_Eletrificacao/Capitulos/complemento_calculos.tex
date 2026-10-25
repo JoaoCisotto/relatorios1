@@ -101,7 +101,8 @@ As ordens 3 e 6 são nulas. A expansão completa desse exemplo é:
 \end{equation}
 
 Considerando um exemplo para $\phi\neq\theta$, mantendo $d=P/3$, mas escolhendo $\phi=P/6$ e
-$\theta=P/2$. Escolhendo, também, $m=P/3$ para a componente fundamental, tem-se os coeficientes de ordem 1:
+$\theta=P/2$. O centro do pulso é, portanto, $m=\phi+d/2=P/3$;
+para a componente fundamental, tem-se os coeficientes de ordem 1:
 
 \begin{equation}
     \begin{aligned}
@@ -121,7 +122,7 @@ as médias são $A/3$ e $-A/3$, respectivamente.
 \input{resultados/retangular_coef_2}
 
 \subsubsection{Dois ciclos retangulares alternados}
-A partir das figuras \ref{fig:sinal_retangular_unipolar} e\ref{fig:sinal_retangular_bipolar}, adotou-se a hipótese de que esse par se repete, com as condições apresentadas abaixo:
+A partir das figuras \ref{fig:sinal_retangular_unipolar} e \ref{fig:sinal_retangular_bipolar}, adotou-se a hipótese de que esse par se repete, com as condições apresentadas abaixo:
 
 \begin{equation}
     \begin{aligned}
@@ -215,6 +216,8 @@ As equações completas dos sinais, incluindo a periodicidade, são:
         \widetilde v_6(x)&=A\left(1-4\left|u_\delta-\frac12\right|\right).
     \end{aligned}
 \end{equation}
+Para todos esses sinais, $\widetilde v_i(x+\delta)=\widetilde v_i(x)$,
+com $i=1,\ldots,6$.
 
 \subsubsection{Derivação dos coeficientes deslocados}
 Sejam $a_{n,0}$ e $b_{n,0}$ os coeficientes sem deslocamento, já
@@ -407,7 +410,9 @@ $8A/\pi^2$ no bipolar. Substituindo em $E_1=LC_1^2/2$, obtém-se os resultados a
     \end{aligned}
 \end{equation}
 
-Das equações apresentadas anteriormente, tem-se que a energia dos sinais está relacionada com o somatório das ordens ímpares, ou seja, $S_2$ e $S_{4,\mathrm{imp}}$.
+Nas rampas, todas as ordens de 1 a 7 contribuem para a energia;
+nos triângulos, apenas as ímpares contribuem. Definem-se, respectivamente,
+$S_2$ e $S_{4,\mathrm{imp}}$:
 \begin{equation}
     \begin{aligned}
         S_2&=\sum_{n=1}^{7}\frac{1}{n^2}\approx1{,}511797052, \\
@@ -511,7 +516,12 @@ Para os dois ciclos alternados, as integrais diretas são
 As energias harmônicas usam os coeficientes na base $L=2P$,
 não as equações de pulso único. No exemplo trabalhado, pode-se definir:
 \begin{equation}
-    G=\frac14+\left(\frac{\sqrt3}{2}-\sqrt2\right)^2.
+    \begin{aligned}
+        G&=\frac14+\left(\frac{\sqrt3}{2}-\sqrt2\right)^2 \\
+         &=\frac14+\frac34+2-\sqrt6 \\
+         &=3-\sqrt6\approx0{,}550510257.
+    \end{aligned}
+    \label{eq:G_alternada}
 \end{equation}
 
 Como $(C_{1,2P}^{(7)})^2=A^2G/\pi^2$, então

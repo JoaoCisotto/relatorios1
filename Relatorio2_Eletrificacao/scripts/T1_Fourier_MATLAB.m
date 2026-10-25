@@ -5,12 +5,17 @@ raiz = fileparts(fileparts(mfilename('fullpath')));
 saida = fullfile(raiz,'resultados');
 if ~exist(saida,'dir'), mkdir(saida); end
 diary(fullfile(saida,'execucao_matlab.txt'));
-if nargin>0 && strcmp(modo,'artefatos')
+if nargin>0 && any(strcmp(modo,{'artefatos','tabelas'}))
     % Recria somente tabelas e graficos a partir de uma execucao ja salva.
     S=load(fullfile(saida,'validacao_completa.mat'));
     assert(isfield(S,'dadosOndas'),'Execute o modo completo para salvar as amostras simuladas.');
-    T1_gerar_apresentacao(saida,S.coef,S.energias,S.resumo,S.dadosOndas,S.temSimulink);
-    registrarAmbiente(saida,S.N,S.omega,S.temSimulink);
+    [S.coef,S.energias,S.resumo]=T1_calcular_metricas(S.coef,S.energias,S.resumo);
+    writetable(S.coef,fullfile(saida,'coeficientes_fft.csv'));
+    writetable(S.energias,fullfile(saida,'energias.csv'));
+    writetable(S.resumo,fullfile(saida,'validacao_fft.csv'));
+    save(fullfile(saida,'validacao_completa.mat'),'-struct','S');
+    T1_gerar_apresentacao(saida,S.coef,S.energias,S.resumo,S.dadosOndas,S.temSimulink,strcmp(modo,'artefatos'));
+    registrarAmbiente(saida,S.N,S.omega,S.temSimulink,S.dadosOndas);
     fprintf('Artefatos recriados a partir dos 24 cenarios salvos.\n'); diary off; return
 end
 A = 1; P = 2*pi; omega = 120*pi; N = 2^16;
@@ -103,6 +108,7 @@ for ic = 1:numel(casos)
         ic,c.nome,a0,a0f,hypot(a(1),b(1)),hypot(af(1),bf(1)));
 end
 assert(all(energias.etaCC_7<=100+1e-10),'Energia truncada superior a energia total.');
+[coef,energias,resumo]=T1_calcular_metricas(coef,energias,resumo);
 writetable(coef,fullfile(saida,'coeficientes_fft.csv'));
 writetable(energias,fullfile(saida,'energias.csv'));
 writetable(resumo,fullfile(saida,'validacao_fft.csv'));
@@ -112,18 +118,32 @@ if temSimulink
     close_system(modelo,0);
 end
 T1_gerar_apresentacao(saida,coef,energias,resumo,dadosOndas,temSimulink);
-registrarAmbiente(saida,N,omega,temSimulink);
+registrarAmbiente(saida,N,omega,temSimulink,dadosOndas);
 fprintf('Concluido: %d cenarios. Simulink executado: %d.\n',numel(casos),temSimulink);
 diary off;
 end
 
-function registrarAmbiente(saida,N,omega,temSimulink)
+function registrarAmbiente(saida,N,omega,temSimulink,dados)
 fid = fopen(fullfile(saida,'ambiente.txt'),'w');
 fprintf(fid,'MATLAB: %s\nN = %d\nomega = %.17g rad/s\nSimulink executado: %d\n', ...
     version,N,omega,temSimulink);
 fprintf(fid,'Geracao Simulink: Digital Clock -> MATLAB Function -> To Workspace.\n');
 fprintf(fid,'Amostras no ponto medio; FFT corrigida por exp(-i*pi*n/N).\n');
+fprintf(fid,'Solver: FixedStepDiscrete (passo fixo, sem estados continuos).\n');
+fprintf(fid,'Ts=T0/N=L/(omega*N); instantes de saida j*Ts, j=0,...,N-1.\n');
+fprintf(fid,'O bloco avalia x=omega*(t+Ts/2); StopTime=(N-1)*Ts.\n');
+fprintf(fid,'FFT: uma janela retangular, w_j=1; N pontos; um ciclo completo.\n');
+fprintf(fid,'Sem janela de Hann, sem preenchimento de zeros e sem transitorio.\n');
+fprintf(fid,'Modelo salvo: ultimo cenario; executar o script para percorrer os 24.\n');
 fclose(fid);
+config=table();
+for j=1:numel(dados)
+    c=dados{j}.caso; T0=c.L/omega; Ts=T0/N;
+    config=[config;table(string(c.nome),T0,Ts,1/Ts,(N-1)*Ts,N,1, ...
+        string('retangular'),temSimulink,'VariableNames', ...
+        {'Caso','T0_s','Ts_s','fs_Hz','StopTime_s','N','Ciclos_FFT','Janela','Simulink'})]; %#ok<AGROW>
+end
+writetable(config,fullfile(saida,'configuracao_simulacao.csv'));
 end
 
 function c = caso(nome,tipo,A,P,L,phi,d,phi2,d2,alternado)

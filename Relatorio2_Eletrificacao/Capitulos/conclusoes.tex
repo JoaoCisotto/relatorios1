@@ -1,3 +1,25 @@
 \section{Conclusão}
 
-Os resultados obtidos demonstram a eficácia das séries de Fourier na representação das ondas estudadas, com destaque para a precisão na reconstrução dos sinais e a análise detalhada das energias harmônicas. As comparações entre os valores teóricos e os obtidos através da simulação confirmam a validade dos modelos desenvolvidos, contribuindo para uma melhor compreensão dos fenômenos envolvidos em sistemas periódicos.
+As séries de Fourier foram verificadas nos 24 cenários, com sete
+pares de coeficientes por caso. A FFT das amostras geradas no
+Simulink apresentou erro máximo de $\ErroCoefMax$ V por par;
+os erros relativos máximos da fundamental e da energia total
+foram $\ErroCUmMax\%$ e $\ErroEnergiaMax\%$, respectivamente.
+A concordância foi conferida também por integração direta das
+ondas e pelo teorema de Parseval.
+
+O triângulo bipolar concentra $98{,}5534\%$ de sua energia na
+fundamental e $99{,}9689\%$ até a ordem 7. Na rampa unipolar,
+a reconstrução com a média e as ordens 1 a 7 retém $97{,}9766\%$;
+a média sozinha responde por $75\%$ do total. O
+$\mathrm{THD}_7$ de $11{,}9842\%$ dos triângulos, frente a
+$71{,}5400\%$ das rampas, quantifica a menor participação relativa
+dos harmônicos superiores nas ondas triangulares.
+
+Por fim, notou-se que ao deslocar a onda a amplitude é preservada e as razões de energia também.
+Reduzir o período para $0{,}8P$ eleva a frequência de 60 para 75 Hz;
+alternar dois ciclos distintos produz a fundamental de 30 Hz e
+participações de $6{,}6934\%$ e $11{,}1557\%$ na energia dos
+retangulares unipolar e bipolar. Os pequenos erros da FFT são
+compatíveis com a discretização adotada; as oscilações junto aos
+saltos nas reconstruções decorrem do truncamento da série.

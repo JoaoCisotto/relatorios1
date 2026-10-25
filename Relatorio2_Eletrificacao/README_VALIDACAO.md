@@ -38,18 +38,47 @@ Para recriar somente as tabelas e os gráficos a partir dos dados já salvos:
 T1_Fourier_MATLAB('artefatos')
 ```
 
+Para atualizar apenas as tabelas, métricas e o registro da aquisição, preservando
+os gráficos já gerados, use `T1_Fourier_MATLAB('tabelas')`.
+
+## Conferir os resultados e o THD
+
+```matlab
+addpath('scripts');
+T1_verificar_resultados
+```
+
+O verificador integra cada onda por trechos, recalcula a FFT das amostras
+salvas, confere Parseval e o THD por soma direta do espectro e compara os
+valores publicados nas tabelas com os CSV, considerando o arredondamento.
+Também confere os dados das 24 ondas e dos 24 espectros usados nas figuras
+e os parâmetros do modelo Simulink salvo. O registro está em
+`resultados/conferencia_numerica.txt`.
+
+O erro dos coeficientes é `hypot(a_fft-a_teo,b_fft-b_teo)`, em V;
+essa definição também funciona para ordens teoricamente nulas. O erro
+relativo da energia total usa a teoria como referência. `THD7` considera
+as ordens 2 a 7 em relação à fundamental, excluindo a média. O THD total
+teórico usa Parseval com todas as ordens; sua estimativa simulada inclui
+todo o espectro amostrado até Nyquist, com as limitações da amostragem.
+
+O solver é `FixedStepDiscrete`, com `Ts=L/(omega*N)`. A aquisição usa
+um ciclo completo e janela retangular (`w=1`), sem preenchimento de zeros.
+O bloco avalia a onda em `x=omega*(t+Ts/2)` e a FFT corrige essa meia amostra.
+O diagrama, o tempo final e os valores de Ts estão documentados no relatório;
+os parâmetros por cenário estão em `resultados/configuracao_simulacao.csv`.
+
 ## Compilar o PDF
 
 Na pasta do projeto, execute:
 
 ```powershell
 xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error Main.tex
-biber Main
 xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error Main.tex
 xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error Main.tex
 ```
 
-Também é possível usar uma receita de `latexmk` com XeLaTeX e Biber. Não é necessário executar novamente o MATLAB para compilar o relatório: os CSV e os arquivos TeX gerados acompanham o projeto.
+Também é possível usar uma receita de `latexmk` com XeLaTeX. A versão atual não utiliza bibliografia nem exige Biber. Não é necessário executar novamente o MATLAB para compilar o relatório: os CSV e os arquivos TeX gerados acompanham o projeto.
 
 Os gráficos usam as amostras reais das simulações e os coeficientes de FFT calculados no MATLAB. São exportados em PDF vetorial e PNG para `resultados/figuras/`, por meio de PGFPlots, XeLaTeX e `pdftoppm`; não dependem de janelas gráficas do MATLAB. O programa `scripts/T1_gerar_apresentacao.m` automatiza essa exportação e a criação das tabelas. Para regenerar as imagens, XeLaTeX e `pdftoppm` precisam estar disponíveis no PATH. Os caches de compilação do Simulink são encaminhados para a pasta temporária do sistema.
 
@@ -68,13 +97,18 @@ Os gráficos usam as amostras reais das simulações e os coeficientes de FFT ca
 | `retangular_coef_1.tex` a `retangular_coef_3.tex` | Sete pares de coeficientes de cada exemplo retangular unipolar |
 | `tabela_energias.tex`, `tabela_validacao.tex`, `resumo_validacao.tex` | Energias, percentuais, médias e fundamentais comparados diretamente com a teoria |
 | `tabela_coeficientes_comparacao.tex` | 24 tabelas: comparação dos sete pares de coeficientes de todos os cenários |
+| `tabela_erro_thd.tex` | Quatro tabelas com erro da energia e THD parcial e total, para todos os 24 cenários |
+| `metricas_erro_thd.csv` | Erros de média, fundamental, coeficientes e energias, além dos dois THD |
+| `metricas_resumo.tex` | Máximos numéricos usados na análise e na conclusão, gerados dos dados completos |
+| `configuracao_simulacao.csv` | Período, passo, frequência de amostragem, tempo final e janela dos 24 casos |
+| `conferencia_numerica.txt` | Auditoria por quadratura, FFT, Parseval e conferência dos valores tabulados |
 | `onda_*.csv` | Amostras da simulação e reconstruções de ordem 7 com coeficientes teóricos e medidos pela FFT |
 | `espectro_*.csv` | Amplitudes analíticas e de FFT para as figuras espectrais |
 | `graficos_fourier.tex` | Inclusão das oito figuras comparativas, cada uma com três ondas e seus três espectros |
 | `figuras/comparacao_*.pdf` e `figuras/comparacao_*.png` | Oito conjuntos atuais com onda e espectro dos 24 cenários, agrupados em três sinais por imagem |
 | `cobertura_sinais.csv` | Conferência dos 24 cenários: tabela de coeficientes, energia, percentuais, onda e espectro de cada um |
 
-Todos os resultados estão presentes no PDF, e não somente nos CSV: são 24 tabelas com os sete pares de coeficientes, quatro tabelas de energia absoluta, quatro de percentuais e 48 gráficos (24 ondas e 24 espectros). As quatro tabelas de média/fundamental e as quatro tabelas teóricas do desenvolvimento completam o total de 40 tabelas.
+Todos os resultados estão presentes no PDF: são 24 tabelas com os sete pares de coeficientes e seu erro, quatro de energia absoluta, quatro de percentuais, quatro de erro/THD e 48 gráficos (24 ondas e 24 espectros). As quatro tabelas de média/fundamental, as quatro tabelas teóricas do desenvolvimento e uma tabela de aquisição completam 45 tabelas. O diagrama do Simulink é apresentado além das oito figuras de comparação.
 
 Os arquivos `onda_*.csv` preservam uma seleção das amostras reais para desenhar as curvas; a FFT e as energias usam todas as 65536 amostras. As tabelas identificam T (teoria) e S (simulação). A energia total simulada é `L*mean(y.^2)`; a energia da fundamental e das ordens 1–7 usa os coeficientes medidos pela FFT, e os percentuais simulados usam a energia total simulada no denominador. Não se compara o MATLAB com o Simulink: o Simulink gera as amostras, e o MATLAB as analisa e compara com a teoria.
 

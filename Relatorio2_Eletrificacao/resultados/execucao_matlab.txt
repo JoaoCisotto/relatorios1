@@ -74,3 +74,5 @@ Concluido: 24 cenarios. Simulink executado: 1.
 24/24 Ret8_alternada: a0 teoria/sim = -0.166667 / -0.166656; C1 = 0.472349 / 0.472353
 Concluido: 24 cenarios. Simulink executado: 1.
 Artefatos recriados a partir dos 24 cenarios salvos.
+Artefatos recriados a partir dos 24 cenarios salvos.
+Artefatos recriados a partir dos 24 cenarios salvos.

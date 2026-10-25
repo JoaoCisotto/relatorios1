@@ -4,3 +4,9 @@ omega = 376.99111843077515 rad/s
 Simulink executado: 1
 Geracao Simulink: Digital Clock -> MATLAB Function -> To Workspace.
 Amostras no ponto medio; FFT corrigida por exp(-i*pi*n/N).
+Solver: FixedStepDiscrete (passo fixo, sem estados continuos).
+Ts=T0/N=L/(omega*N); instantes de saida j*Ts, j=0,...,N-1.
+O bloco avalia x=omega*(t+Ts/2); StopTime=(N-1)*Ts.
+FFT: uma janela retangular, w_j=1; N pontos; um ciclo completo.
+Sem janela de Hann, sem preenchimento de zeros e sem transitorio.
+Modelo salvo: ultimo cenario; executar o script para percorrer os 24.

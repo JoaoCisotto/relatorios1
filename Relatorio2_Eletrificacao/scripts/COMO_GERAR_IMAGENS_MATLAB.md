@@ -59,3 +59,9 @@ Para inserir uma imagem no LaTeX, copie o PDF desejado para `images/matlab/` e u
 ```
 
 As figuras são geradas com `figure`, `tiledlayout`, `plot`, `stem`, `bar` e `exportgraphics`. Recomenda-se executar a exportação na sessão gráfica do MATLAB. O modo de cálculos pode ser executado sem abrir figuras.
+
+Os CSV exportados incluem o erro absoluto de cada par de coeficientes,
+o erro relativo da fundamental e da energia total e o THD teórico e simulado.
+`THD7` considera as ordens 2 a 7; o THD total exclui a componente contínua
+e usa a energia total. Na simulação, essa última medida é uma estimativa
+limitada à aquisição finita. Todos os erros comparam teoria e simulação.

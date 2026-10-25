@@ -490,6 +490,10 @@ da série de Fourier são:
         a_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+d}
             \cos(k_nx)\,dx \\
             &= \frac{2A}{Pk_n}\left[\sin(k_nx)\right]_\phi^{\phi+d} \\
+            &= \frac{2A}{Pk_n}\bigl[\sin(k_n(\phi+d)) \\
+            &\qquad\qquad {}-\sin(k_n\phi)\bigr] \\
+            &= \frac{4A}{Pk_n}\sin\left(\frac{k_nd}{2}\right)
+                \cos\left(k_n\left(\phi+\frac d2\right)\right) \\
             &= \frac{2A}{\pi n}\sin\left(\frac{k_nd}{2}\right)
                 \cos(k_nm) \\
             &= \frac{2A}{\pi n}\sin(\pi nD)
@@ -502,6 +506,8 @@ da série de Fourier são:
         b_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+d}
             \sin(k_nx)\,dx \\
             &= -\frac{2A}{Pk_n}\left[\cos(k_nx)\right]_\phi^{\phi+d} \\
+            &= \frac{2A}{Pk_n}\bigl[\cos(k_n\phi) \\
+            &\qquad\qquad {}-\cos(k_n(\phi+d))\bigr] \\
             &= \frac{2A}{\pi n}\sin\left(\frac{k_nd}{2}\right)
                 \sin(k_nm) \\
             &= \frac{2A}{\pi n}\sin(\pi nD)
