@@ -1,103 +1,39 @@
-\documentclass[10pt, a4paper, twocolumn]{article}
+\documentclass[letterpaper,journal]{IEEEtran}
 
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
-\usepackage{amssymb,amsfonts,bezier,amstext,amsthm,amsmath,graphicx,makeidx,caption,subfigure,mathtools}
+% A classe IEEEtran define margens, fontes, colunas, títulos e legendas.
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,array,multirow}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{stackengine}
-\newcommand{\pr}{\hspace*{15mm}}
-\newcommand{\n}{\noindent}
-\usepackage{lipsum}
-\usepackage{gensymb}
-%\usepackage{authblk}
-\usepackage{blindtext}
 \usepackage[T1]{fontenc}
 \graphicspath{ {./images/} }
-\usepackage{indentfirst}
-\usepackage{float}
-\usepackage{color}	
-\usepackage{chemfig,chemmacros} 
-\usepackage{microtype} 			
-\usepackage{pdfpages}
-\usepackage{lastpage}
-\usepackage{lmodern}
-\usepackage{esvect}
-\def\figureautorefname{Figura}
-\def\equationautorefname{Equação}
-\usepackage{comment}
+\usepackage{microtype}
+\usepackage{cite}
 \usepackage{url}
 \usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-\pgfplotsset{plot coordinates/math parser=false}
-\newlength\figureheight
-\newlength\figurewidth
-\usepackage[title]{appendix}
 \usepackage{placeins}
-\usepackage{multirow}
 \usepackage[portuguese]{babel}
-\usepackage{csquotes}
-
-\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
-\lstset{
-        literate=                    
-        {á}{{\'a}}1
-        {â}{{\^a}}1
-        {ã}{{\~a}}1
-        {à}{{\`a}}1
-        {é}{{\'e}}1
-        {ê}{{\^e}}1
-        {í}{{\'i}}1
-        {ó}{{\'o}}1
-        {ô}{{\^o}}1
-        {õ}{{\~o}}1
-        {ú}{{\'u}}1
-        {ç}{{\c{c}}}1
-}
-
-\setlocalecaption{portuguese}{contents}{\centering Sumário}
-\providecommand{\keywords}[1]{\textbf{\textit{Palavras-chave---}} #1}
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
 
 
 \begin{document}
 % -----------------------------------------------------------
 % 1. TÍTULO e 2. AUTORES 
-% Cabeçalho e autores do relatório em duas colunas
+% Título e autores no formato de periódico IEEE.
 % -----------------------------------------------------------
-\title{\vspace{-2.0cm} 
-    \begin{minipage}{0.2\textwidth}
-        \raggedright
-        \includegraphics[width=1.5cm]{images/SEL.png}
-    \end{minipage}%
-    \begin{minipage}{0.6\textwidth}
-        \centering
-        \normalsize
-        Departamento de Engenharia Elétrica \\
-        Lista T1 --- 2026
-    \end{minipage}%
-    \begin{minipage}{0.2\textwidth}
-        \raggedleft
-        \includegraphics[width=3.2cm]{images/Logo EESC-USP_top.png}
-    \end{minipage} \\[0.8cm]
-    \textbf{\Large Séries de Fourier: harmônicas, energia e validação por FFT}
-}
+\title{Séries de Fourier: harmônicas, energia e validação por FFT}
 
-\author{
-    \normalsize
-    \begin{tabular}{c}
-        Vitor Gabriel Saturnino de Melo - N.\textsuperscript{o} USP: 14611599 \\
-        João Pedro Muto Cisotto - N.\textsuperscript{o} USP: 14761684 
-    \end{tabular}
-}
-\date{} % Deixar este campo vazio remove a data do documento
+\author{Vitor Gabriel Saturnino de Melo - N.\textsuperscript{o} USP: 14611599\\
+João Pedro Muto Cisotto - N.\textsuperscript{o} USP: 14761684\\[0.5ex]
+\normalsize Departamento de Engenharia Elétrica\\
+\normalsize Lista T1 --- 2026}
+
+\markboth{Departamento de Engenharia Elétrica --- Lista T1 --- 2026}%
+{Séries de Fourier: harmônicas, energia e validação por FFT}
 
 \maketitle
+% Mantém o espaçamento natural quando um elemento [H] passa à coluna seguinte.
+\raggedbottom
 
 
 

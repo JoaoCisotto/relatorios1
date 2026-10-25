@@ -1,5 +1,4 @@
 \FloatBarrier
-\raggedbottom
 \section{Resultados}
 \input{resultados/metricas_resumo}
 A comparação abrange as seis ondas básicas da Figura 1,
@@ -19,7 +18,7 @@ diretamente a essa saída do Simulink.
 
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[font=\scriptsize]
+    \begin{tikzpicture}[font=\footnotesize]
         \node[draw,align=center,text width=17mm,minimum height=12mm]
             (tempo) at (0,0) {Tempo\\Digital Clock};
         \node[draw,align=center,text width=23mm,minimum height=12mm]
@@ -41,7 +40,7 @@ o bloco avalia $x_j=\omega(t_j+T_s/2)$, isto é, o ponto médio
 de cada intervalo. O tempo final do modelo é $(N-1)T_s$.
 
 \begin{table}[H]
-    \centering\small
+    \centering\footnotesize
     \setlength{\tabcolsep}{3pt}
     \caption{Aquisição de um ciclo completo em cada período efetivo.}
     \label{tab:aquisicao_fft}
