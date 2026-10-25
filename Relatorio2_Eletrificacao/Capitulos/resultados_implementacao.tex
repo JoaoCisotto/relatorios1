@@ -1,1 +1,113 @@
+\FloatBarrier
+\raggedbottom
 \section{Resultados}
+A comparação abrange as seis ondas básicas da Figura 1,
+as seis ondas da Figura 2 em cada condição $\delta=P$ e
+$\delta=0{,}8P$, com $\phi=P/10$, e as duas retangulares
+nos casos simétrico, assimétrico e alternado. Os 24 cenários
+têm seus coeficientes, energias e gráficos apresentados a seguir.
+
+\subsection{Grandezas extraídas da simulação}
+Sejam $y_j$ as amostras simuladas. A FFT normalizada e a correção
+para o início em meia amostra são
+\begin{equation}
+    \begin{aligned}
+        Y_n&=\frac1N\sum_{j=0}^{N-1}y_j
+            \exp\left(-\mathrm{i}\frac{2\pi nj}{N}\right), \\
+        \widehat c_n&=Y_n\exp\left(-\mathrm{i}\frac{\pi n}{N}\right), \\
+        \widehat a_0&=\operatorname{Re}(Y_0), \\
+        \widehat a_n&=2\operatorname{Re}(\widehat c_n), \qquad
+        \widehat b_n=-2\operatorname{Im}(\widehat c_n), \\
+        \widehat C_n&=\sqrt{\widehat a_n^2+\widehat b_n^2}.
+    \end{aligned}
+\end{equation}
+A energia total simulada é estimada diretamente pelas amostras;
+as energias das ordens 1 a 7 utilizam os coeficientes medidos pela FFT:
+\begin{equation}
+    \begin{aligned}
+        \widehat E_L^{(x)}&=\frac LN\sum_{j=0}^{N-1}y_j^2, \\
+        \widehat E_{\mathrm{CC}}&=L\widehat a_0^2, \qquad
+        \widehat E_1=\frac L2\widehat C_1^2, \\
+        \widehat E_{1:7}&=\frac L2\sum_{n=1}^{7}\widehat C_n^2, \\
+        \widehat E_{\mathrm{CC}:7}&=\widehat E_{\mathrm{CC}}+\widehat E_{1:7}.
+    \end{aligned}
+\end{equation}
+
+Cada percentual simulado é calculado dividindo a energia estimada
+da parcela pela energia total estimada $\widehat E_L^{(x)}$.
+Os valores teóricos usam as integrais e os coeficientes analíticos,
+com seus próprios denominadores.
+
+\subsection{Média e amplitude da fundamental}
+
+Foram simulados 24 cenários, com $N=65536$ amostras por período real.
+ As tabelas apresentam lado a lado os valores da teoria (T) e da simulação (S).
+  Os valores S foram obtidos aplicando a FFT do MATLAB às amostras geradas.
+
+Nas tabelas, S1 a S6 identificam as seis formas de onda já definidas;
+as abreviações \textit{uni.} e \textit{bi.} indicam retangulares
+unipolares e bipolares, e \textit{sim.}, \textit{assim.} e \textit{alt.}
+seus casos simétrico, assimétrico e alternado, respectivamente.
+Os cabeçalhos T e S indicam teoria e simulação.
+
+\input{resultados/tabela_validacao}
+
+As Tabelas \ref{tab:fft}--\ref{tab:fft_ret} mostram a preservação
+da amplitude da fundamental após deslocar ou mudar o período das
+seis ondas. Nas retangulares, os valores simulados também reproduzem
+a igualdade de $C_1$ entre os pulsos simétrico e assimétrico de mesmo
+$D$. Na alternância, a fundamental passa a corresponder ao período
+$2P$, e sua amplitude é diferente da de um pulso de período $P$.
+
+\subsection{Coeficientes das ordens 1 a 7}
+As Tabelas \ref{tab:coef_comp1}--\ref{tab:coef_comp24} apresentam
+os sete pares $(a_n,b_n)$ de todos os 24 cenários, com teoria e
+FFT lado a lado. A ordem é: seis sinais básicos, seis deslocados
+com $\delta=P$, seis com $\delta=0{,}8P$ e seis retangulares.
+Estão incluídas todas as rampas crescentes e decrescentes,
+os triângulos e as variantes unipolares e bipolares.
+
+\input{resultados/tabela_coeficientes_comparacao}
+
+As diferenças nas
+últimas casas decorrem da aquisição finita. Em especial, fronteiras
+como $P/3$ não coincidem necessariamente com a malha de amostragem.
+
+\subsection{Comparação das energias e dos percentuais}
+As Tabelas \ref{tab:energia_abs1}, \ref{tab:energia_abs2},
+\ref{tab:energia_abs3} e \ref{tab:energia_abs4} comparam a energia
+total, a fundamental e a soma das ordens 1 a 7 em V$^2$rad para
+todos os cenários. As Tabelas \ref{tab:energias}, \ref{tab:energias_P},
+\ref{tab:energias_08P} e \ref{tab:energias_ret} apresentam os
+percentuais, incluindo a razão entre a fundamental e o sinal
+completo solicitada no item (c). As linhas T e S representam
+teoria e simulação, respectivamente.
+
+\input{resultados/tabela_energias}
+
+Os resultados simulados reproduzem a concentração de energia do
+triângulo bipolar na fundamental e a contribuição da componente
+contínua nos sinais unipolares. Por exemplo, na rampa unipolar,
+as ordens 1 a 7 contêm cerca de $22{,}9766\%$ do total, enquanto
+a reconstrução com a média alcança aproximadamente $97{,}9766\%$.
+
+As tabelas dos sinais deslocados confirmam os mesmos percentuais
+de suas formas básicas. Quando $\delta=0{,}8P$, suas energias angulares
+por período são multiplicadas por $0{,}8$, e as frequências passam
+de 60 para 75 Hz.
+
+\subsection{Comparação gráfica}
+As Figuras \ref{fig:comparacao1}--\ref{fig:comparacao8} abrangem
+todos os 24 cenários. Para cada sinal, o gráfico da onda mostra
+as amostras simuladas, a série teórica truncada na ordem 7 e a
+reconstrução com os coeficientes medidos pela FFT. Logo abaixo,
+o espectro compara a amplitude teórica e simulada de cada uma
+das sete ordens. A sobreposição
+das duas reconstruções evidencia a concordância dos coeficientes;
+a diferença em relação aos pontos simulados evidencia o efeito
+do truncamento, sobretudo nas proximidades dos saltos.
+
+Cada figura reúne três sinais, sempre com sua onda e seu espectro,
+sem restringir a comparação a exemplos selecionados.
+\input{resultados/graficos_fourier}
+\FloatBarrier

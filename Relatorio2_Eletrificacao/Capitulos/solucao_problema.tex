@@ -1,5 +1,6 @@
 \section{Desenvolvimento}
 \label{Desenvolvimento}
+\input{Capitulos/fundamentos_fourier}
 \subsection{Sinais Unipolares}
 \subsubsection{Sinal 1: rampa crescente de 0 a $A$}
 \label{subsection_rampa_crescente}
@@ -65,7 +66,7 @@ calcular os coeficientes $a_n$ e $b_n$, que são dados pelas equações abaixo:
 \end{equation}
 
 Utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, a série de Fourier
-até o sétimo termo é dada por:
+até a sétima ordem é dada por:
 
 \begin{equation}
     \begin{aligned}
@@ -138,8 +139,8 @@ Além disso, para construir sua representação em série de Fourier, é necess�
     \end{aligned}
 \end{equation}
 
-Desssa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, os sete primeiros termos
-da série de Fourier são dados por:
+Dessa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$,
+a aproximação até a sétima ordem da série de Fourier é dada por:
 
 \begin{equation}
     \begin{aligned}
@@ -154,7 +155,7 @@ da série de Fourier são dados por:
     \end{aligned}
 \end{equation}
 
-\subsubsection{Sinal triangular unipolar de 0 a $A$}
+\subsubsection{Sinal 3: triangular unipolar de 0 a $A$}
 
 \begin{figure}[H]
     \centering
@@ -166,13 +167,13 @@ da série de Fourier são dados por:
 Um sinal triangular unipolar, como o demonstrado na figura \ref{fig:sinal_triangular}, pode ser descrito por uma rampa crescente na primeira metade do período e uma rampa decrescente na segunda metade. Dessa forma, a equação do sinal triangular é dada por:
 
 \begin{equation}
-    \resizebox{\dimexpr\linewidth-2.5em\relax}{!}{$\displaystyle
-        v_3(x) = \begin{cases}
+    \begin{aligned}
+        v_3(x) &= \begin{cases}
             \dfrac{2Ax}{P}, & 0 \leq x < \dfrac{P}{2}, \\[6pt]
             \dfrac{2A(P-x)}{P}, & \dfrac{P}{2} \leq x < P.
-        \end{cases}
-        \quad v_3(x+P) = v_3(x).
-    $}
+        \end{cases} \\
+        v_3(x+P) &= v_3(x).
+    \end{aligned}
 \end{equation}
 
 A componente contínua dessa função, pode ser obtida como a média da função em um período, sendo ela dada por:
@@ -221,11 +222,13 @@ Definindo $k_n = 2\pi n/P$, com $n = 1,2,\ldots$, obtém-se:
             x\sin(k_n x)\,dx \\
             &\quad {}+ \frac{4A}{P^2} \int_{P/2}^{P}
             (P-x)\sin(k_n x)\,dx \\
-            &= 0.
+            &= \frac{4A}{P^2}\biggl[
+            -\frac{P(-1)^n}{2k_n}+\frac{P(-1)^n}{2k_n}\biggr] = 0.
     \end{aligned}
 \end{equation}
 
-Dessa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$, os sete primeiros termos da série de Fourier são dados por:
+Dessa forma, utilizando os valores calculados para $a_0$, $a_n$ e $b_n$,
+a série de Fourier até a sétima ordem é dada por:
 
 \begin{equation}
     \begin{aligned}
@@ -292,7 +295,7 @@ Já para os coeficientes $a_n$ e $b_n$ da série de Fourier, obtém-se:
     \end{aligned}
 \end{equation}
 
-Assim, a série de Fourier até o sétimo termo é dada por:
+Assim, a série de Fourier até a sétima ordem é dada por:
 
 \begin{equation}
     \begin{aligned}
@@ -356,7 +359,7 @@ Definindo $k_n=2\pi n/P$, para $n=1,2,\ldots$, os coeficientes são:
     \end{aligned}
 \end{equation}
 
-Com os coeficientes calculados, a série de Fourier até o sétimo termo dessa função é:
+Com os coeficientes calculados, a série de Fourier até a sétima ordem dessa função é:
 
 \begin{equation}
     \begin{aligned}
@@ -443,14 +446,14 @@ os harmônicos ímpares:
 \end{figure}
 
 No sinal retangular unipolar da figura \ref{fig:sinal_retangular_unipolar},
-$\delta$ é a largura do pulso de amplitude $A>0$, enquanto $\phi$ e $\theta$
+$d$ é a largura do pulso de amplitude $A>0$, enquanto $\phi$ e $\theta$
 são os intervalos em nível zero antes e depois do pulso. Para
-$\phi,\theta\geq0$ e $0\leq\delta\leq P$, definem-se o período $P>0$,
+$\phi,\theta\geq0$ e $0\leq d\leq P$, definem-se o período $P>0$,
 o ciclo de trabalho $D$ e o centro do pulso $m$:
 \begin{equation}
     \begin{aligned}
-        P &= \phi+\delta+\theta, \\
-        D &= \frac{\delta}{P}, \qquad m = \phi+\frac{\delta}{2}.
+        P &= \phi+d+\theta, \\
+        D &= \frac{d}{P}, \qquad m = \phi+\frac{d}{2}.
     \end{aligned}
 \end{equation}
 
@@ -460,8 +463,8 @@ Então, o sinal retangular unipolar pode ser descrito como:
     \begin{aligned}
         v_7(x) &= \begin{cases}
             0, & 0 \leq x < \phi, \\
-            A, & \phi \leq x < \phi+\delta, \\
-            0, & \phi+\delta \leq x < P,
+            A, & \phi \leq x < \phi+d, \\
+            0, & \phi+d \leq x < P,
         \end{cases} \\
         v_7(x+P) &= v_7(x).
     \end{aligned}
@@ -474,8 +477,8 @@ o valor médio é:
 \begin{equation}
     \begin{aligned}
         a_0^{(7)} &= \frac{1}{P}\int_0^P v_7(x)\,dx \\
-            &= \frac{A}{P}\int_\phi^{\phi+\delta}\,dx
-             = \frac{A\delta}{P} = AD.
+            &= \frac{A}{P}\int_\phi^{\phi+d}\,dx
+             = \frac{Ad}{P} = AD.
     \end{aligned}
 \end{equation}
 
@@ -484,10 +487,10 @@ da série de Fourier são:
 
 \begin{equation}
     \begin{aligned}
-        a_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+\delta}
+        a_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+d}
             \cos(k_nx)\,dx \\
-            &= \frac{2A}{Pk_n}\left[\sin(k_nx)\right]_\phi^{\phi+\delta} \\
-            &= \frac{2A}{\pi n}\sin\left(\frac{k_n\delta}{2}\right)
+            &= \frac{2A}{Pk_n}\left[\sin(k_nx)\right]_\phi^{\phi+d} \\
+            &= \frac{2A}{\pi n}\sin\left(\frac{k_nd}{2}\right)
                 \cos(k_nm) \\
             &= \frac{2A}{\pi n}\sin(\pi nD)
                 \cos\left(\frac{2\pi nm}{P}\right).
@@ -496,10 +499,10 @@ da série de Fourier são:
 
 \begin{equation}
     \begin{aligned}
-        b_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+\delta}
+        b_n^{(7)} &= \frac{2A}{P}\int_\phi^{\phi+d}
             \sin(k_nx)\,dx \\
-            &= -\frac{2A}{Pk_n}\left[\cos(k_nx)\right]_\phi^{\phi+\delta} \\
-            &= \frac{2A}{\pi n}\sin\left(\frac{k_n\delta}{2}\right)
+            &= -\frac{2A}{Pk_n}\left[\cos(k_nx)\right]_\phi^{\phi+d} \\
+            &= \frac{2A}{\pi n}\sin\left(\frac{k_nd}{2}\right)
                 \sin(k_nm) \\
             &= \frac{2A}{\pi n}\sin(\pi nD)
                 \sin\left(\frac{2\pi nm}{P}\right).
@@ -515,7 +518,7 @@ A amplitude de cada harmônico é não negativa e independe da posição $m$:
     \end{aligned}
 \end{equation}
 
-Para $\phi=\theta=(P-\delta)/2$, o pulso está centrado em $m=P/2$.
+Para $\phi=\theta=(P-d)/2$, o pulso está centrado em $m=P/2$.
 Como $\cos(k_nm)=(-1)^n$ e $\sin(k_nm)=0$, obtém-se:
 
 \begin{equation}
@@ -526,7 +529,7 @@ Como $\cos(k_nm)=(-1)^n$ e $\sin(k_nm)=0$, obtém-se:
     \end{aligned}
 \end{equation}
 
-Para $\phi\neq\theta$, mantém-se $m=\phi+\delta/2$ e utilizam-se
+Para $\phi\neq\theta$, mantém-se $m=\phi+d/2$ e utilizam-se
 as expressões gerais:
 
 \begin{equation}
@@ -537,10 +540,11 @@ as expressões gerais:
     \end{aligned}
 \end{equation}
 
-\subsection{Sinal 8: Retangular bipolar}
+\subsubsection{Sinal 8: Retangular bipolar}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{images/retangular_bipolar.png}
     \caption{Sinal de entrada retangular bipolar.}
     \label{fig:sinal_retangular_bipolar}
 \end{figure}
+\input{Capitulos/complemento_calculos}

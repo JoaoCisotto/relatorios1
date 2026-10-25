@@ -1,0 +1,6 @@
+MATLAB: 26.1.0.3312084 (R2026a) Update 4
+N = 65536
+omega = 376.99111843077515 rad/s
+Simulink executado: 1
+Geracao Simulink: Digital Clock -> MATLAB Function -> To Workspace.
+Amostras no ponto medio; FFT corrigida por exp(-i*pi*n/N).

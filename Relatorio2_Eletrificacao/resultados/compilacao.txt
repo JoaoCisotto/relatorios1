@@ -1,0 +1,8 @@
+﻿Compilacao: XeLaTeX + Biber; 21 paginas.
+Cobertura: todos os sinais, 24 cenarios; sem selecao de exemplos.
+Coeficientes: 24 tabelas; 168 pares teoricos/simulados, ordens 1 a 7.
+Energia: quatro tabelas absolutas e quatro de percentuais; todos os 24 cenarios.
+Figuras: 24 ondas e 24 espectros, agrupados em oito figuras.
+Conferencia numerica: 1098 valores em 39 tabelas numericas; mais uma tabela simbolica, totalizando 40 tabelas.
+Resultado: sem erros, referencias indefinidas ou conteudo excedendo a largura das colunas.
+SHA256 de Main.pdf: 267CB160AF4F2C4D0B081EF2F4E41206606CF85CF176B94CBFEEF59FB0D84DC6

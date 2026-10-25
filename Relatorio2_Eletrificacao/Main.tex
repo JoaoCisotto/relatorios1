@@ -43,7 +43,6 @@
 \usepackage{multirow}
 \usepackage[portuguese]{babel}
 \usepackage{csquotes}
-\usepackage{biblatex}
 
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 \lstset{
@@ -61,7 +60,6 @@
         {ú}{{\'u}}1
         {ç}{{\c{c}}}1
 }
-\addbibresource{relatorio.bib}
 
 \setlocalecaption{portuguese}{contents}{\centering Sumário}
 \providecommand{\keywords}[1]{\textbf{\textit{Palavras-chave---}} #1}
@@ -70,7 +68,7 @@
 \begin{document}
 % -----------------------------------------------------------
 % 1. TÍTULO e 2. AUTORES 
-% Adaptado para economizar espaço e caber nas 2 páginas
+% Cabeçalho e autores do relatório em duas colunas
 % -----------------------------------------------------------
 \title{\vspace{-2.0cm} 
     \begin{minipage}{0.2\textwidth}
@@ -80,21 +78,21 @@
     \begin{minipage}{0.6\textwidth}
         \centering
         \normalsize
-        Sistemas Inteligentes - SEL0421 \\
-        Prof. Ivan Nunes da Silva
+        Departamento de Engenharia Elétrica \\
+        Lista T1 --- 2026
     \end{minipage}%
     \begin{minipage}{0.2\textwidth}
         \raggedleft
         \includegraphics[width=3.2cm]{images/Logo EESC-USP_top.png}
     \end{minipage} \\[0.8cm]
-    \textbf{\Large Projeto Parcial: [Insira o Título do Projeto Aqui]}
+    \textbf{\Large Séries de Fourier: harmônicas, energia e validação por FFT}
 }
 
 \author{
     \normalsize
     \begin{tabular}{c}
-        Vitor Gabriel Saturnino de Melo - N° USP: 14611599 \\
-        João Pedro Muto Cisotto - N° USP: 14761684 
+        Vitor Gabriel Saturnino de Melo - N.\textsuperscript{o} USP: 14611599 \\
+        João Pedro Muto Cisotto - N.\textsuperscript{o} USP: 14761684 
     \end{tabular}
 }
 \date{} % Deixar este campo vazio remove a data do documento
@@ -106,7 +104,7 @@
 
 
 % ==========================================
-% PROJETO PARCIAL (PARTE I) - SEÇÕES ATIVAS
+% SEÇÕES INICIAIS
 % ==========================================
 
 % 3. Resumo
@@ -116,27 +114,24 @@
 \input{Capitulos/introducao}
 
 % 5. Definição do Problema
-\input{Capitulos/definicao_problema} % Renomeie seu arquivo "Desenvolvimento.tex" para "definicao_problema.tex" ou altere aqui
+%\input{Capitulos/definicao_problema} % Renomeie seu arquivo "Desenvolvimento.tex" para "definicao_problema.tex" ou altere aqui
 
 
 % ==========================================
-% PROJETO COMPLETO (PARTE II) - COMENTADOS
+% DESENVOLVIMENTO, RESULTADOS E CONCLUSÃO
 % ==========================================
 
 % 6. Solução do Problema
 \input{Capitulos/solucao_problema}
 
 % 7. Resultados de Implementação
-%\input{Capitulos/resultados_implementacao}
+\input{Capitulos/resultados_implementacao}
 
 % 8. Análises dos Resultados
-%\input{Capitulos/analise_resultados}
+\input{Capitulos/análise_resultados}
 
 % 9. Conclusões
-%\input{Capitulos/conclusoes}
-
-% 10. Referências
-%\input{Capitulos/referencia} 
+\input{Capitulos/conclusoes}
 
 % 11. Anexos
 %\input{Capitulos/anexos}

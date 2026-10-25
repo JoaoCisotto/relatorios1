@@ -1,0 +1,40 @@
+\subsection{Convenção da série e integrais auxiliares}
+Para um sinal qualquer de período angular $L$, adota-se $k_n=2\pi n/L$. Dessa forma, sua representação em série de Fourier é dada por:
+\begin{equation}
+    \begin{aligned}
+        v(x)&=a_0+\sum_{n=1}^{\infty}\bigl[
+            a_n\cos(k_nx)+b_n\sin(k_nx)\bigr], \\
+        a_0&=\frac{1}{L}\int_0^L v(x)\,dx, \\
+        a_n&=\frac{2}{L}\int_0^L v(x)\cos(k_nx)\,dx, \\
+        b_n&=\frac{2}{L}\int_0^L v(x)\sin(k_nx)\,dx.
+    \end{aligned}
+    \label{eq:convencao_fourier}
+\end{equation}
+
+Nessa representação, $a_0$ é a própria média.
+Na reconstrução $v_{i,7}$, o índice 7 indica truncamento na ordem 7;
+as ordens com coeficientes nulos permanecem incluídas. Não se trata
+necessariamente de sete termos não nulos.
+
+Para $n\geq1$, a amplitude de pico e a fase podem ser expressas por:
+\begin{equation}
+    \begin{aligned}
+        C_n&=\sqrt{a_n^2+b_n^2}, \\
+        \alpha_n&=\operatorname{atan2}(b_n,a_n), \\
+        v_n(x)&=C_n\cos(k_nx-\alpha_n).
+    \end{aligned}
+\end{equation}
+
+Se $C_n=0$, a fase é indeterminada e não altera o sinal. As amplitudes
+$C_n$ são valores de pico; o valor eficaz do harmônico é $C_n/\sqrt{2}$.
+
+As integrações por partes utilizam, para $k\neq0$:
+\begin{equation}
+    \begin{aligned}
+        \int x\cos(kx)\,dx
+            &=\frac{x\sin(kx)}{k}+\frac{\cos(kx)}{k^2}+C, \\
+        \int x\sin(kx)\,dx
+            &=-\frac{x\cos(kx)}{k}+\frac{\sin(kx)}{k^2}+C.
+    \end{aligned}
+\end{equation}
+

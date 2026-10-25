@@ -1,1 +1,28 @@
 \section{Definição do problema}
+
+O enunciado reproduzido no memorial solicita as equações das oito ondas
+da Figura 1 e das seis variações da Figura 2, até a ordem harmônica 7,
+uma comparação teórica com FFT no MATLAB/Simulink e as energias da
+fundamental e das sete primeiras ordens em relação ao sinal completo.
+Para as retangulares, devem ser contemplados $\phi=\theta$ e
+$\phi\neq\theta$; para as ondas deslocadas, $\delta=P$ e $\delta\neq P$.
+
+Adota-se $x=\omega t$, com $\omega>0$ em rad/s e amplitude $A>0$ em V.
+O intervalo angular nominal é $P=\omega T$. O período angular efetivo
+será indicado por $L$: $L=P$ nos ciclos simples, $L=\delta$ nas ondas
+da Figura 2 e $L=2P$ na alternância de dois ciclos retangulares distintos.
+O período físico e a frequência fundamental são, portanto,
+\begin{equation}
+    T_0=\frac{L}{\omega}, \qquad f_0=\frac{1}{T_0}=\frac{\omega}{L}.
+\end{equation}
+
+Para evitar a ambiguidade do símbolo $\delta$, a largura do pulso
+retangular da Figura 1 será escrita como $d$, enquanto $\delta$ denotará
+o período efetivo da Figura 2. Os intervalos $\phi$ e $\theta$ são
+medidas angulares antes e depois do pulso, e não amplitudes.
+
+Uma onda periódica não nula tem energia infinita quando integrada em
+todo o eixo temporal. Neste trabalho, ``energia do sinal completo''
+significa a integral de seu quadrado em um período, incluindo a
+componente contínua. A energia apenas das ordens 1 a 7 será distinguida
+da energia da reconstrução que também inclui a média.

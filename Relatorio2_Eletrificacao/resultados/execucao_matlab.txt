@@ -1,0 +1,76 @@
+ 1/24 Fig1_sinal1: erro FFT 8.534e-10, Simulink 2.220e-16
+ 2/24 Fig1_sinal2: erro FFT 8.534e-10, Simulink 2.220e-16
+ 3/24 Fig1_sinal3: erro FFT 1.552e-10, Simulink 4.441e-16
+ 4/24 Fig1_sinal4: erro FFT 1.707e-09, Simulink 4.441e-16
+ 5/24 Fig1_sinal5: erro FFT 1.707e-09, Simulink 4.441e-16
+ 6/24 Fig1_sinal6: erro FFT 3.104e-10, Simulink 8.882e-16
+ 7/24 Fig2_1.0P_sinal1: erro FFT 1.221e-05, Simulink 2.220e-16
+ 8/24 Fig2_1.0P_sinal2: erro FFT 1.221e-05, Simulink 2.220e-16
+ 9/24 Fig2_1.0P_sinal3: erro FFT 1.428e-10, Simulink 4.441e-16
+10/24 Fig2_1.0P_sinal4: erro FFT 2.441e-05, Simulink 4.441e-16
+11/24 Fig2_1.0P_sinal5: erro FFT 2.441e-05, Simulink 4.441e-16
+12/24 Fig2_1.0P_sinal6: erro FFT 2.856e-10, Simulink 8.882e-16
+13/24 Fig2_0.8P_sinal1: erro FFT 7.315e-10, Simulink 2.220e-16
+14/24 Fig2_0.8P_sinal2: erro FFT 7.315e-10, Simulink 2.220e-16
+15/24 Fig2_0.8P_sinal3: erro FFT 1.098e-10, Simulink 4.441e-16
+16/24 Fig2_0.8P_sinal4: erro FFT 1.463e-09, Simulink 4.441e-16
+17/24 Fig2_0.8P_sinal5: erro FFT 1.463e-09, Simulink 4.441e-16
+18/24 Fig2_0.8P_sinal6: erro FFT 2.195e-10, Simulink 8.882e-16
+19/24 Ret7_simetrica: erro FFT 2.035e-05, Simulink 0.000e+00
+20/24 Ret7_assimetrica: erro FFT 1.017e-05, Simulink 0.000e+00
+21/24 Ret7_alternada: erro FFT 1.017e-05, Simulink 0.000e+00
+22/24 Ret8_simetrica: erro FFT 4.069e-05, Simulink 0.000e+00
+23/24 Ret8_assimetrica: erro FFT 2.035e-05, Simulink 0.000e+00
+24/24 Ret8_alternada: erro FFT 2.035e-05, Simulink 0.000e+00
+Artefatos recriados a partir dos 24 cenarios salvos.
+ 1/24 Fig1_sinal1: erro FFT 8.534e-10, Simulink 2.220e-16
+ 2/24 Fig1_sinal2: erro FFT 8.534e-10, Simulink 2.220e-16
+ 3/24 Fig1_sinal3: erro FFT 1.552e-10, Simulink 4.441e-16
+ 4/24 Fig1_sinal4: erro FFT 1.707e-09, Simulink 4.441e-16
+ 5/24 Fig1_sinal5: erro FFT 1.707e-09, Simulink 4.441e-16
+ 6/24 Fig1_sinal6: erro FFT 3.104e-10, Simulink 8.882e-16
+ 7/24 Fig2_1.0P_sinal1: erro FFT 1.221e-05, Simulink 2.220e-16
+ 8/24 Fig2_1.0P_sinal2: erro FFT 1.221e-05, Simulink 2.220e-16
+ 9/24 Fig2_1.0P_sinal3: erro FFT 1.428e-10, Simulink 4.441e-16
+10/24 Fig2_1.0P_sinal4: erro FFT 2.441e-05, Simulink 4.441e-16
+11/24 Fig2_1.0P_sinal5: erro FFT 2.441e-05, Simulink 4.441e-16
+12/24 Fig2_1.0P_sinal6: erro FFT 2.856e-10, Simulink 8.882e-16
+13/24 Fig2_0.8P_sinal1: erro FFT 7.315e-10, Simulink 2.220e-16
+14/24 Fig2_0.8P_sinal2: erro FFT 7.315e-10, Simulink 2.220e-16
+15/24 Fig2_0.8P_sinal3: erro FFT 1.098e-10, Simulink 4.441e-16
+16/24 Fig2_0.8P_sinal4: erro FFT 1.463e-09, Simulink 4.441e-16
+17/24 Fig2_0.8P_sinal5: erro FFT 1.463e-09, Simulink 4.441e-16
+18/24 Fig2_0.8P_sinal6: erro FFT 2.195e-10, Simulink 8.882e-16
+19/24 Ret7_simetrica: erro FFT 2.035e-05, Simulink 0.000e+00
+20/24 Ret7_assimetrica: erro FFT 1.017e-05, Simulink 0.000e+00
+21/24 Ret7_alternada: erro FFT 1.017e-05, Simulink 0.000e+00
+22/24 Ret8_simetrica: erro FFT 4.069e-05, Simulink 0.000e+00
+23/24 Ret8_assimetrica: erro FFT 2.035e-05, Simulink 0.000e+00
+24/24 Ret8_alternada: erro FFT 2.035e-05, Simulink 0.000e+00
+Concluido: 24 cenarios. Simulink executado: 1.
+ 1/24 Fig1_sinal1: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.318310 / 0.318310
+ 2/24 Fig1_sinal2: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.318310 / 0.318310
+ 3/24 Fig1_sinal3: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.405285 / 0.405285
+ 4/24 Fig1_sinal4: a0 teoria/sim = 0.000000 / -0.000000; C1 = 0.636620 / 0.636620
+ 5/24 Fig1_sinal5: a0 teoria/sim = 0.000000 / 0.000000; C1 = 0.636620 / 0.636620
+ 6/24 Fig1_sinal6: a0 teoria/sim = 0.000000 / 0.000000; C1 = 0.810569 / 0.810569
+ 7/24 Fig2_1.0P_sinal1: a0 teoria/sim = 0.500000 / 0.500006; C1 = 0.318310 / 0.318310
+ 8/24 Fig2_1.0P_sinal2: a0 teoria/sim = 0.500000 / 0.499994; C1 = 0.318310 / 0.318310
+ 9/24 Fig2_1.0P_sinal3: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.405285 / 0.405285
+10/24 Fig2_1.0P_sinal4: a0 teoria/sim = 0.000000 / 0.000012; C1 = 0.636620 / 0.636620
+11/24 Fig2_1.0P_sinal5: a0 teoria/sim = 0.000000 / -0.000012; C1 = 0.636620 / 0.636620
+12/24 Fig2_1.0P_sinal6: a0 teoria/sim = 0.000000 / 0.000000; C1 = 0.810569 / 0.810569
+13/24 Fig2_0.8P_sinal1: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.318310 / 0.318310
+14/24 Fig2_0.8P_sinal2: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.318310 / 0.318310
+15/24 Fig2_0.8P_sinal3: a0 teoria/sim = 0.500000 / 0.500000; C1 = 0.405285 / 0.405285
+16/24 Fig2_0.8P_sinal4: a0 teoria/sim = 0.000000 / -0.000000; C1 = 0.636620 / 0.636620
+17/24 Fig2_0.8P_sinal5: a0 teoria/sim = 0.000000 / 0.000000; C1 = 0.636620 / 0.636620
+18/24 Fig2_0.8P_sinal6: a0 teoria/sim = 0.000000 / 0.000000; C1 = 0.810569 / 0.810569
+19/24 Ret7_simetrica: a0 teoria/sim = 0.333333 / 0.333344; C1 = 0.551329 / 0.551339
+20/24 Ret7_assimetrica: a0 teoria/sim = 0.333333 / 0.333328; C1 = 0.551329 / 0.551324
+21/24 Ret7_alternada: a0 teoria/sim = 0.416667 / 0.416672; C1 = 0.236174 / 0.236177
+22/24 Ret8_simetrica: a0 teoria/sim = -0.333333 / -0.333313; C1 = 1.102658 / 1.102678
+23/24 Ret8_assimetrica: a0 teoria/sim = -0.333333 / -0.333344; C1 = 1.102658 / 1.102648
+24/24 Ret8_alternada: a0 teoria/sim = -0.166667 / -0.166656; C1 = 0.472349 / 0.472353
+Concluido: 24 cenarios. Simulink executado: 1.
+Artefatos recriados a partir dos 24 cenarios salvos.

@@ -1,0 +1,48 @@
+\documentclass[border=2pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,pgfplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tabular}{@{}c@{}}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.6cm,grid=major,xmin=0,xmax=1,xlabel={$x/L$},ylabel={$v$ (V)},title={Rampa crescente bi., $\delta=0{,}8P$, $\phi=P/10$},font=\scriptsize]
+\addplot[black,only marks,mark=*,mark size=0.35pt] table[x=u,y=simulada,col sep=comma]{resultados/onda_16.csv};
+\addplot[blue,thin] table[x=u,y=teoria7,col sep=comma]{resultados/onda_16.csv};
+\addplot[red,dashed,thin] table[x=u,y=fft7,col sep=comma]{resultados/onda_16.csv};
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3cm,grid=major,xtick={1,2,3,4,5,6,7},xlabel={Ordem $n$},ylabel={$C_n$ (V)},font=\scriptsize]
+\addplot[blue,ycomb,mark=*,mark size=1pt] table[x=n,y=teoriaC,col sep=comma]{resultados/espectro_caso_16.csv};
+\addplot[red,only marks,mark=o,mark size=1.6pt] table[x=n,y=fftC,col sep=comma]{resultados/espectro_caso_16.csv};
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.6cm,grid=major,xmin=0,xmax=1,xlabel={$x/L$},ylabel={$v$ (V)},title={Rampa decrescente bi., $\delta=0{,}8P$, $\phi=P/10$},font=\scriptsize]
+\addplot[black,only marks,mark=*,mark size=0.35pt] table[x=u,y=simulada,col sep=comma]{resultados/onda_17.csv};
+\addplot[blue,thin] table[x=u,y=teoria7,col sep=comma]{resultados/onda_17.csv};
+\addplot[red,dashed,thin] table[x=u,y=fft7,col sep=comma]{resultados/onda_17.csv};
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3cm,grid=major,xtick={1,2,3,4,5,6,7},xlabel={Ordem $n$},ylabel={$C_n$ (V)},font=\scriptsize]
+\addplot[blue,ycomb,mark=*,mark size=1pt] table[x=n,y=teoriaC,col sep=comma]{resultados/espectro_caso_17.csv};
+\addplot[red,only marks,mark=o,mark size=1.6pt] table[x=n,y=fftC,col sep=comma]{resultados/espectro_caso_17.csv};
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.6cm,grid=major,xmin=0,xmax=1,xlabel={$x/L$},ylabel={$v$ (V)},title={Triangular bi., $\delta=0{,}8P$, $\phi=P/10$},font=\scriptsize]
+\addplot[black,only marks,mark=*,mark size=0.35pt] table[x=u,y=simulada,col sep=comma]{resultados/onda_18.csv};
+\addplot[blue,thin] table[x=u,y=teoria7,col sep=comma]{resultados/onda_18.csv};
+\addplot[red,dashed,thin] table[x=u,y=fft7,col sep=comma]{resultados/onda_18.csv};
+\end{axis}
+\end{tikzpicture}\\
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3cm,grid=major,xtick={1,2,3,4,5,6,7},xlabel={Ordem $n$},ylabel={$C_n$ (V)},font=\scriptsize]
+\addplot[blue,ycomb,mark=*,mark size=1pt] table[x=n,y=teoriaC,col sep=comma]{resultados/espectro_caso_18.csv};
+\addplot[red,only marks,mark=o,mark size=1.6pt] table[x=n,y=fftC,col sep=comma]{resultados/espectro_caso_18.csv};
+\end{axis}
+\end{tikzpicture}\\
+\end{tabular}
+\end{document}
