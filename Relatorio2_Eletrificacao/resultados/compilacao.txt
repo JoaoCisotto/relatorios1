@@ -1,0 +1,9 @@
+﻿Compilacao final: XeLaTeX; 22 paginas; sem bibliografia e sem Biber.
+Cobertura: 24 cenarios; 168 pares de coeficientes, ordens 1 a 7.
+Tabelas: 45 no PDF, sendo 44 numericas e uma simbolica.
+Auditoria: 1392 valores tabulados conferidos; ver conferencia_numerica.txt.
+FFT recalculada das amostras salvas do Simulink; teoria conferida por quadratura.
+THD parcial ate a ordem 7 e total; erro entre teoria e simulacao.
+Figuras: 24 ondas e 24 espectros em oito comparacoes, mais o diagrama Simulink.
+Resultado: sem erros, referencias indefinidas ou avisos de excesso de largura.
+SHA256 de Main.pdf: D30F9963809113E37C1C18A5DB79761AAE258337AF44A7F894752DC9FA8CB233

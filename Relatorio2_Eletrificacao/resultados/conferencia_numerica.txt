@@ -1,0 +1,16 @@
+PASSOU: 24 cenarios; 168 pares, ordens 1 a 7.
+Origem registrada das amostras: Simulink=1.
+Quadratura por trechos vs teoria: diferenca maxima 2.84217094304e-14.
+FFT recalculada e energias vs CSV: diferenca maxima 7.1054273576e-14.
+Parseval discreto: diferenca maxima 3.16635606623e-13 V^2 rad.
+Conferidos 1392 valores nas 44 tabelas numericas TeX, com arredondamento.
+Conferidos os CSV das 24 ondas e dos 24 espectros apresentados nas figuras.
+THD parcial e total verificados por soma direta do espectro, com Nyquist.
+G=3-sqrt(6); porcentagens das alternadas verificadas.
+Erro maximo por par de coeficientes: 4.06901044784e-05 V.
+Erro maximo da media: 2.03450520834e-05 V.
+Erro relativo maximo C1: 0.00184507936071 %.
+Erro relativo maximo Etotal: 0.0030517578125 %.
+Erro relativo maximo E1: 0.00369019276458 %.
+Erro relativo maximo E1:7: 0.00186253202663 %.
+Diferenca maxima do THD total: 0.00234804779956 pontos percentuais.

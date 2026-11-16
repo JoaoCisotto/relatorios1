@@ -1,0 +1,75 @@
+\documentclass[letterpaper,journal]{IEEEtran}
+
+% A classe IEEEtran define margens, fontes, colunas, títulos e legendas.
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{graphicx,array,multirow}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\graphicspath{ {./images/} }
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{placeins}
+\usepackage[portuguese]{babel}
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+
+
+\begin{document}
+% -----------------------------------------------------------
+% 1. TÍTULO e 2. AUTORES 
+% Título e autores no formato de periódico IEEE.
+% -----------------------------------------------------------
+\title{Séries de Fourier: harmônicas, energia e validação por FFT}
+
+\author{Vitor Gabriel Saturnino de Melo - N.\textsuperscript{o} USP: 14611599\\
+João Pedro Muto Cisotto - N.\textsuperscript{o} USP: 14761684\\[0.5ex]
+\normalsize Departamento de Engenharia Elétrica\\
+\normalsize Lista T1 --- 2026}
+
+\markboth{Departamento de Engenharia Elétrica --- Lista T1 --- 2026}%
+{Séries de Fourier: harmônicas, energia e validação por FFT}
+
+\maketitle
+% Mantém o espaçamento natural quando um elemento [H] passa à coluna seguinte.
+\raggedbottom
+
+
+
+
+
+% ==========================================
+% SEÇÕES INICIAIS
+% ==========================================
+
+% 3. Resumo
+\input{Capitulos/resumo}
+
+% 4. Introdução
+\input{Capitulos/introducao}
+
+% 5. Definição do Problema
+%\input{Capitulos/definicao_problema} % Renomeie seu arquivo "Desenvolvimento.tex" para "definicao_problema.tex" ou altere aqui
+
+
+% ==========================================
+% DESENVOLVIMENTO, RESULTADOS E CONCLUSÃO
+% ==========================================
+
+% 6. Solução do Problema
+\input{Capitulos/solucao_problema}
+
+% 7. Resultados de Implementação
+\input{Capitulos/resultados_implementacao}
+
+% 8. Análises dos Resultados
+\input{Capitulos/análise_resultados}
+
+% 9. Conclusões
+\input{Capitulos/conclusoes}
+
+% 11. Anexos
+%\input{Capitulos/anexos}
+
+\end{document}
