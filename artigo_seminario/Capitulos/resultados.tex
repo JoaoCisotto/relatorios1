@@ -1,0 +1,54 @@
+\section{Resultados de Simulação}
+\label{sec:resultados}
+
+O sistema foi implementado no Matlab/Simulink utilizando a toolbox Specialized Power
+Systemas, com passo de simulação $T_s/50$ e controle discreto amostrado na frequência de 
+chaveamento $f_sw$.
+
+\subsection{Partida e regime permanente}
+Para permitir a pré-carga dos capacitores e dos diodos, o PWM é habilitado em $t=0,2s$. Após isso,
+o controle é totalmente habilitado, podendo-se observar, por meio da figura \ref{}, \textcolor{red}{adicionar figura} que a tensão de barramento ($V_{dc}$) atinge 
+$600$ V que era a tensão de referência, com um sobressinal de cerca de $20V$ e a tensão sobre
+os capacitores $V_{C1}$ e $V_{C2}$ ficam equilibrados em $300$ V, com uma ondulação de $\pm 12V$. Por fim,
+as correntes são senoidais e com cerca de $85$ A de pico. 
+
+
+\subsection{Degraus de Fator de Potência com e sem limitador}
+
+Para verificar se o modelo proposto suportava um PFC, o FP foi variado de 1 para 
+0,95 indutivo (0,4 s) e depois para 0,95 (0,6 s) capacitivo em carga nominal. Sendo os 
+resultados apresentados na figura \ref{} \textcolor{red}{adicionar figura}.
+
+Para o fator de potência em 0,95 indutivo, nota-se que o referencial é seguido com e sem limitador, 
+com uma potência reativa de $7 kvar$. Nessa situação, é apresentado um THD de 0,2\%. Já para um FP de 
+0,95 capacitivo, nota-se que sem limitador, o conversor não é capaz de sintetizar a corrente
+e o THD passa de 20\%. Isso ocorre, devido a presença de harmônicos das fases que se somam no neutro. Com o limitador,
+a operação segue conforme o esperado. Por fim, para um fator de potência unitário em carga nominal, da simulação
+pode-se obter um FP de 0,992 com THD de $1,7\%$.
+
+Além disso, pode-se notar também, que em todos os degraus, a potência aparente e a tensão do 
+barramento CC praticamente não se alteram, o que confirma o desacoplamento previsto anteriormente
+em \ref{}.
+
+\subsection{Primeiro ensaio}
+Descreva o ensaio e comente as figuras e tabelas (Tabela~\ref{tab:resultados}).
+
+\begin{itemize}
+    \item \textbf{Caso 1}: comentário do resultado.
+    \item \textbf{Caso 2}: comentário do resultado.
+\end{itemize}
+
+\begin{table}[!t]
+    \centering
+    \caption{Resultados em regime}
+    \label{tab:resultados}
+    \footnotesize
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        $\FP^*$ & Limit. & $\varphi$ medido & $Q$ [kvar] & $\THD$ \\
+        \midrule
+        1,00    & não    & \ang{0}          & 0,1        & \SI{6,2}{\percent} \\
+        1,00    & sim    & \ang{6,9}        & 2,7        & \SI{1,7}{\percent} \\
+        \bottomrule
+    \end{tabular}
+\end{table}

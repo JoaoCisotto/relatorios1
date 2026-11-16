@@ -1,0 +1,18 @@
+# Arquivos auxiliares gerados pelo LaTeX e pela bibliografia
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.bcf
+*.bbl
+*.blg
+*.run.xml
+*.SAVE-ERROR
+
+# PDF compilado
+/Main.pdf
+*.xdv
