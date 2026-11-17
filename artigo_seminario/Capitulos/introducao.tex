@@ -5,10 +5,10 @@ Em carregadores de veículos elétricos o estágio de entrada precisa absorver u
 senoidal com FP elevado e baixo THD, dentro das normas estabelecidas pela IEEE 519 \cite{ieee519}
 e fornecer um barramento CC regulado ao conversor CC-CC que alimenta a bateria. Os conversores PFC monofásicos, 
 como o \textit{boost}, o \textit{bridless} e o \textit{totem-pole}, são amplamente utilizados em carregadores de baixa potência,
-porém em estações de recarga rápidas ou carregadores embarcados que operam na faixa de 20kW, faz-se necessária a utilização
-de retificadores trifásicos multiníveis, como o retificador de Vienna, para reduzir os esforços nas chaves semicondutoras e o tamanho de filtros utilizados \cite{yilmaz2013review}, \cite{tu2019extreme}.
+porém em estações de recarga rápidas ou carregadores embarcados que operam na faixa de \SI{20}{kW}, faz-se necessária a utilização
+de retificadores trifásicos multiníveis, como o retificador de Vienna, para reduzir os esforços nas chaves semicondutoras e o tamanho de filtros utilizados \cite{yilmaz2013review,tu2019extreme}.
 O retificador de Vienna se destaca nesse cenário por utilizar apenas três chaves bidirecionais, que bloquiam metade da tensão do barramento, 
-dessa forma diminuindo o estresse nas chaves e permitindo a utilização de semicondutores de menor tensão nominal, sendo amplamente utilizado em módulos comerciais de recarga rápida \textcolor{red}{colocar alguma referência depois}.
+dessa forma diminuindo o estresse nas chaves e permitindo a utilização de semicondutores de menor tensão nominal, sendo amplamente utilizado em módulos comerciais de recarga rápida \obs{colocar alguma referência depois}.
 
 O retificador de Vienna a quatro fios (ponto de neutro aterrado) com fator de potência variável é uma topologia em que o neutro da rede é ligado ao ponto médio do barramento \cite{alahuhtala2006fourwire}, essa conexão permite
 que o conversor opere com cargas e redes desequilibradas, tendo em vista que ele fixa o potencial do ponto médio (o que reduz o ruído de modo comum) e viabiliza sua utilização em redes monofásicas e trifásicas \cite{schafmeister2021transformerless}. 

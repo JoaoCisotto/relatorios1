@@ -3,13 +3,13 @@
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=\linewidth]{images/figure-3-phase-wire-vienna-rectifier.jpeg}
+    \includegraphics[width=\columnwidth]{figure-3-phase-wire-vienna-rectifier.jpeg}
     \caption{Braço do Vienna de 4 fios.}
     \label{fig:braco_vienna}
 \end{figure}
 
-A figura \ref{fig:braco_vienna} mostra o braço do retificador de Vienna de quatro fios,
-a tensão aplicada à fase é a tensão de polo $v_{kM}$, e cada fase  $k \in \{a,b,c\}$ é descrita de forma independente, como apresentado na equação \ref{eq:modelo_vienna4}.
+A Fig.~\ref{fig:braco_vienna} mostra o braço do retificador de Vienna de quatro fios,
+a tensão aplicada à fase é a tensão de polo $v_{kM}$, e cada fase $k \in \{a,b,c\}$ é descrita de forma independente, como apresentado na equação~\eqref{eq:modelo_vienna4}.
 
 \begin{equation}
     L\frac{di_k}{dt} = v_k - R i_k - v_{kM}, \qquad
@@ -21,34 +21,34 @@ a tensão aplicada à fase é a tensão de polo $v_{kM}$, e cada fase  $k \in \{
     \label{eq:modelo_vienna4}
 \end{equation}
 
-Na equação, $d_k$  é a razão cíclica da chave $S_k$. Além disso, os capacitores respeitam a
-equação \ref{eq:capacitores}.
+Na equação, $d_k$ é a razão cíclica da chave $S_k$. Além disso, os capacitores respeitam a
+equação~\eqref{eq:capacitores}.
 
 \begin{equation}
-    C\frac{dV_{C1}}{dt} = \sum_{i_k>0}^{}(1-d_k)i_k-i_L, \qquad
-    C\frac{dV_{C2}}{dt} = \sum_{i_k<0}^{}(1-d_k)|i_k|-i_L.
+    \begin{aligned}
+        C\frac{dV_{C1}}{dt} &= \sum_{k:\,i_k>0}(1-d_k)\,i_k-i_L,\\
+        C\frac{dV_{C2}}{dt} &= \sum_{k:\,i_k<0}(1-d_k)\,\lvert i_k\rvert-i_L.
+    \end{aligned}
     \label{eq:capacitores}
 \end{equation}
 
-Da equação \ref{eq:modelo_vienna}, tem-se que a corrente no ponto médio ($i_M$) é a soma das correntes de cada fase, ou seja, $i_M = \sum_{}^{}d_ki_k$. 
-Além disso, em regime permantente, o conversor deve sintetizar uma tensão, que no formato de fasores, pode ser representada por:
+Da equação~\eqref{eq:modelo_vienna4}, tem-se que a corrente média chaveada total ($i_M$) é a soma das correntes médias chaveadas de cada fase, ou seja, $i_M = \sum_{k} d_k i_k$.
+Além disso, em regime permanente, o conversor deve sintetizar uma tensão, que no formato de fasores, pode ser representada por:
 
 \begin{equation}
-    \fasor{V}_{\sub{conv}} = \fasor{V}_s - (R + j\omega_0 L)\fasor{I}, \fasor{I} = Ae^{-j\phi},
+    \fasor{V}_{\sub{conv}} = \fasor{V}_s - (R + j\omega_0 L)\,\fasor{I}, \qquad \fasor{I} = A e^{-j\varphi},
     \label{eq:fasor}
 \end{equation}
 
-Na equação \ref{eq:fasor}, $\phi>0$ representa uma corrente atrasada. Caso $\fasor{V_{conv}}$ e $\fasor{I}$ não estejam em fase,
+Na equação~\eqref{eq:fasor}, $\varphi>0$ representa uma corrente atrasada. Caso $\fasor{V}_{\sub{conv}}$ e $\fasor{I}$ não estejam em fase,
 então para cada semiciclo, existe um intervalo em que a tensão necessária tem o sinal oposto ao da corrente
-e, dessa forma, a corrente irá se distorcer em decorrência da saturação de $d_k$. Desconsideranto R na equação \ref{eq:fasor}, o alinhamento
-entre a corrente e a tensão do conversor exige que $V_{pk}sin(\phi) = \omega_{0}LA$, ou seja, a corrente de linha é atrasada em relação à tensão do conversor.
-Tendo isso em vista, tem-se a equação \ref{eq:phi}.
+e, dessa forma, a corrente irá se distorcer em decorrência da saturação de $d_k$. Desconsideranto $R$ na equação~\eqref{eq:fasor}, o alinhamento
+entre a corrente e a tensão do conversor exige que $V_{\sub{pk}}\sin\varphi = \omega_{0}LA$, ou seja, a corrente de linha é atrasada em relação à tensão do conversor.
+Tendo isso em vista, tem-se a equação~\eqref{eq:phi}.
 
 \begin{equation}
-    \phi= \Psi_0 = arcsin(\omega_0LA/V_{pk})
+    \varphi = \psi_0 = \arcsin\!\left(\frac{\omega_0 L A}{V_{\sub{pk}}}\right)
     \label{eq:phi}
 \end{equation}
 
 Logo, o ângulo sem distorção é indutivo e cresce com a corrente.
-
-
