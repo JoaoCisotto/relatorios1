@@ -6,6 +6,7 @@ Os carregadores de veículos elétricos podem ser classificados em embarcados (\
 de dezenas a centenas de kW \cite{yilmaz2013review,tu2019extreme}. Ambos tipos 
 apresentam dois estágios, o primeiro é um retificador PFC que é responsável por regular 
 o barramento CC intermediário e o seguindo é um conversor CC-CC isolado que adapta a tensão do barramento CC à tensão da bateria (tipicamente entre 400 e 800 V). 
+
 Estações de recarga rápidas apresentam o estágio CA-CC formado por módulos de 15 a 30 kW em paralelo para diminuir o esforço das chaves dos retificadores, sendo a escolha da 
 topologia utilizada dependente da eficiência, densidade de potência e qualidade de energia necessária. Como os 
 OBCs podem operar tanto em redes monofásicas quanto em redes trifásicas, topologias com
@@ -13,10 +14,12 @@ o ponto médio do barramento ligado aso neutro da rede são comumente utilizadas
 \subsection{Topologias de retificadores trifásiocos}
 
 Existem diversas topologias de retificadores trifásicos, entre elas podem ser destacadas algumas características. 
+
 As pontes de diodos com conversor boost são simples e necessitam de apenas uma chave, por conta dessa particularidade, apresentam
 apenas um nível de tensão e um fluxo de corrente unidirecional, não sendo possível controlar o FP, o que provoca
 uma corrente de linha distorcida. As topologias de retificador com PWM de dois níveis apresentam seis chaves e são bidirecionais, além de apresentarem
 dois níveis de tensão, permitindo o controle completo do fator de potência e da corrente de linha, porém apresentam uma maior complexidade de controle e suas chaves bloqueiam a tensão do barramento, assim ficam sobre um estresse maior \cite{kolar2013essence}. 
+
 Já as topologias NPC/tipo-T apresentam doze chaves e 3 níveis de tensão, além de permitirem um fluxo de corrente
 bidirecional, o que torna possível a operação em modo de recarga e de injeção de energia na rede. Apesar de reduzirem os esforçoes sobre cada chave, seu custo é maior
 tendo em vista a necessidade de doze chaves \cite{safayatullah2022comprehensive}. O retificador de Vienna de três fios \cite{kolar1997novel} é a versão unidirecional do 
@@ -28,5 +31,6 @@ para carregadores embarcados sem transformados \cite{schafmeister2021transformer
 
 Para um retificador de Vienna de quatro fios, os mecanismos doe controle, de forma geral, se concentram em três malhas, uma para a corrente de entrada,
 uma para a tensão do barramento CC e uma para o equilíbrio do ponto médio do barramento CC. A malha de corrente de entrada é responsável por controlar a corrente de linha, garantindo que ela siga uma referência senoidal em fase com a tensão da rede, o que permite o controle do fator de potência. A malha de tensão do barramento CC regula a tensão do barramento intermediário, garantindo que ela permaneça dentro dos limites especificados para a operação segura do conversor. Por fim, a malha de equilíbrio do ponto médio do barramento CC assegura que as tensões nos capacitores do barramento permaneçam equilibradas, evitando sobrecargas em um dos capacitores e garantindo a estabilidade do sistema.
+
 Para o retificador destacado anteriormente, o equilíbrio é realizado com um termo aditivo na amplitude da referência, com sinal dependente do semiciclo \cite{alahuhtala2006fourwire}.
 

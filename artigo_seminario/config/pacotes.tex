@@ -59,10 +59,7 @@
     \renewcommand{\figurename}{Fig.}%
 }
 
-% Primeiro parágrafo após um título sem recuo (IEEEtran e babel o ativam)
-\makeatletter
-\AtBeginDocument{%
-    \def\@afterindentfalse{\let\if@afterindent\iffalse}%
-    \let\@afterindenttrue\@afterindentfalse
-}
-\makeatother
+
+
+
+\usepackage{indentfirst}   % recuo também no 1º parágrafo após \section

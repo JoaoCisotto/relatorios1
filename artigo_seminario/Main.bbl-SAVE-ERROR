@@ -1,0 +1,371 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{ieee519}{standard}{}{}
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{number}{519-2022}
+      \field{title}{{IEEE} Standard for Harmonic Control in Electric Power Systems}
+      \field{type}{IEEE Std}
+      \field{year}{2022}
+    \endentry
+    \entry{yilmaz2013review}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=74e834f5058e49e657aabf5e5600ce0c}{%
+           family={Yilmaz},
+           familyi={Y\bibinitperiod},
+           given={Murat},
+           giveni={M\bibinitperiod}}}%
+        {{hash=647acd332315c127a1cfa52a14711d82}{%
+           family={Krein},
+           familyi={K\bibinitperiod},
+           given={Philip\bibnamedelima T.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{fullhash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{fullhashraw}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{bibnamehash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{authorbibnamehash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{authornamehash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{authorfullhash}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \strng{authorfullhashraw}{fa4a4d3e0b563487f1d31c0730d7f910}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Electronics}
+      \field{number}{5}
+      \field{title}{Review of Battery Charger Topologies, Charging Power Levels, and Infrastructure for Plug-In Electric and Hybrid Vehicles}
+      \field{volume}{28}
+      \field{year}{2013}
+      \field{pages}{2151\bibrangedash 2169}
+      \range{pages}{19}
+    \endentry
+    \entry{tu2019extreme}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=d1be5c55f2495b5ae5c6cef477a0fe62}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b0e8e4c399a2cfa6f86a3bed624f666c}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=22dee2532a77b4bf6fe045839453098f}{%
+           family={Srdic},
+           familyi={S\bibinitperiod},
+           given={Srdjan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=615a6c5cf1823550992d3cf5a1d82e9b}{%
+           family={Lukic},
+           familyi={L\bibinitperiod},
+           given={Srdjan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{6eb7ff8426870542f38019131df33e84}
+      \strng{fullhash}{6eb7ff8426870542f38019131df33e84}
+      \strng{fullhashraw}{6eb7ff8426870542f38019131df33e84}
+      \strng{bibnamehash}{6eb7ff8426870542f38019131df33e84}
+      \strng{authorbibnamehash}{6eb7ff8426870542f38019131df33e84}
+      \strng{authornamehash}{6eb7ff8426870542f38019131df33e84}
+      \strng{authorfullhash}{6eb7ff8426870542f38019131df33e84}
+      \strng{authorfullhashraw}{6eb7ff8426870542f38019131df33e84}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Transportation Electrification}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Extreme Fast Charging of Electric Vehicles: A Technology Overview}
+      \field{volume}{5}
+      \field{year}{2019}
+      \field{pages}{861\bibrangedash 878}
+      \range{pages}{18}
+    \endentry
+    \entry{alahuhtala2006fourwire}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=7a1d9b636a388211d8e2dd27c16a80f0}{%
+           family={Alahuhtala},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=04001c8ffe14f0e0494a39e1bbef0052}{%
+           family={Tuusa},
+           familyi={T\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{fullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{fullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{bibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorbibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authornamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorfullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorfullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. IEEE IECON}
+      \field{title}{Four-Wire Unidirectional Three-Phase/Level/Switch ({VIENNA}) Rectifier}
+      \field{year}{2006}
+      \field{pages}{2420\bibrangedash 2425}
+      \range{pages}{6}
+    \endentry
+    \entry{schafmeister2021transformerless}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=09203fdd55d92d50c0cc1d81df7be7f5}{%
+           family={Schafmeister},
+           familyi={S\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{fullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{fullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{bibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorbibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authornamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorfullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorfullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Power Systems Design}
+      \field{month}{12}
+      \field{title}{Transformerless {OBCs} with Three- and Single-Phase Operation}
+      \field{year}{2021}
+    \endentry
+    \entry{liao2026nonunity}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=85e0c69bc62c31c5e1c581de946ab348}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Y.-H.},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=55c73f6ff1bd94a1c6dfc884e9392877}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={J.-S.},
+           giveni={J\bibinithyphendelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{fullhash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{fullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{bibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorbibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authornamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorfullhash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorfullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Electronics}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{Nonunity Power Factor Current Optimization for Three-Phase {Vienna} Rectifiers Under Unbalanced Grid and Unbalanced {DC}-Link Voltage Conditions}
+      \field{volume}{41}
+      \field{year}{2026}
+      \field{pages}{7635\bibrangedash 7650}
+      \range{pages}{16}
+    \endentry
+    \entry{kolar2013essence}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=78cc164754bb3d7c91e078b91c63481c}{%
+           family={Kolar},
+           familyi={K\bibinitperiod},
+           given={Johann\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=76120846954ca3c3deb06b177f07e499}{%
+           family={Friedli},
+           familyi={F\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{fullhash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{fullhashraw}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{bibnamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorbibnamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authornamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorfullhash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorfullhashraw}{42b847fc25e744ad8567fc2bc3423794}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Electronics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{The Essence of Three-Phase {PFC} Rectifier Systems---Part {I}}
+      \field{volume}{28}
+      \field{year}{2013}
+      \field{pages}{176\bibrangedash 198}
+      \range{pages}{23}
+    \endentry
+    \entry{safayatullah2022comprehensive}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=fa0de6b0cc092d7f16f83a2923dfa148}{%
+           family={Safayatullah},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=097684c6ca34ef92e59e7c4701a4ecb9}{%
+           family={Elrais},
+           familyi={E\bibinitperiod},
+           given={M.\bibnamedelimi T.},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=e32a27498cd9effd591b2f249394d8b2}{%
+           family={Ghosh},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=12cf093647313298497471526747e46a}{%
+           family={Rezaii},
+           familyi={R\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ba488aeb1556e5abe8bff9f285bc1002}{%
+           family={Batarseh},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{fullhash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{fullhashraw}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{bibnamehash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{authorbibnamehash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{authornamehash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{authorfullhash}{372b05eba9c4cc043b3ef8efb688e09b}
+      \strng{authorfullhashraw}{372b05eba9c4cc043b3ef8efb688e09b}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{A Comprehensive Review of Power Converter Topologies and Control Methods for Electric Vehicle Fast Charging Applications}
+      \field{volume}{10}
+      \field{year}{2022}
+      \field{pages}{40753\bibrangedash 40793}
+      \range{pages}{41}
+    \endentry
+    \entry{kolar1997novel}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=78cc164754bb3d7c91e078b91c63481c}{%
+           family={Kolar},
+           familyi={K\bibinitperiod},
+           given={Johann\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ac7269de3f1eb9899cd92c61729f9c8d}{%
+           family={Zach},
+           familyi={Z\bibinitperiod},
+           given={Franz\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{fullhash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{fullhashraw}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{bibnamehash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{authorbibnamehash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{authornamehash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{authorfullhash}{275b1a5bea6e1298e313d9c240167d0b}
+      \strng{authorfullhashraw}{275b1a5bea6e1298e313d9c240167d0b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+      \field{number}{4}
+      \field{title}{A Novel Three-Phase Utility Interface Minimizing Line Current Harmonics of High-Power Telecommunications Rectifier Modules}
+      \field{volume}{44}
+      \field{year}{1997}
+      \field{pages}{456\bibrangedash 467}
+      \range{pages}{12}
+    \endentry
+    \entry{senthilkumar2025iipq}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1381264e1ac5daaa457b3ef55cc44d7}{%
+           family={Senthilkumar},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{fullhash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{fullhashraw}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{bibnamehash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{authorbibnamehash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{authornamehash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{authorfullhash}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \strng{authorfullhashraw}{b1381264e1ac5daaa457b3ef55cc44d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{106880}
+      \field{journaltitle}{Results in Engineering}
+      \field{title}{{IIPQ} Controlled Three Phase Three Level Four Wire {T}-Type {Vienna} Rectifier for High Efficient Off Board Fast {EV} Charging Station with Enhanced System Stability}
+      \field{volume}{27}
+      \field{year}{2025}
+    \endentry
+    \entry{alonso2018distributed}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=07256ed4bc52c35ba84d0d47bd55ee5f}{%
+           family={Alonso},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi M.\bibnamedelimi S.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {UNESP}%
+      }
+      \strng{namehash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{fullhash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{fullhashraw}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{bibnamehash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{authorbibnamehash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{authornamehash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{authorfullhash}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \strng{authorfullhashraw}{07256ed4bc52c35ba84d0d47bd55ee5f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Distributed Harmonic Compensation in Single-Phase Low-Voltage Microgrids}
+      \field{type}{Dissertação de Mestrado}
+      \field{year}{2018}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
