@@ -5,7 +5,55 @@
 \abx@aux@refcontext{none/global//global/global/global}
 \babel@aux{portuguese}{}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introdução e escopo}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}Contextualização e objetivo}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama do sistema}}{1}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:diagrama}{{1}{1}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Parâmetros e escopo do projeto}{1}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Parâmetros adotados para o projeto demonstrativo}}{1}{}\protected@file@percent }
+\newlabel{tab:parametros}{{I}{1}{}{table.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Desenvolvimento}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {III}Resultados}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Estados de condução e formas de onda}{1}{}\protected@file@percent }
+\newlabel{eq:vL}{{1}{1}{}{equation.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Topologias de condução ($s_bs_cs_{pv}$)}}{2}{}\protected@file@percent }
+\newlabel{tab:estados}{{II}{2}{}{table.2}{}}
+\newlabel{eq:ganho}{{2}{2}{}{equation.2}{}}
+\newlabel{eq:dI}{{3}{2}{}{equation.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comandos das chaves inferiores, correntes nos indutores e tensão do barramento em três períodos PWM.}}{2}{}\protected@file@percent }
+\newlabel{fig:ondas}{{2}{2}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Dimensionamento dos componentes}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Componentes adotados e ondulações obtidas}}{2}{}\protected@file@percent }
+\newlabel{tab:dim}{{III}{2}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Modelo de espaço de estados}{2}{}\protected@file@percent }
+\newlabel{eq:chav}{{9}{2}{}{equation.9}{}}
+\newlabel{eq:Amat}{{10}{3}{}{equation.10}{}}
+\newlabel{eq:Bmat}{{11}{3}{}{equation.11}{}}
+\newlabel{eq:lin}{{13}{3}{}{equation.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Projeto do controlador \textit  {droop}}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura do controle em dupla malha.}}{3}{}\protected@file@percent }
+\newlabel{fig:blocos}{{3}{3}{}{figure.3}{}}
+\newlabel{eq:pi}{{14}{3}{}{equation.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Ganhos da malha interna de corrente}}{3}{}\protected@file@percent }
+\newlabel{tab:ganhos}{{IV}{3}{}{table.4}{}}
+\newlabel{eq:refs}{{20}{4}{}{equation.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Resultados}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Implementação e simulação em Simulink}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Verificação da equivalência por simulação em 3 etapas}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}}{4}{}\protected@file@percent }
+\newlabel{fig:equiv}{{4}{4}{}{figure.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Erros entre as etapas de simulação}}{4}{}\protected@file@percent }
+\newlabel{tab:erros}{{V}{4}{}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Resposta em malha fechada}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Resposta ao degrau de carga com PI e \textit  {droop}, comparada ao sistema sem controle.}}{5}{}\protected@file@percent }
+\newlabel{fig:degrau}{{5}{5}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Impedância, admitância e autovalores}{5}{}\protected@file@percent }
+\newlabel{eq:Y}{{25}{5}{}{equation.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Módulo e fase de $Z_{out}$ com razões cíclicas fixas e com PI--\textit  {droop}.}}{5}{}\protected@file@percent }
+\newlabel{fig:Z}{{6}{5}{}{figure.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces $|Z_{out}|$ em malha aberta (razões cíclicas fixas) e em malha fechada}}{5}{}\protected@file@percent }
+\newlabel{tab:Z}{{VI}{5}{}{table.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Autovalores dos modelos linearizados em malha aberta (5 estados) e fechada (10 estados).}}{6}{}\protected@file@percent }
+\newlabel{fig:eig}{{7}{6}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusão}{6}{}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{E75D7E0DB03F09D45B25DF2F538BB294}
-\gdef \@abspage@last{1}
+\gdef \@abspage@last{6}

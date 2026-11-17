@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  20 OCT 2026 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  16 NOV 2026 11:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -108,6 +108,25 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
+) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen172
+\lightrulewidth=\dimen173
+\cmidrulewidth=\dimen174
+\belowrulesep=\dimen175
+\belowbottomsep=\dimen176
+\aboverulesep=\dimen177
+\abovetopsep=\dimen178
+\cmidrulesep=\dimen179
+\cmidrulekern=\dimen180
+\defaultaddspace=\dimen181
+\@cmidla=\count290
+\@cmidlb=\count291
+\@aboverulesep=\dimen182
+\@belowrulesep=\dimen183
+\@thisruleclass=\count292
+\@lastruleclass=\count293
+\@thisrulewidth=\dimen184
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 116.
@@ -115,7 +134,7 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 116
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
-\babel@savecnt=\count290
+\babel@savecnt=\count294
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2050.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2052.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2054.
@@ -123,11 +142,11 @@ LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2056.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2058.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2083.
-\U@D=\dimen172
+\U@D=\dimen185
 \l@unhyphenated=\language79
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count291
+\bbl@dirlevel=\count295
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
 (babel)             Reported on input line 4175.
@@ -184,20 +203,20 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count292
+\etb@tempcnta=\count296
 )
 \MT@toks=\toks21
 \MT@tempbox=\box55
-\MT@count=\count293
+\MT@count=\count297
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
 LaTeX Info: Redefining \leftprotrusion on input line 1088.
 \MT@prot@toks=\toks22
 LaTeX Info: Redefining \rightprotrusion on input line 1107.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen173
+\MT@outer@kern=\dimen186
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count294
+\MT@listname@count=\count298
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2025/07/09 v3.2b Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 944.
@@ -219,21 +238,21 @@ Package: amstext 2024/11/17 v2.01 AMS text
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
-\ex@=\dimen174
+\ex@=\dimen187
 )) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen175
+\pmbraise@=\dimen188
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count295
+\inf@bad=\count299
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count296
-\leftroot@=\count297
+\uproot@=\count300
+\leftroot@=\count301
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count298
-\DOTSCASE@=\count299
+\classnum@=\count302
+\DOTSCASE@=\count303
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -243,30 +262,30 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen176
+\big@size=\dimen189
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count300
+\macc@depth=\count304
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count301
+\c@MaxMatrixCols=\count305
 \dotsspace@=\muskip17
-\c@parentequation=\count302
-\dspbrk@lvl=\count303
+\c@parentequation=\count306
+\dspbrk@lvl=\count307
 \tag@help=\toks24
-\row@=\count304
-\column@=\count305
-\maxfields@=\count306
+\row@=\count308
+\column@=\count309
+\maxfields@=\count310
 \andhelp@=\toks25
-\eqnshift@=\dimen177
-\alignsep@=\dimen178
-\tagshift@=\dimen179
-\tagwidth@=\dimen180
-\totwidth@=\dimen181
-\lineht@=\dimen182
+\eqnshift@=\dimen190
+\alignsep@=\dimen191
+\tagshift@=\dimen192
+\tagwidth@=\dimen193
+\totwidth@=\dimen194
+\lineht@=\dimen195
 \@envbody=\toks26
 \multlinegap=\skip54
 \multlinetaggap=\skip55
@@ -295,11 +314,11 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen183
-\Gin@req@width=\dimen184
+\Gin@req@height=\dimen196
+\Gin@req@width=\dimen197
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count307
+\c@float@type=\count311
 \float@exts=\toks28
 \float@box=\box58
 \@float@everytoks=\toks29
@@ -308,14 +327,14 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen185
-\captionmargin=\dimen186
-\caption@leftmargin=\dimen187
-\caption@rightmargin=\dimen188
-\caption@width=\dimen189
-\caption@indent=\dimen190
-\caption@parindent=\dimen191
-\caption@hangindent=\dimen192
+\caption@tempdima=\dimen198
+\captionmargin=\dimen199
+\caption@leftmargin=\dimen256
+\caption@rightmargin=\dimen257
+\caption@width=\dimen258
+\caption@indent=\dimen259
+\caption@parindent=\dimen260
+\caption@hangindent=\dimen261
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi  on input line 1175.
@@ -325,21 +344,21 @@ Package caption Warning: Unknown document class (or package),
 (caption)                standard defaults will be used.
 See the caption package documentation for explanation.
 
-\c@caption@flags=\count308
-\c@continuedfloat=\count309
+\c@caption@flags=\count312
+\c@continuedfloat=\count313
 Package caption Info: float package is loaded.
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count310
+\c@subfigure=\count314
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count311
+\c@subtable=\count315
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip56
-\multirow@cntb=\count312
+\multirow@cntb=\count316
 \multirow@dima=\skip57
-\bigstrutjot=\dimen193
+\bigstrutjot=\dimen262
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -347,12 +366,12 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2026-05-19 v5.2p context-sensitive quotations (JAW)
-\csq@reset=\count313
-\csq@gtype=\count314
-\csq@glevel=\count315
-\csq@qlevel=\count316
-\csq@maxlvl=\count317
-\csq@tshold=\count318
+\csq@reset=\count317
+\csq@gtype=\count318
+\csq@glevel=\count319
+\csq@qlevel=\count320
+\csq@maxlvl=\count321
+\csq@tshold=\count322
 \csq@ltx@everypar=\toks30
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2026-05-19 v5.2p csquotes generic definitions (JAW)
@@ -382,24 +401,24 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count319
+\lst@mode=\count323
 \lst@gtempboxa=\box60
 \lst@token=\toks31
-\lst@length=\count320
-\lst@currlwidth=\dimen194
-\lst@column=\count321
-\lst@pos=\count322
-\lst@lostspace=\dimen195
-\lst@width=\dimen196
-\lst@newlines=\count323
-\lst@lineno=\count324
-\lst@maxwidth=\dimen197
+\lst@length=\count324
+\lst@currlwidth=\dimen263
+\lst@column=\count325
+\lst@pos=\count326
+\lst@lostspace=\dimen264
+\lst@width=\dimen265
+\lst@newlines=\count327
+\lst@lineno=\count328
+\lst@maxwidth=\dimen266
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count325
-\lst@skipnumbers=\count326
+\c@lstnumber=\count329
+\lst@skipnumbers=\count330
 \lst@framebox=\box61
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -432,55 +451,55 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count327
+\lrq@indent=\count331
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count328
-\c@listtotal=\count329
-\c@listcount=\count330
-\c@liststart=\count331
-\c@liststop=\count332
-\c@citecount=\count333
-\c@citetotal=\count334
-\c@multicitecount=\count335
-\c@multicitetotal=\count336
-\c@instcount=\count337
-\c@maxnames=\count338
-\c@minnames=\count339
-\c@maxitems=\count340
-\c@minitems=\count341
-\c@citecounter=\count342
-\c@maxcitecounter=\count343
-\c@savedcitecounter=\count344
-\c@uniquelist=\count345
-\c@uniquename=\count346
-\c@refsection=\count347
-\c@refsegment=\count348
-\c@maxextratitle=\count349
-\c@maxextratitleyear=\count350
-\c@maxextraname=\count351
-\c@maxextradate=\count352
-\c@maxextraalpha=\count353
-\c@abbrvpenalty=\count354
-\c@highnamepenalty=\count355
-\c@lownamepenalty=\count356
-\c@maxparens=\count357
-\c@parenlevel=\count358
-\blx@tempcnta=\count359
-\blx@tempcntb=\count360
-\blx@tempcntc=\count361
-\c@blx@maxsection=\count362
-\blx@maxsegment@0=\count363
-\blx@notetype=\count364
-\blx@parenlevel@text=\count365
-\blx@parenlevel@foot=\count366
-\blx@sectionciteorder@0=\count367
-\blx@sectionciteorderinternal@0=\count368
-\blx@entrysetcounter=\count369
-\blx@biblioinstance=\count370
+\c@tabx@nest=\count332
+\c@listtotal=\count333
+\c@listcount=\count334
+\c@liststart=\count335
+\c@liststop=\count336
+\c@citecount=\count337
+\c@citetotal=\count338
+\c@multicitecount=\count339
+\c@multicitetotal=\count340
+\c@instcount=\count341
+\c@maxnames=\count342
+\c@minnames=\count343
+\c@maxitems=\count344
+\c@minitems=\count345
+\c@citecounter=\count346
+\c@maxcitecounter=\count347
+\c@savedcitecounter=\count348
+\c@uniquelist=\count349
+\c@uniquename=\count350
+\c@refsection=\count351
+\c@refsegment=\count352
+\c@maxextratitle=\count353
+\c@maxextratitleyear=\count354
+\c@maxextraname=\count355
+\c@maxextradate=\count356
+\c@maxextraalpha=\count357
+\c@abbrvpenalty=\count358
+\c@highnamepenalty=\count359
+\c@lownamepenalty=\count360
+\c@maxparens=\count361
+\c@parenlevel=\count362
+\blx@tempcnta=\count363
+\blx@tempcntb=\count364
+\blx@tempcntc=\count365
+\c@blx@maxsection=\count366
+\blx@maxsegment@0=\count367
+\blx@notetype=\count368
+\blx@parenlevel@text=\count369
+\blx@parenlevel@foot=\count370
+\blx@sectionciteorder@0=\count371
+\blx@sectionciteorderinternal@0=\count372
+\blx@entrysetcounter=\count373
+\blx@biblioinstance=\count374
 \labelnumberwidth=\skip58
 \labelalphawidth=\skip59
 \biblabelsep=\skip60
@@ -492,9 +511,9 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count371
-\c@maxcomprange=\count372
-\c@mincompwidth=\count373
+\c@mincomprange=\count375
+\c@maxcomprange=\count376
+\c@mincompwidth=\count377
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -504,74 +523,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count374
-\c@savedafterword=\count375
-\c@annotator=\count376
-\c@savedannotator=\count377
-\c@author=\count378
-\c@savedauthor=\count379
-\c@bookauthor=\count380
-\c@savedbookauthor=\count381
-\c@commentator=\count382
-\c@savedcommentator=\count383
-\c@editor=\count384
-\c@savededitor=\count385
-\c@editora=\count386
-\c@savededitora=\count387
-\c@editorb=\count388
-\c@savededitorb=\count389
-\c@editorc=\count390
-\c@savededitorc=\count391
-\c@foreword=\count392
-\c@savedforeword=\count393
-\c@holder=\count394
-\c@savedholder=\count395
-\c@introduction=\count396
-\c@savedintroduction=\count397
-\c@namea=\count398
-\c@savednamea=\count399
-\c@nameb=\count400
-\c@savednameb=\count401
-\c@namec=\count402
-\c@savednamec=\count403
-\c@translator=\count404
-\c@savedtranslator=\count405
-\c@shortauthor=\count406
-\c@savedshortauthor=\count407
-\c@shorteditor=\count408
-\c@savedshorteditor=\count409
-\c@labelname=\count410
-\c@savedlabelname=\count411
-\c@institution=\count412
-\c@savedinstitution=\count413
-\c@lista=\count414
-\c@savedlista=\count415
-\c@listb=\count416
-\c@savedlistb=\count417
-\c@listc=\count418
-\c@savedlistc=\count419
-\c@listd=\count420
-\c@savedlistd=\count421
-\c@liste=\count422
-\c@savedliste=\count423
-\c@listf=\count424
-\c@savedlistf=\count425
-\c@location=\count426
-\c@savedlocation=\count427
-\c@organization=\count428
-\c@savedorganization=\count429
-\c@origlocation=\count430
-\c@savedoriglocation=\count431
-\c@origpublisher=\count432
-\c@savedorigpublisher=\count433
-\c@publisher=\count434
-\c@savedpublisher=\count435
-\c@language=\count436
-\c@savedlanguage=\count437
-\c@origlanguage=\count438
-\c@savedoriglanguage=\count439
-\c@pageref=\count440
-\c@savedpageref=\count441
+\c@afterword=\count378
+\c@savedafterword=\count379
+\c@annotator=\count380
+\c@savedannotator=\count381
+\c@author=\count382
+\c@savedauthor=\count383
+\c@bookauthor=\count384
+\c@savedbookauthor=\count385
+\c@commentator=\count386
+\c@savedcommentator=\count387
+\c@editor=\count388
+\c@savededitor=\count389
+\c@editora=\count390
+\c@savededitora=\count391
+\c@editorb=\count392
+\c@savededitorb=\count393
+\c@editorc=\count394
+\c@savededitorc=\count395
+\c@foreword=\count396
+\c@savedforeword=\count397
+\c@holder=\count398
+\c@savedholder=\count399
+\c@introduction=\count400
+\c@savedintroduction=\count401
+\c@namea=\count402
+\c@savednamea=\count403
+\c@nameb=\count404
+\c@savednameb=\count405
+\c@namec=\count406
+\c@savednamec=\count407
+\c@translator=\count408
+\c@savedtranslator=\count409
+\c@shortauthor=\count410
+\c@savedshortauthor=\count411
+\c@shorteditor=\count412
+\c@savedshorteditor=\count413
+\c@labelname=\count414
+\c@savedlabelname=\count415
+\c@institution=\count416
+\c@savedinstitution=\count417
+\c@lista=\count418
+\c@savedlista=\count419
+\c@listb=\count420
+\c@savedlistb=\count421
+\c@listc=\count422
+\c@savedlistc=\count423
+\c@listd=\count424
+\c@savedlistd=\count425
+\c@liste=\count426
+\c@savedliste=\count427
+\c@listf=\count428
+\c@savedlistf=\count429
+\c@location=\count430
+\c@savedlocation=\count431
+\c@organization=\count432
+\c@savedorganization=\count433
+\c@origlocation=\count434
+\c@savedoriglocation=\count435
+\c@origpublisher=\count436
+\c@savedorigpublisher=\count437
+\c@publisher=\count438
+\c@savedpublisher=\count439
+\c@language=\count440
+\c@savedlanguage=\count441
+\c@origlanguage=\count442
+\c@savedoriglanguage=\count443
+\c@pageref=\count444
+\c@savedpageref=\count445
 \shorthandwidth=\skip66
 \shortjournalwidth=\skip67
 \shortserieswidth=\skip68
@@ -595,19 +614,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count442
-\c@textcitetotal=\count443
-\c@textcitemaxnames=\count444
-\c@biburlbigbreakpenalty=\count445
-\c@biburlbreakpenalty=\count446
-\c@biburlnumpenalty=\count447
-\c@biburlucpenalty=\count448
-\c@biburllcpenalty=\count449
+\c@textcitecount=\count446
+\c@textcitetotal=\count447
+\c@textcitemaxnames=\count448
+\c@biburlbigbreakpenalty=\count449
+\c@biburlbreakpenalty=\count450
+\c@biburlnumpenalty=\count451
+\c@biburlucpenalty=\count452
+\c@biburllcpenalty=\count453
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count450
+\c@smartand=\count454
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
@@ -625,8 +644,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count451
-\c@bbx:relatedtotal=\count452
+\c@bbx:relatedcount=\count455
+\c@bbx:relatedtotal=\count456
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
@@ -658,7 +677,7 @@ Package biblatex Info: Document encoding is UTF8 ....
 Package: expl3 2025-11-06 L3 programming layer (loader) 
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count453
+\l__color_backend_stack_int=\count457
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2025-11-06 L3 programming layer (loader) 
@@ -673,7 +692,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 52.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 53.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (Main.aux
@@ -682,29 +701,29 @@ Package babel Info: 'portuguese' activates 'portuges' shorthands.
 )
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 -- Lines per column: 56 (exact).
-LaTeX Info: Redefining \microtypecontext on input line 52.
-Package microtype Info: Applying patch `item' on input line 52.
-Package microtype Info: Applying patch `toc' on input line 52.
-Package microtype Info: Applying patch `eqnum' on input line 52.
-Package microtype Info: Applying patch `footnote' on input line 52.
-Package microtype Info: Applying patch `verbatim' on input line 52.
-LaTeX Info: Redefining \microtypesetup on input line 52.
+LaTeX Info: Redefining \microtypecontext on input line 53.
+Package microtype Info: Applying patch `item' on input line 53.
+Package microtype Info: Applying patch `toc' on input line 53.
+Package microtype Info: Applying patch `eqnum' on input line 53.
+Package microtype Info: Applying patch `footnote' on input line 53.
+Package microtype Info: Applying patch `verbatim' on input line 53.
+LaTeX Info: Redefining \microtypesetup on input line 53.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -719,16 +738,16 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count454
-\scratchdimen=\dimen198
+\scratchcounter=\count458
+\scratchdimen=\dimen267
 \scratchbox=\box62
-\nofMPsegments=\count455
-\nofMParguments=\count456
+\nofMPsegments=\count459
+\nofMParguments=\count460
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count457
-\MPscratchDim=\dimen199
-\MPnumerator=\count458
-\makeMPintoPDFobject=\count459
+\MPscratchCnt=\count461
+\MPscratchDim=\dimen268
+\MPnumerator=\count462
+\makeMPintoPDFobject=\count463
 \everyMPtoPDFconversion=\toks33
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -739,18 +758,18 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 52.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 52.
+LaTeX Info: Redefining \celsius on input line 53.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 52.
-Package gensymb Info: Using \Omega for \ohm on input line 52.
+LaTeX Info: Redefining \ohm on input line 53.
+Package gensymb Info: Using \Omega for \ohm on input line 53.
 
 Package gensymb Warning: Not defining \micro.
 
-\c@lstlisting=\count460
+\c@lstlisting=\count464
 Package biblatex Info: Trying to load language 'portuguese'...
 Package biblatex Info: ... file 'portuguese.lbx' found.
 (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\portuguese.lbx
@@ -764,20 +783,123 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Main.bbl' found.
  (Main.bbl)
-Package biblatex Info: Reference section=0 on input line 52.
-Package biblatex Info: Reference segment=0 on input line 52.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 54.
+Package biblatex Info: Reference section=0 on input line 53.
+Package biblatex Info: Reference segment=0 on input line 53.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 55.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-** WARNING: \thanks is locked out when in conference mode (line 54).
+** WARNING: \thanks is locked out when in conference mode (line 55).
 (Capitulos/introducao.tex
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
-) (Capitulos/definicao_problema.tex) (Capitulos/resultados_implementacao.tex)
+<images/diagrama.png, id=1, 344.03531pt x 100.12407pt>
+File: images/diagrama.png Graphic file (type png)
+<use images/diagrama.png>
+Package pdftex.def Info: images/diagrama.png  used on input line 8.
+(pdftex.def)             Requested size: 258.0pt x 75.0852pt.
 
-LaTeX Warning: Empty bibliography on input line 85.
+Overfull \hbox (6.0pt too wide) in paragraph at lines 8--9
+ [][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 31.
+(C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 31.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 31.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 31.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 31.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 31.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 31.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)) (Capitulos/definicao_problema.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 5.
+ [1{C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+
+
+{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./images/diagrama.png>]
+<images/fig_ondas.png, id=27, 1706.375pt x 1194.4625pt>
+File: images/fig_ondas.png Graphic file (type png)
+<use images/fig_ondas.png>
+Package pdftex.def Info: images/fig_ondas.png  used on input line 49.
+(pdftex.def)             Requested size: 252.0pt x 176.39128pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 79.
+ [2 <./images/fig_ondas.png (PNG copy)>]
+<images/fig_diagrama_blocos.png, id=36, 624.08156pt x 352.31625pt>
+File: images/fig_diagrama_blocos.png Graphic file (type png)
+<use images/fig_diagrama_blocos.png>
+Package pdftex.def Info: images/fig_diagrama_blocos.png  used on input line 149.
+(pdftex.def)             Requested size: 226.79846pt x 128.03258pt.
+
+Underfull \vbox (badness 3108) has occurred while \output is active []
+
+ [3{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./images/fig_diagrama_blocos.png>]) (Capitulos/resultados_implementacao.tex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+<images/fig_equiv.png, id=45, 1706.375pt x 1365.1pt>
+File: images/fig_equiv.png Graphic file (type png)
+<use images/fig_equiv.png>
+Package pdftex.def Info: images/fig_equiv.png  used on input line 17.
+(pdftex.def)             Requested size: 252.0pt x 201.59004pt.
+ [4 <./images/fig_equiv.png (PNG copy)>]
+<images/fig_degrau.png, id=51, 1706.375pt x 1279.78125pt>
+File: images/fig_degrau.png Graphic file (type png)
+<use images/fig_degrau.png>
+Package pdftex.def Info: images/fig_degrau.png  used on input line 50.
+(pdftex.def)             Requested size: 252.0pt x 188.99066pt.
+
+
+LaTeX Warning: Reference `fig:zoom' on page 5 undefined on input line 55.
+
+<images/fig_Z.png, id=52, 1535.7375pt x 1194.4625pt>
+File: images/fig_Z.png Graphic file (type png)
+<use images/fig_Z.png>
+Package pdftex.def Info: images/fig_Z.png  used on input line 90.
+(pdftex.def)             Requested size: 252.0pt x 195.98424pt.
+[5 <./images/fig_degrau.png (PNG copy)> <./images/fig_Z.png (PNG copy)>]
+<images/fig_eig.png, id=57, 1365.1pt x 989.6975pt>
+File: images/fig_eig.png Graphic file (type png)
+<use images/fig_eig.png>
+Package pdftex.def Info: images/fig_eig.png  used on input line 117.
+(pdftex.def)             Requested size: 252.0pt x 182.69853pt.
+) (Capitulos/conclusoes.tex)
+
+LaTeX Warning: Empty bibliography on input line 89.
 
 
 ** Conference Paper **
@@ -790,31 +912,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+[6
 
-
-
-] (Main.aux)
+ <./images/fig_eig.png (PNG copy)>] (Main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'Main.run.xml'.
 \openout1 = `Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18955 strings out of 467871
- 344247 string characters out of 5417408
- 1218676 words of memory out of 5000000
- 47574 multiletter control sequences out of 15000+600000
- 801087 words of font info for 145 fonts, out of 8000000 for 9000
+ 19577 strings out of 467871
+ 355364 string characters out of 5417408
+ 1251058 words of memory out of 5000000
+ 47964 multiletter control sequences out of 15000+600000
+ 850307 words of font info for 264 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,8n,76p,1066b,1597s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
-Output written on Main.pdf (1 page, 151267 bytes).
+ 63i,13n,76p,1124b,1607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Main.pdf (6 pages, 1205517 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
+ 182 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 18433 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 51748 words of extra memory for PDF output out of 61914 (max. 10000000)
 

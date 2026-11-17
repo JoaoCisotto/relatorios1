@@ -1,1 +1,120 @@
 \section{Resultados}
+
+\subsection{Implementação e simulação em Simulink}
+
+A unidade de geração foi implementada em Simulink com solver de passo fixo (\texttt{ode4}) e passo de $T_s/100=0{,}5\ \mu$s, de modo que cada transição de chaveamento seja resolvida com precisão suficiente para a análise das ondulações. O modelo é organizado em quatro blocos: (i) a planta, que implementa as equações \eqref{eq:chav} com os estados $\mathbf{x}$ integrados; (ii) o bloco de PWM, no qual uma portadora dente-de-serra de frequência $f_s$ é comparada com as razões cíclicas, produzindo os sinais $s_b$, $s_c$ e $s_{pv}$; (iii) o controle, que reúne os PI de corrente \eqref{eq:pi}, o \textit{droop}, o filtro de demanda e as referências \eqref{eq:refs}; e (iv) os blocos de aquisição, que registram os estados e as razões cíclicas para o pós-processamento. A carga é uma fonte do tipo degrau, que reduz $R$ de 20~$\Omega$ para 16~$\Omega$ em $t=0{,}1$ s.
+
+Sendo assim, três execuções foram realizadas a partir do mesmo modelo: a primeira com PWM e malha fechada, que fornece os sinais chaveados; a segunda com o modelo médio e malha fechada, em que as razões cíclicas atuam diretamente sobre as equações; e a terceira com razões cíclicas fixas e sem controle, utilizada como referência de comparação. Para os testes de equivalência, o circuito com as chaves $Q_1$ a $Q_6$ foi simulado com os mesmos comandos aplicados às equações, de acordo com a metodologia de três etapas.
+
+\subsection{Verificação da equivalência por simulação em 3 etapas}
+
+A verificação foi conduzida a partir do ponto transitório $\mathbf{x}(0)=(15\,\mathrm{A},\,10\,\mathrm{A},\,8\,\mathrm{A},\,400\,\mathrm{V},\,300\,\mathrm{V})$, com razões cíclicas constantes e janela de observação de 80 ms. Na primeira etapa, simulou-se o circuito a partir das leis de Kirchhoff para cada estado de condução; na segunda, aplicaram-se às equações \eqref{eq:chav} as mesmas sequências de chaveamento, com propagação exata do modelo linear em cada intervalo; e, na terceira, resolveu-se o modelo médio, inicializado com o valor médio do primeiro período PWM, comparando-o à média por período do circuito.
+
+A Figura~\ref{fig:equiv} apresenta as quatro curvas, e a Tabela~\ref{tab:erros} quantifica as diferenças. Entre as duas primeiras etapas, os erros máximos são da ordem de $10^{-10}$, o que demonstra que as equações chaveadas reproduzem o circuito. Entre a média por período e o modelo médio, os erros quadráticos médios permanecem pequenos e decorrem da aproximação por médias e da frequência PWM finita. Cabe ressaltar que a comparação de uma amostra instantânea com a média de um período introduz erro adicional de fase e de ondulação, razão pela qual a comparação foi feita entre grandezas médias.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/fig_equiv.png}
+\caption{Circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}
+\label{fig:equiv}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Erros entre as etapas de simulação}
+\label{tab:erros}
+\small
+\begin{tabular}{lcc}
+\toprule
+Grandeza & Máx. etapas 1--2 & RMS média--modelo \\
+\midrule
+$i_b$ [A] & $1{,}2\cdot10^{-10}$ & 0,165 \\
+$i_c$ [A] & $1{,}2\cdot10^{-10}$ & 0,071 \\
+$i_{pv}$ [A] & $4{,}7\cdot10^{-11}$ & 0,061 \\
+$v_{dc}$ [V] & $8{,}7\cdot10^{-12}$ & 0,0115 \\
+$v_c$ [V] & $1{,}6\cdot10^{-11}$ & 0,0281 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Resposta em malha fechada}
+
+Com o controle projetado, aplicou-se o degrau de carga de 20~$\Omega$ para 16~$\Omega$ em $t=0{,}1$ s. A referência de equilíbrio do \textit{droop} satisfaz
+\begin{equation}
+V_f=400-1\cdot\left(\frac{V_f}{16}-20\right)\ \Rightarrow\ V_f=395{,}294\ \text{V},
+\end{equation}
+valor atingido pelo modelo em regime, como mostra a Figura~\ref{fig:degrau}. Observa-se que o ultracapacitor responde primeiro ao degrau, com pico de corrente de 5,74 A, enquanto o filtro de demanda transfere gradualmente a potência adicional às baterias, de modo que $i_c$ retorna a zero e $i_b$ e $i_{pv}$ convergem para 24,4 A e 19,5 A, respectivamente. Em consequência, a tensão $v_c$ decresce cerca de 5 V, de 300 V para aproximadamente 295 V. A tensão do barramento apresenta afundamento máximo de 394,16 V, ao passo que, sem o controle, ela oscila entre 391,5 V e 406,9 V com amortecimento pouco expressivo, o que evidencia o benefício da malha fechada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/fig_degrau.png}
+\caption{Resposta ao degrau de carga com PI e \textit{droop}, comparada ao sistema sem controle.}
+\label{fig:degrau}
+\end{figure}
+
+Para avaliar o efeito do chaveamento, a malha fechada também foi simulada com PWM, sendo a Figura~\ref{fig:zoom} um detalhe do instante do degrau. Nota-se que as razões cíclicas se ajustam em poucos períodos de chaveamento, que as correntes mantêm a ondulação triangular projetada e que a média de $v_{dc}$ segue o valor previsto pelo modelo médio, com diferença quadrática média de 0,021 V ao longo da simulação. Ademais, as correntes alcançam os valores de regime sem violar as saturações das razões cíclicas, o que dispensa a atuação do anti-\textit{windup}.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=\columnwidth]{images/fig_chaveado_zoom.png}
+%\caption{Detalhe do degrau de carga na simulação com PWM: tensão do barramento, correntes e razões cíclicas.}
+%\label{fig:zoom}
+%\end{figure}
+
+\subsection{Impedância, admitância e autovalores}
+
+Tendo em vista que, para uma única resistência fixa, a relação $\hat v_{dc}/\hat i_R=R$ corresponde apenas à lei de Ohm e não à impedância dinâmica de interesse, introduz-se a corrente incremental $\hat i_\ell$ extraída do barramento, conservando-se $R=20\ \Omega$ como carga nominal. Define-se, então,
+\begin{align}
+G_{vi}(s)&=\frac{\hat v_{dc}(s)}{\hat i_\ell(s)},\\
+Z_{out}(s)&=-G_{vi}(s),\\
+Y_{out}(s)&=\frac{1}{Z_{out}(s)}.
+\end{align}
+Linearizando as equações com razões cíclicas fixas e baterias de tensão constante, as correntes incrementais são $\hat i_b=-\alpha_b\hat v_{dc}/(L_bs)$, $\hat i_{pv}=-\alpha_{pv}\hat v_{dc}/(L_{pv}s)$ e $\hat i_c=-\alpha_cs\,\hat v_{dc}/(L_cs^2+1/C)$, de modo que a admitância é
+\begin{equation}
+Y_{out}(s)=C_{dc}s+\frac1R+\frac{\alpha_b^2}{L_bs}+\frac{\alpha_{pv}^2}{L_{pv}s}+\frac{\alpha_c^2s}{L_cs^2+1/C}.
+\label{eq:Y}
+\end{equation}
+Substituindo $\alpha_b=0{,}5$, $\alpha_c=0{,}75$ e $\alpha_{pv}=0{,}625$, resulta
+\begin{equation}
+Y_{out}(s)=0{,}001s+0{,}05+\frac{138{,}63}{s}+\frac{0{,}5625\,s}{0{,}0038s^2+10}.
+\end{equation}
+
+Para as malhas fechadas, forma-se o vetor aumentado de dez estados $[i_b,\,i_c,\,i_{pv},\,v_{dc},\,v_c,\,\xi_b,\,\xi_c,\,\xi_{pv},\,\xi_v,\,J_b^{slow}]^\top$, cujo jacobiano $\mathbf{A}_{cl}$ é calculado no ponto permanente, e a impedância é obtida por
+\begin{equation}
+Z_{cl}(s)=-\mathbf{C}_v\,(s\mathbf{I}-\mathbf{A}_{cl})^{-1}\mathbf{B}_\ell,
+\end{equation}
+em que $\mathbf{C}_v$ seleciona $v_{dc}$. A Figura~\ref{fig:Z} e a Tabela~\ref{tab:Z} comparam as impedâncias com e sem controle. Nota-se que, com razões cíclicas fixas, existem ressonâncias agudas em torno de 6 Hz e de 85 Hz, as quais são amortecidas pelo controle, substituídas por um pico suave próximo de 40 Hz, frequência de projeto da malha de tensão. Acima de algumas centenas de hertz, as duas curvas coincidem, pois a impedância passa a ser dominada pelo capacitor $C_{dc}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/fig_Z.png}
+\caption{Módulo e fase de $Z_{out}$ com razões cíclicas fixas e com PI--\textit{droop}.}
+\label{fig:Z}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{$|Z_{out}|$ em malha aberta (razões cíclicas fixas) e em malha fechada}
+\label{tab:Z}
+\small
+\begin{tabular}{rcc}
+\toprule
+$f$ [Hz] & Razões fixas [$\Omega$] & Controle [$\Omega$] \\
+\midrule
+1 & 0,0461 & 0,0948 \\
+10 & 0,1086 & 0,9639 \\
+40 & 1,0914 & 3,1272 \\
+100 & 5,6309 & 1,6058 \\
+1000 & 0,1603 & 0,1602 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os autovalores do sistema com razões cíclicas fixas são $-24{,}88\pm j536{,}09$, $-0{,}119\pm j35{,}59$ e $0$. Em malha fechada, com os dez estados, obtêm-se $-4415{,}6\pm j4549{,}2$, $-4442{,}2\pm j4443{,}6$ (dois pares), $-157{,}0\pm j200{,}5$, $-12{,}56$ e $0$, apresentados na Figura~\ref{fig:eig}. O autovalor nulo está associado à ausência de regulação explícita do nível de energia do ultracapacitor, pois o controle o utiliza em transitórios sem forçar $v_c$ a um único valor permanente. Os demais modos possuem parte real negativa, e os modos pouco amortecidos da malha aberta, com parte real de $-0{,}119$, passam a ter amortecimento adequado. Contudo, não é correto afirmar estabilidade assintótica de todos os estados sem uma malha adicional de recuperação do estado de carga.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/fig_eig.png}
+\caption{Autovalores dos modelos linearizados em malha aberta (5 estados) e fechada (10 estados).}
+\label{fig:eig}
+\end{figure}
