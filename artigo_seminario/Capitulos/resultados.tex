@@ -1,0 +1,45 @@
+\section{Resultados de Simulação}
+\label{sec:resultados}
+
+O sistema foi implementado no Matlab/Simulink utilizando a toolbox Specialized Power
+Systemas, com passo de simulação $T_s/50$ e controle discreto amostrado na frequência de
+chaveamento $f_{\sub{sw}}$.
+
+\subsection{Partida e regime permanente}
+Para permitir a pré-carga dos capacitores e dos diodos, o PWM é habilitado em $t=\SI{0,2}{s}$. Após isso,
+o controle é totalmente habilitado, podendo-se observar, por meio da Fig.~\ref{fig:tensoes}, que a tensão de barramento ($V_{\sub{dc}}$) atinge
+\SI{600}{V} que era a tensão de referência, com um sobressinal de cerca de \SI{20}{V} e a tensão sobre
+os capacitores $V_{C1}$ e $V_{C2}$ ficam equilibrados em \SI{300}{V}, com uma ondulação de \SI{\pm 12}{V}. Por fim,
+as correntes são senoidais e com cerca de \SI{85}{A} de pico.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\columnwidth, trim=0 136 0 136, clip]{Tensoes.pdf}
+    \caption{Resultados da Simulação para tensões.}
+    \label{fig:tensoes}
+\end{figure}
+
+
+\subsection{Degraus de Fator de Potência com e sem limitador}
+
+Para verificar se o modelo proposto suportava um PFC, o FP foi variado de 1 para
+0,95 indutivo (\SI{0,4}{s}) e depois para 0,95 (\SI{0,6}{s}) capacitivo em carga nominal. Sendo os
+resultados apresentados na Fig.~\ref{fig:potencia}.
+Para o fator de potência em 0,95 indutivo, nota-se que o referencial é seguido com e sem limitador,
+com uma potência reativa de \SI{7}{kvar}. Nessa situação, é apresentado um THD de \SI{0,2}{\percent}. Já para um FP de
+0,95 capacitivo, nota-se que sem limitador, o conversor não é capaz de sintetizar a corrente
+e o THD passa de \SI{20}{\percent}. Isso ocorre, devido a presença de harmônicos das fases que se somam no neutro. Com o limitador,
+a operação segue conforme o esperado. Por fim, para um fator de potência unitário em carga nominal, da simulação
+pode-se obter um FP de 0,992 com THD de \SI{1,7}{\percent}.
+
+Além disso, pode-se notar também, que em todos os degraus, a potência aparente e a tensão do
+barramento CC praticamente não se alteram, o que confirma o desacoplamento previsto anteriormente
+em \eqref{eq:decomp}.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\columnwidth, trim=87 272 87 272, clip]{Potencia.pdf}
+    \caption{Resultados da Simulação para corrente no neutro, potências e FP.}
+    \label{fig:potencia}
+\end{figure}
+

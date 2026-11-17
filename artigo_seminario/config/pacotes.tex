@@ -1,0 +1,68 @@
+% =====================================================================
+%  Pacotes e configurações de formatação
+% =====================================================================
+
+% ---------- Idioma e codificação ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% ---------- Fontes (Times, como no padrão IEEE) ----------
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{microtype}
+
+% ---------- Matemática e unidades ----------
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage[
+    output-decimal-marker={,},
+    group-separator={.},
+    per-mode=symbol,
+    range-phrase={ a },
+    list-final-separator={ e },
+    list-pair-separator={ e }
+]{siunitx}
+
+% ---------- Figuras, tabelas e diagramas ----------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\graphicspath{{./images/}}
+
+% ---------- Listas ----------
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlist[enumerate]{label=\arabic*., leftmargin=*, itemsep=2pt, topsep=4pt}
+
+% ---------- Links e referências cruzadas ----------
+\usepackage{url}
+\usepackage[autostyle=false,style=english]{csquotes} % aspas “ ” nas referências
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Bibliografia (estilo IEEE: [1], [2], ...) ----------
+\usepackage[style=ieee,backend=biber,sorting=none,maxnames=6]{biblatex}
+\addbibresource{artigo.bib}
+\renewcommand*{\bibfont}{\footnotesize}
+
+% ---------- Rótulos em português no padrão IEEE ----------
+% Figuras ficam como "Fig. 1." e tabelas como "TABELA I" (padrão do IEEEtran).
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+\addto\captionsportuguese{%
+    \renewcommand{\abstractname}{Resumo}%
+    \renewcommand{\tablename}{TABELA}%
+    \renewcommand{\figurename}{Fig.}%
+}
+
+% Primeiro parágrafo após um título sem recuo (IEEEtran e babel o ativam)
+\makeatletter
+\AtBeginDocument{%
+    \def\@afterindentfalse{\let\if@afterindent\iffalse}%
+    \let\@afterindenttrue\@afterindentfalse
+}
+\makeatother

@@ -1,0 +1,54 @@
+% =====================================================================
+%  Artigo do seminário -- modelo IEEE conference (duas colunas)
+%  Estrutura:
+%    Main.tex              -> arquivo principal (compile este)
+%    config/pacotes.tex    -> pacotes e configurações de formatação
+%    config/comandos.tex   -> macros e símbolos próprios do artigo
+%    Capitulos/*.tex       -> uma seção por arquivo
+%    images/               -> figuras
+%    artigo.bib            -> referências (biblatex + biber)
+% =====================================================================
+\documentclass[conference]{IEEEtran}
+
+\input{config/pacotes}
+\input{config/comandos}
+
+% ---------- Título e autores ----------
+\title{Modelo de Controle de um Retificador de Vienna Trifásico a Quatro Fios}
+
+\author{%
+    \IEEEauthorblockN{Vitor Gabriel Saturnino de Melo}
+    \IEEEauthorblockA{Escola de Engenharia de São Carlos\\
+    Universidade de São Paulo (EESC-USP)\\
+    São Carlos, SP, Brasil}
+    \and
+    \IEEEauthorblockN{João Pedro Muto Cisotto}
+    \IEEEauthorblockA{Escola de Engenharia de São Carlos\\
+    Universidade de São Paulo (EESC-USP)\\
+    São Carlos, SP, Brasil}
+}
+
+\begin{document}
+
+\maketitle
+
+% ---------- Resumo e palavras-chave ----------
+\input{Capitulos/resumo}
+
+% ---------- Seções ----------
+\input{Capitulos/introducao}
+\input{Capitulos/revisao}
+\input{Capitulos/modelo}
+\input{Capitulos/controle}
+\input{Capitulos/resultados}
+\input{Capitulos/discussao}
+\input{Capitulos/conclusoes}
+
+% ---------- Referências ----------
+\printbibliography
+
+% ---------- Anexos (opcional) ----------
+%\appendices
+%\input{Capitulos/anexos}
+
+\end{document}

@@ -1,0 +1,125 @@
+\section{Estratégia de Controle}
+\label{sec:controle}
+
+\subsection{Referências com FP variável}
+\obs{revisar depois (talvez simplificar/diminuir)}
+No controle por fase adotado, cada corrente é controlada por um PR no
+referencial estacionário. A referência de cada fase precisa, portanto, ser
+uma senoide definida por uma amplitude e um ângulo, e não por componentes
+$d$ e $q$. Ela é escrita como
+\begin{equation}
+    \begin{gathered}
+        i_k^* = A\cos(\theta_k-\varphi) + I_{\sub{bias}}\,\lvert\cos(\theta_k-\varphi)\rvert,\\
+        A = \frac{I_{\sub{pk}}}{\cos\varphi},
+    \end{gathered}
+    \label{eq:corrente_fase}
+\end{equation}
+
+Em que $\theta_k$ é o ângulo da tensão da fase $k$, obtido do PLL;
+$\varphi$ é o ângulo de defasagem desejado entre corrente e tensão
+($\varphi>0$ para corrente atrasada, isto é, carga indutiva);
+$I_{\sub{pk}}$ é a saída do PI de tensão; e $I_{\sub{bias}}$ é a saída do PI de
+equilíbrio do ponto médio.
+
+Para entender o papel de cada termo, a primeira parcela de
+\eqref{eq:corrente_fase} pode ser expandida:
+\begin{equation}
+    A\cos(\theta-\varphi) = \underbrace{I_{\sub{pk}}\cos\theta}_{\text{em fase com } v}
+    + \underbrace{I_{\sub{pk}}\tan\varphi\,\sin\theta}_{\text{em quadratura com } v}.
+    \label{eq:decomp}
+\end{equation}
+
+A parcela em fase com a tensão é a corrente ativa, e a parcela em quadratura
+é a corrente reativa. Para as três fases, as potências são
+\begin{equation}
+    P = \tfrac{3}{2}V_{\sub{pk}}I_{\sub{pk}}, \qquad Q = P\tan\varphi .
+    \label{eq:potencias}
+\end{equation}
+
+Duas consequências decorrem daí. Primeiro, a divisão por $\cos\varphi$ na
+amplitude $A$ faz com que a componente ativa seja sempre igual a $I_{\sub{pk}}$,
+qualquer que seja $\varphi$. Assim, a potência ativa depende apenas da saída
+do PI de tensão, e alterar o fator de potência não perturba a regulação do
+barramento: as malhas de tensão e de reativo ficam desacopladas. Segundo,
+\eqref{eq:decomp} é exatamente a decomposição usada no controle em $dq$, com
+$I_d=I_{\sub{pk}}$ e $I_q=I_{\sub{pk}}\tan\varphi$. Escolher $\varphi$ equivale, portanto,
+à cadeia $\FP^*\rightarrow Q^*\rightarrow I_q^*$ do controle vetorial, sem
+exigir transformações de coordenadas.
+
+O ângulo é obtido diretamente do fator de potência desejado, cujo sinal
+indica o tipo ($\FP^*>0$ indutivo, $\FP^*<0$ capacitivo):
+\begin{equation}
+    \varphi^* = \operatorname{sgn}(\FP^*)\,\arccos\lvert \FP^*\rvert .
+    \label{eq:phi_ref}
+\end{equation}
+Antes de ser aplicado, $\varphi^*$ passa por dois limitadores em série:
+\begin{enumerate}
+    \item \textit{Janela de quatro fios}: $\varphi\in[\psi_0-\Delta,\ \psi_0+\Delta]$,
+    com $\psi_0=\arcsin(K_xI_{\sub{pk}})$, $K_x=\omega_0LI_b/V_{\sub{pk}}$ e $\Delta=\ang{8}$.
+    Fora dessa faixa a tensão que o conversor precisaria sintetizar teria sinal
+    oposto ao da corrente, o que distorce a corrente
+    (Seção~\ref{sec:modelo}, equação~\eqref{eq:phi}).
+    \item \textit{Limite de corrente}: a amplitude não pode exceder o valor
+    máximo, $A=I_{\sub{pk}}/\cos\varphi\le I_{\sub{max}}$, o que resulta em
+    $\lvert\varphi\rvert\le\arccos(I_{\sub{pk}}/I_{\sub{max}})$. Como a potência aparente é $S = \tfrac{3}{2}V_{\sub{pk}}A$, esse limite equivale a
+    $S \le S_{\sub{max}} = \tfrac{3}{2}V_{\sub{pk}}I_{\sub{max}}$, ou seja,
+    \begin{equation}
+        Q_{\sub{max}} = \sqrt{S_{\sub{max}}^2 - P^2}.
+        \label{eq:qmax}
+    \end{equation}
+\end{enumerate}
+
+Por fim, o termo $I_{\sub{bias}}\lvert\cos(\theta_k-\varphi)\rvert$ de
+\eqref{eq:corrente_fase} vem do PI de equilíbrio~\cite{alahuhtala2006fourwire}. Como
+$\lvert\cos\rvert=\operatorname{sgn}(\cos)\cos$, ele aumenta a amplitude de um
+semiciclo e reduz a do outro. O semiciclo positivo carrega $C_1$ e o negativo
+carrega $C_2$, então essa assimetria transfere carga entre os capacitores e
+mantém $V_{C1}=V_{C2}$.
+
+\subsection{Malha de corrente com controladores PR}
+
+O retificador de Vienna a quatro fios desenvolvido, possui suas fases desacopladas e a
+planta por fase, em pu, pode ser descrita por
+\begin{equation}
+    G_i(s) = \frac{K_iV_{\sub{dc}}}{2(Ls+R)},
+    \label{eq:planta_corrente}
+\end{equation}
+com $K_i = 1/I_b$. Considerando um ganho proporcional com frequência de cruzamento a
+1/10 da frequência de chaveamento ($f_c=f_{\sub{sw}}/10$), $\lvert K_pG_i(j\omega_c)\rvert=1$. Então $K_p$, pode
+ser calculado pela equação~\eqref{eq:Kp_corrente}
+
+\begin{equation}
+    K_p=\frac{2}{K_iV_{\sub{dc}}}\sqrt{(\omega_cL)^2+R^2}.
+    \label{eq:Kp_corrente}
+\end{equation}
+
+O controlador ressonante pode ser representado por $2K_{Ih}s/(s^2+\omega_0^2)$, com $K_{Ih} = 2{,}2K_p/(n_{oh}T_0)$, o
+que resulta em um tempo de subida de $n_{oh}=0{,}9$ ciclo \cite{alonso2018distributed}. Ao implementá-lo por Tustin,
+ele pode ser dado por
+\begin{equation}
+    r(k) = a_h\left[e(k)- e(k-2)\right]+b_h\,r(k-1)-r(k-2),
+    \label{eq:tustin}
+\end{equation}
+com
+\begin{equation}
+    a_h = \frac{4K_{Ih}T_s}{4+\omega_0^2T_s^2}, \qquad
+    b_h = \frac{8-2\omega_0^2T_s^2}{4+\omega_0^2T_s^2}.
+    \label{eq:tustin_coef}
+\end{equation}
+
+\subsection{Malha de tensão total e de equilíbrio}
+
+Do balanço de potência nos capacitores, considerando $C_{\sub{eq}}=C/2$, então a planta considerada pode
+ser obtida com a equação abaixo:
+
+\begin{equation}
+    \begin{gathered}
+        G_v(s) = \frac{K_v}{s+p_v},\\
+        K_v = \frac{3V_{\sub{pk}}I_b}{2C_{\sub{eq}}V_{\sub{dc}}V_b}, \qquad p_v = \frac{2}{R_LC_{\sub{eq}}}
+    \end{gathered}
+    \label{eq:planta_tensao}
+\end{equation}
+
+O PI de tensão total cancela o polo na carga nominal ($K_{i,v}/K_{p,v}=p_v$) e $K_{p,v} = \omega_{cv}/K_v$, com $f_{cv} = \SI{10}{Hz}$.
+
+\obs{terminar dps. Falta descrever o PI de equilíbrio ($I_{\sub{bias}}$) e o \textit{feedforward} com $V_{C1}/V_{C2}$. Falta também uma tabela de parâmetros ($V$, $L$, $C$, $f_{\sub{sw}}$, $I_b$, $V_b$, $R_L$, ganhos).}

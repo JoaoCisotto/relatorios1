@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1794838920.23865 -1
-  "Main.bcf" 1794838919 107804 87289f6776247cd6d8ba8fa0742d9ec1 "pdflatex"
+["biber Main"] 0 "Main.bcf" "Main.bbl" "Main" 1794918219.19782 -1
+  "Main.bcf" 1794918218 107804 87289f6776247cd6d8ba8fa0742d9ec1 "pdflatex"
   "relatorio.bib" 1789855151 15469 388c86311e5c5ccfabdfb74562cc260b ""
   (generated)
   "Main.bbl"
   "Main.blg"
   (rewritten before read)
-["pdflatex"] 1794838918.70399 "c:/Users/Samsung/Documents/Relatórios1/Eletrificação_Veicular/Main.tex" "Main.pdf" "Main" 1794838920.23954 0
+["pdflatex"] 1794918217.73216 "c:/Users/Samsung/Documents/Relatórios1/Eletrificação_Veicular/Main.tex" "Main.pdf" "Main" 1794918219.19844 0
   "C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1794328976 82849 5ca6a81b0dcd164ef988e78cb6258ffe ""
   "C:/Users/Samsung/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1764967159 13334479 40852012e3bfb2370112158db2bb52b9 ""
   "C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -187,22 +187,22 @@
   "C:/Users/Samsung/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1ptm.fd" 1585253778 817 61d7da1e9f9e74989b196d147e623736 ""
   "C:/Users/Samsung/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Samsung/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Capitulos/conclusoes.tex" 1794832004 1222 ee12d3092a532ea38b78afad4a075e8f ""
-  "Capitulos/definicao_problema.tex" 1794838755 11447 11fe0f41f75e9404af32bb9d1abcac2d ""
-  "Capitulos/introducao.tex" 1794831424 2474 2e27de24d7aaa7ea74739170a0e067df ""
-  "Capitulos/resultados_implementacao.tex" 1794834672 9229 70ef63c1148c0586584c22dd261387d2 ""
-  "Main.aux" 1794838919 5310 743b178140b5865d19b07c78bdb10766 "pdflatex"
+  "Capitulos/conclusoes.tex" 1794918215 1228 ee12d3092a532ea38b78afad4a075e8f ""
+  "Capitulos/definicao_problema.tex" 1794918215 11648 11fe0f41f75e9404af32bb9d1abcac2d ""
+  "Capitulos/introducao.tex" 1794918215 2521 2e27de24d7aaa7ea74739170a0e067df ""
+  "Capitulos/resultados_implementacao.tex" 1794918215 9349 70ef63c1148c0586584c22dd261387d2 ""
+  "Main.aux" 1794918218 5310 743b178140b5865d19b07c78bdb10766 "pdflatex"
   "Main.bbl" 1794834614 486 76d65a242ec496c9b4361af646ff12cb "biber Main"
-  "Main.run.xml" 1794838919 2404 43e7c279a954503e0407f9501e557f0d "pdflatex"
-  "Main.tex" 1794832671 3299 69b6e2b3380b2f7716e6bfd91f4e8c16 ""
-  "c:/Users/Samsung/Documents/Relatórios1/Eletrificação_Veicular/Main.tex" 1794832671 3299 69b6e2b3380b2f7716e6bfd91f4e8c16 ""
-  "images/diagrama.png" 1794327509 36435 143ead60eec23546ade9e86232e2980a ""
-  "images/fig_Z.png" 1794832430 119350 f7c9a041b57e48176600872aa1d3925f ""
-  "images/fig_degrau.png" 1794832416 105544 2134a12cd9fa2d967f084ab95aa38a42 ""
-  "images/fig_diagrama_blocos.png" 1794838910 131040 502537dea8d9e79fdc4cca30e9c80205 ""
-  "images/fig_eig.png" 1794832437 46911 66e01391d2b5252be3e19899bdadfd26 ""
-  "images/fig_equiv.png" 1794832405 234589 6a6b1a99ae02579b21547f45fe6c8c7d ""
-  "images/fig_ondas.png" 1794832237 108972 4202e91b76fea1eed5b43a5436a8f3cb ""
+  "Main.run.xml" 1794918218 2404 43e7c279a954503e0407f9501e557f0d "pdflatex"
+  "Main.tex" 1794918215 3393 69b6e2b3380b2f7716e6bfd91f4e8c16 ""
+  "c:/Users/Samsung/Documents/Relatórios1/Eletrificação_Veicular/Main.tex" 1794918215 3393 69b6e2b3380b2f7716e6bfd91f4e8c16 ""
+  "images/diagrama.png" 1794918215 36435 143ead60eec23546ade9e86232e2980a ""
+  "images/fig_Z.png" 1794918215 119350 f7c9a041b57e48176600872aa1d3925f ""
+  "images/fig_degrau.png" 1794918215 105544 2134a12cd9fa2d967f084ab95aa38a42 ""
+  "images/fig_diagrama_blocos.png" 1794918215 131040 502537dea8d9e79fdc4cca30e9c80205 ""
+  "images/fig_eig.png" 1794918215 46911 66e01391d2b5252be3e19899bdadfd26 ""
+  "images/fig_equiv.png" 1794918215 234589 6a6b1a99ae02579b21547f45fe6c8c7d ""
+  "images/fig_ondas.png" 1794918215 108972 4202e91b76fea1eed5b43a5436a8f3cb ""
   "mcode.sty" 1789855151 10954 2c2db50283d6a5cecb73ce94707ab515 ""
   (generated)
   "Main.aux"
