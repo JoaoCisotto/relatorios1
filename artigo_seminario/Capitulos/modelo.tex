@@ -73,7 +73,7 @@ equação~\eqref{eq:capacitores}.
     \label{eq:capacitores}
 \end{equation}
 
-Da equação~\eqref{eq:modelo_vienna4}, tem-se que a corrente média chaveada total ($i_M$) é a soma das correntes médias chaveadas de cada fase, ou seja, $i_M = \sum_{k} d_k i_k$.
+Subtraindo as equações de~\eqref{eq:capacitores}, obtém-se a dinâmica do desequilíbrio entre os capacitores, $C\,d(V_{C1}-V_{C2})/dt=\sum_{k}(1-d_k)\,i_k$, cujo somatório possui componente de terceira harmônica e, portanto, origina a ondulação de \SI{180}{Hz} do ponto médio.
 Além disso, em regime permanente, o conversor deve sintetizar uma tensão, que no formato de fasores, pode ser representada por:
 
 \begin{equation}
@@ -84,7 +84,7 @@ Além disso, em regime permanente, o conversor deve sintetizar uma tensão, que 
 Na equação~\eqref{eq:fasor}, $\varphi>0$ representa uma corrente atrasada. Caso $\fasor{V}_{\sub{conv}}$ e $\fasor{I}$ não estejam em fase,
 então para cada semiciclo, existe um intervalo em que a tensão necessária tem o sinal oposto ao da corrente
 e, dessa forma, a corrente irá se distorcer em decorrência da saturação de $d_k$. Desconsiderando $R$ na equação~\eqref{eq:fasor}, o alinhamento
-entre a corrente e a tensão do conversor exige que $V_{\sub{pk}}\sin\varphi = \omega_{0}LA$, ou seja, a corrente de linha é atrasada em relação à tensão do conversor.
+entre a corrente e a tensão do conversor exige que $V_{\sub{pk}}\sin\varphi = \omega_{0}LA$, ou seja, a corrente de linha fica em fase com a tensão do conversor e atrasada de $\psi_0$ em relação à tensão da rede.
 Tendo isso em vista, tem-se a equação~\eqref{eq:phi}.
 
 \begin{equation}

@@ -149,7 +149,7 @@ cíclica de regime permanente, de modo que PR corrige apenas o erro. Dessa forma
 \eqref{eq:modelo_vienna4}, desconsiderando R, tem-se as seguintes equações:
 
 \begin{equation}
-    D_{\sub{ff},k} =1 - \frac{v^*_{\sub{conv},k}}{V_{Ci}}, \qquad v^*_{\sub{conv},k} = v_k-L\frac{di^*_k}{dt}
+    D_{\sub{ff},k} =1 - \frac{\lvert v^*_{\sub{conv},k}\rvert}{V_{Ci}}, \qquad v^*_{\sub{conv},k} = v_k-L\frac{di^*_k}{dt}
     \label{eq:razão_ciclíca}
 \end{equation}
 
@@ -181,7 +181,7 @@ de equilíbrio, pode-se utilizar as equações~\eqref{eq:capacitores} e~\eqref{e
     \label{eq:planta_equilibrio}
 \end{equation}
 
-Como $p_b$ é nulo em vazio, o PI de equilíbrio é projetado nessa condição, considerando um cruzamento em \SI{12}{Hz} ($f_{cb} = \omega_{cb}/4$). Dessa forma, pode-se calcular
+Como $p_b$ é nulo em vazio, o PI de equilíbrio é projetado nessa condição, considerando um cruzamento em $f_{cb}=\SI{12}{Hz}$ e o zero do PI em $\omega_{cb}/4$. Dessa forma, pode-se calcular
 os ganhos proporcional e integral pela equação~\eqref{eq:ganhos_equilibrio}.
 
 \begin{equation}
@@ -208,5 +208,5 @@ PI de tensão: $K_{p,v}$; $K_{i,v}$ & 0,504; 130,6\\
 PI de equilíbrio: $K_{p,b}$; $K_{i,b}$ & 0,586; 11,05\\
 Janela: $K_x$; $\Delta$ & 0,315; \ang{8}\\
 $I_{\sub{max}}$ & \SI{0,99}{pu}\\
-PLL: $K_p$; $K_i$ & 200; 4000\\\bottomrule
+PLL: $K_{p,\sub{PLL}}$; $K_{i,\sub{PLL}}$ & 200; 4000\\\bottomrule
 \end{tabular}\end{table}
