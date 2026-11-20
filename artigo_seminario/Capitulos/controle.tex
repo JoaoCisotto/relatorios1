@@ -1,12 +1,42 @@
 \section{Estratégia de Controle}
 \label{sec:controle}
 
+A Fig.~\ref{fig:controle} demonstra um resumo da estrutura de controle implementada, nela todos
+os sinais estão normalizados para p.u., e o controle é amostrado na frequência de 
+chaveamento.
+
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}[font=\footnotesize,>=Stealth,
+  blk/.style={draw,rounded corners=2pt,minimum height=6mm,minimum width=8mm,inner sep=2pt,align=center},
+  sm/.style={draw,circle,inner sep=0pt,minimum size=2.6mm,
+    label={[font=\scriptsize,inner sep=0.5pt,label distance=0.3pt]135:$+$}}]
+\node[left,inner sep=1pt] (fp) at (0.4,1.35) {$\mathrm{FP}^*$};
+\node[blk] (lim) at (1.95,1.35) {$\arccos$ +\\limitadores};
+\node[left,inner sep=1pt] (vr) at (0.4,0) {$V_{dc}^*$}; \node[sm] (s1) at (0.85,0) {}; \node[blk] (piv) at (1.95,0) {PI$_v$};
+\node[left,inner sep=1pt] (vc) at (0.4,-1.3) {$V_{C2}$}; \node[sm] (s2) at (0.85,-1.3) {}; \node[blk] (pib) at (1.95,-1.3) {FPB +\\PI$_b$};
+\node[blk,minimum width=12mm] (ref) at (4.05,0) {Eq.~(5)};
+\node[sm] (s3) at (5.5,0) {}; \node[blk] (pr) at (7.15,0) {$K_p+\dfrac{2K_{Ih}s}{s^2+\omega_0^2}$};
+\node[blk] (ff) at (7.15,-1.3) {$\times\mathrm{sgn}$ + \textit{f.f.}}; \node[blk] (pwm) at (7.15,-2.4) {PWM};
+\node (ik) at (5.5,-1.0) {$i_k$};
+\draw[->] (fp)--(lim); \draw[->] (vr)--(s1); \draw[->] (s1)--(piv); \draw[->] (vc)--(s2); \draw[->] (s2)--(pib);
+\draw[->] (0.85,-0.55) node[below]{$V_{dc}$}--node[pos=0.8,right]{\scriptsize$-$}(s1); \draw[->] (0.85,-1.85) node[below]{$V_{C1}$}--node[pos=0.8,right]{\scriptsize$-$}(s2);
+\draw[->] (lim) -| node[pos=0.25,above]{$\varphi$} (ref);
+\draw[->] (piv)--node[above]{$I_{pk}$}(ref.west);
+\draw[->] (pib) -| node[pos=0.25,below]{$I_{bias}$} (ref.south);
+\draw[->] (piv)--(lim);
+\draw[->] (ref)--node[pos=0.4,above]{$i_k^*$}(s3); \draw[->] (ik)--node[pos=0.8,right]{\scriptsize$-$}(s3); \draw[->] (s3)--(pr); \draw[->] (pr)--(ff); \draw[->] (ff)--node[right]{$d_k$}(pwm);
+\end{tikzpicture}
+\caption{Estrutura de controle por fase ($k\in\{a,b,c\}$). O bloco ``$\times$sgn + \textit{f.f.}'' aplica $d_k = D_{\mathrm{ff},k}+\operatorname{sgn}(i_k^*)\,u_{PR,k}$, com $D_{\mathrm{ff},k}$ dado por \eqref{eq:razão_ciclíca}.}
+\label{fig:controle}
+\end{figure}
+
 \subsection{Referências com FP variável}
-\obs{revisar depois (talvez simplificar/diminuir)}
+
 No controle por fase adotado, cada corrente é controlada por um PR no
 referencial estacionário. A referência de cada fase precisa, portanto, ser
-uma senoide definida por uma amplitude e um ângulo, e não por componentes
-$d$ e $q$. Ela é escrita como
+uma senoide definida por uma amplitude e um ângulo. Sendo assim, ela é escrita conforme 
+a equação~\eqref{eq:corrente_fase}.
 \begin{equation}
     \begin{gathered}
         i_k^* = A\cos(\theta_k-\varphi) + I_{\sub{bias}}\,\lvert\cos(\theta_k-\varphi)\rvert,\\
@@ -15,14 +45,14 @@ $d$ e $q$. Ela é escrita como
     \label{eq:corrente_fase}
 \end{equation}
 
-Em que $\theta_k$ é o ângulo da tensão da fase $k$, obtido do PLL;
+Na equação~\eqref{eq:corrente_fase}, $\theta_k$ é o ângulo da tensão da fase $k$, obtido do PLL;
 $\varphi$ é o ângulo de defasagem desejado entre corrente e tensão
 ($\varphi>0$ para corrente atrasada, isto é, carga indutiva);
 $I_{\sub{pk}}$ é a saída do PI de tensão; e $I_{\sub{bias}}$ é a saída do PI de
 equilíbrio do ponto médio.
 
-Para entender o papel de cada termo, a primeira parcela de
-\eqref{eq:corrente_fase} pode ser expandida:
+Expandindo a primeira parcela de
+\eqref{eq:corrente_fase}, tem-se:
 \begin{equation}
     A\cos(\theta-\varphi) = \underbrace{I_{\sub{pk}}\cos\theta}_{\text{em fase com } v}
     + \underbrace{I_{\sub{pk}}\tan\varphi\,\sin\theta}_{\text{em quadratura com } v}.
@@ -36,22 +66,24 @@ A parcela em fase com a tensão é a corrente ativa, e a parcela em quadratura
     \label{eq:potencias}
 \end{equation}
 
-Duas consequências decorrem daí. Primeiro, a divisão por $\cos\varphi$ na
+Duas consequências decorrem desse equacionamento. Primeiro, a divisão por $\cos\varphi$ na
 amplitude $A$ faz com que a componente ativa seja sempre igual a $I_{\sub{pk}}$,
 qualquer que seja $\varphi$. Assim, a potência ativa depende apenas da saída
 do PI de tensão, e alterar o fator de potência não perturba a regulação do
 barramento: as malhas de tensão e de reativo ficam desacopladas. Segundo,
 \eqref{eq:decomp} é exatamente a decomposição usada no controle em $dq$, com
 $I_d=I_{\sub{pk}}$ e $I_q=I_{\sub{pk}}\tan\varphi$. Escolher $\varphi$ equivale, portanto,
-à cadeia $\FP^*\rightarrow Q^*\rightarrow I_q^*$ do controle vetorial, sem
+à $\FP^*\rightarrow Q^*\rightarrow I_q^*$ do controle vetorial, sem
 exigir transformações de coordenadas.
 
 O ângulo é obtido diretamente do fator de potência desejado, cujo sinal
 indica o tipo ($\FP^*>0$ indutivo, $\FP^*<0$ capacitivo):
+
 \begin{equation}
     \varphi^* = \operatorname{sgn}(\FP^*)\,\arccos\lvert \FP^*\rvert .
     \label{eq:phi_ref}
 \end{equation}
+
 Antes de ser aplicado, $\varphi^*$ passa por dois limitadores em série:
 \begin{enumerate}
     \item \textit{Janela de quatro fios}: $\varphi\in[\psi_0-\Delta,\ \psi_0+\Delta]$,
@@ -59,6 +91,7 @@ Antes de ser aplicado, $\varphi^*$ passa por dois limitadores em série:
     Fora dessa faixa a tensão que o conversor precisaria sintetizar teria sinal
     oposto ao da corrente, o que distorce a corrente
     (Seção~\ref{sec:modelo}, equação~\eqref{eq:phi}).
+
     \item \textit{Limite de corrente}: a amplitude não pode exceder o valor
     máximo, $A=I_{\sub{pk}}/\cos\varphi\le I_{\sub{max}}$, o que resulta em
     $\lvert\varphi\rvert\le\arccos(I_{\sub{pk}}/I_{\sub{max}})$. Como a potência aparente é $S = \tfrac{3}{2}V_{\sub{pk}}A$, esse limite equivale a
@@ -79,14 +112,16 @@ mantém $V_{C1}=V_{C2}$.
 \subsection{Malha de corrente com controladores PR}
 
 O retificador de Vienna a quatro fios desenvolvido, possui suas fases desacopladas e a
-planta por fase, em pu, pode ser descrita por
+planta por fase, em pu, pode ser descrita por:
+
 \begin{equation}
     G_i(s) = \frac{K_iV_{\sub{dc}}}{2(Ls+R)},
     \label{eq:planta_corrente}
 \end{equation}
-com $K_i = 1/I_b$. Considerando um ganho proporcional com frequência de cruzamento a
+
+Na equação~\eqref{eq:planta_corrente}, $K_i = 1/I_b$. Considerando um ganho proporcional com frequência de cruzamento a
 1/10 da frequência de chaveamento ($f_c=f_{\sub{sw}}/10$), $\lvert K_pG_i(j\omega_c)\rvert=1$. Então $K_p$, pode
-ser calculado pela equação~\eqref{eq:Kp_corrente}
+ser calculado pela equação~\eqref{eq:Kp_corrente}:
 
 \begin{equation}
     K_p=\frac{2}{K_iV_{\sub{dc}}}\sqrt{(\omega_cL)^2+R^2}.
@@ -95,18 +130,33 @@ ser calculado pela equação~\eqref{eq:Kp_corrente}
 
 O controlador ressonante pode ser representado por $2K_{Ih}s/(s^2+\omega_0^2)$, com $K_{Ih} = 2{,}2K_p/(n_{oh}T_0)$, o
 que resulta em um tempo de subida de $n_{oh}=0{,}9$ ciclo \cite{alonso2018distributed}. Ao implementá-lo por Tustin,
-ele pode ser dado por
+ele pode ser equacionado por:
 \begin{equation}
     r(k) = a_h\left[e(k)- e(k-2)\right]+b_h\,r(k-1)-r(k-2),
     \label{eq:tustin}
 \end{equation}
+
 com
+
 \begin{equation}
     a_h = \frac{4K_{Ih}T_s}{4+\omega_0^2T_s^2}, \qquad
     b_h = \frac{8-2\omega_0^2T_s^2}{4+\omega_0^2T_s^2}.
     \label{eq:tustin_coef}
 \end{equation}
 
+A saída do PR é então, somada, a uma ação \textit{feedforward} que fornece a razão
+cíclica de regime permanente, de modo que PR corrige apenas o erro. Dessa forma, de 
+\eqref{eq:modelo_vienna4}, desconsiderando R, tem-se as seguintes equações:
+
+\begin{equation}
+    D_{\sub{ff},k} =1 - \frac{v^*_{\sub{conv},k}}{V_{Ci}}, \qquad v^*_{\sub{conv},k} = v_k-L\frac{di^*_k}{dt}
+    \label{eq:razão_ciclíca}
+\end{equation}
+
+Na equação~\eqref{eq:razão_ciclíca} $V_{Ci}$ é a tensão sobre o capacitor 1 ou 2, dependendo
+do semiciclo de referência \cite{alahuhtala2006fourwire}. A razão cíclica final é $d_k=D_{\sub{ff},k}+\operatorname{sgn}(i_k^*)\,u_{PR,k}$.
+O sinal presente no equacionamento da razão cíclica final é necessário, pois ao aumentar $d_k$ no semiciclo negativo, 
+a tensão na fase controlada $v_{kM}$ se torna menos negativa.
 \subsection{Malha de tensão total e de equilíbrio}
 
 Do balanço de potência nos capacitores, considerando $C_{\sub{eq}}=C/2$, então a planta considerada pode
@@ -120,6 +170,43 @@ ser obtida com a equação abaixo:
     \label{eq:planta_tensao}
 \end{equation}
 
-O PI de tensão total cancela o polo na carga nominal ($K_{i,v}/K_{p,v}=p_v$) e $K_{p,v} = \omega_{cv}/K_v$, com $f_{cv} = \SI{10}{Hz}$.
+O PI de tensão total cancela o polo na carga nominal ($K_{i,v}/K_{p,v}=p_v$) e $K_{p,v} = \omega_{cv}/K_v$, com $f_{cv} = \SI{10}{Hz}$. Para a malha 
+de equilíbrio, pode-se utilizar as equações~\eqref{eq:capacitores} e~\eqref{eq:corrente_fase}. A partir delas, tem-se:
 
-\obs{terminar dps. Falta descrever o PI de equilíbrio ($I_{\sub{bias}}$) e o \textit{feedforward} com $V_{C1}/V_{C2}$. Falta também uma tabela de parâmetros ($V$, $L$, $C$, $f_{\sub{sw}}$, $I_b$, $V_b$, $R_L$, ganhos).}
+\begin{equation}
+    \begin{gathered}
+        \frac{d(V_{C1}-V_{C2})}{dt} = K_bI_{\sub{bias}}-p_b(V_{C1}-V_{C2}),\\
+        K_b = \frac{3V_{\sub{pk}}I_b}{CV_{\sub{dc}}V_b}, \qquad p_b = \frac{2}{R_LC}
+    \end{gathered}
+    \label{eq:planta_equilibrio}
+\end{equation}
+
+Como $p_b$ é nulo em vazio, o PI de equilíbrio é projetado nessa condição, considerando um cruzamento em \SI{12}{Hz} ($f_{cb} = \omega_{cb}/4$). Dessa forma, pode-se calcular
+os ganhos proporcional e integral pela equação~\eqref{eq:ganhos_equilibrio}.
+
+\begin{equation}
+    K_{b,p} = \frac{\omega^2_{cb}}{K_b\sqrt{\omega^2_{cb}+(\omega_{cb}/4)^2}}
+    \label{eq:ganhos_equilibrio}
+\end{equation}
+
+Com as equações apresentadas anteriormente, pode-se calcular os ganhos de cada controlador
+a partir dos parâmetros do circuito, sendo os resultados apresentados na Tabela~\ref{tab:param}.
+
+\begin{table}[!t]\centering
+\caption{Parâmetros do circuito e ganhos dos controladores}\label{tab:param}
+\begin{tabular}{@{}ll@{}}\toprule
+Parâmetro & Valor\\\midrule
+Tensão de fase / frequência & 127~V$_\mathrm{rms}$ / \SI{60}{Hz}\\
+Potência nominal / $V_{\sub{dc}}^*$ & \SI{21}{kW} / \SI{600}{V}\\
+$L$, $R$ & \SI{1,5}{mH}, \SI{0,1}{\ohm}\\
+$C$ (cada), $R_L$ & \SI{900}{\micro F}, \SI{17,1}{\ohm}\\
+$f_{\sub{sw}}=1/T_s$ & \SI{12}{kHz}\\
+Bases $I_b$, $V_b$ & \SI{100}{A}, \SI{800}{V}\\\midrule
+PR: $K_p$; $K_{Ih}$ & 3,770; 552,9\\
+PR discreto: $a_h$; $b_h$ & 0,04607; 1,99901\\
+PI de tensão: $K_{p,v}$; $K_{i,v}$ & 0,504; 130,6\\
+PI de equilíbrio: $K_{p,b}$; $K_{i,b}$ & 0,586; 11,05\\
+Janela: $K_x$; $\Delta$ & 0,315; \ang{8}\\
+$I_{\sub{max}}$ & \SI{0,99}{pu}\\
+PLL: $K_p$; $K_i$ & 200; 4000\\\bottomrule
+\end{tabular}\end{table}

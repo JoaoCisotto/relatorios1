@@ -1,12 +1,15 @@
 \section{Discussão}
 \label{sec:discussao}
+Os resultados confirmam que a restrição de sinal de \eqref{eq:modelo_vienna4} define a faixa de FP do retificador a quatro fios. 
+Como cada braço só aplica tensão com o mesmo sinal da corrente, a componente fundamental da tensão do conversor fica em fase com a corrente, e o conversor se comporta, para a rede, como uma resistência equivalente em série com o indutor de entrada. 
+A rede passa então a fornecer o reativo do próprio indutor, $Q_L=\tfrac{3}{2}\omega_0LA^2$. Com $A\approx\SI{85}{A}$, tem-se $Q_L\approx\SI{6,1}{kvar}$ para $P\approx\SI{23}{kW}$, o que corresponde a $\psi_0=\arctan(Q_L/P)\approx\ang{15}$, valor coerente com \eqref{eq:phi} e com a janela de \ang{7} a \ang{23} empregada na simulação.
 
-Como $\sin\psi_0 = \omega_0 L I/V_{\sub{pk}}$, a
-posição da janela depende da reatância de entrada em pu: com
-$L=\SI{1,5}{mH}$ (0,25~pu) a janela fica deslocada para o lado indutivo.
-Um indutor de \SI{0,5}{mH} colocaria $\psi_0$ em cerca de \ang{5}
-e permitiria FP unitário em toda a faixa de carga, ao custo de
-triplicar a ondulação de corrente em alta frequência. A capacitância
-afeta apenas a ondulação de \SI{180}{Hz} do ponto médio, que
-é rejeitada pelo \textit{feedforward} com $V_{C1}/V_{C2}$ medidas.
+O retificador de Vienna a três fios opera com FP não unitário, indutivo ou capacitivo, com defasagem de até cerca de $\pm\ang{30}$~\cite{kolar2013essence}. 
+Isso é possível porque, a três fios, somar uma mesma tensão de sequência zero às três referências não altera as correntes de fase. 
+A quatro fios, a ligação entre o neutro e o ponto médio faz qualquer tensão de sequência zero circular como corrente pelo neutro, e essa liberdade deixa de existir: na região de sinais opostos, então, a tensão se torna nula, e o erro de tensão distorce a corrente. O FP capacitivo continua possível, porém essa operação ocorrerá com THD elevado, além de uma corrente de neutro elevada e reativo inferior ao pedido.
+
+O limitador proposto segue a prática da literatura de não perseguir referências que a topologia não consegue sintetizar, como visto em \cite{liao2026nonunity} onde a referência de corrente é ajustada para evitar a região não sintetizável. A quatro fios, essa é uma das alternativas disponíveis para evitar a distorção. Dessa forma, a diferença entre $\FP^*$ e o FP medido após \SI{0,6}{s} apresentada na Fig.~\ref{fig:potencia} não indica falha do controle, mas a saturação de um pedido fora da região de operação.
+
+Como $\sin\psi_0=\omega_0LA/V_{\sub{pk}}$, a posição da janela depende da reatância de entrada em pu. Com $L=\SI{1,5}{mH}$ (\SI{0,25}{pu} na base nominal do conversor), a janela fica deslocada para o lado indutivo. A capacitância não altera a janela, ela apenas define a ondulação do ponto médio, que é compensada pela ação antecipativa com $V_{C1}$ e $V_{C2}$ medidas e filtrada antes do PI de equilíbrio. A corrente de neutro também não se anula com o limitador, pois ainda há a ondulação de chaveamento, comum às três fases por usarem a mesma portadora, e pequenas harmônicas de terceira ordem que se somam no neutro.
+
 

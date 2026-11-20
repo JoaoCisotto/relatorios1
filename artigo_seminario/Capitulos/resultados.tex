@@ -1,8 +1,8 @@
 \section{Resultados de Simulação}
 \label{sec:resultados}
 
-O sistema foi implementado no Matlab/Simulink utilizando a toolbox Specialized Power
-Systemas, com passo de simulação $T_s/50$ e controle discreto amostrado na frequência de
+O sistema foi implementado no Matlab/Simulink utilizando a \textit{toolbox} Specialized Power
+Systems, com passo de simulação $T_s/50$ e controle discreto amostrado na frequência de
 chaveamento $f_{\sub{sw}}$.
 
 \subsection{Partida e regime permanente}
@@ -14,7 +14,7 @@ as correntes são senoidais e com cerca de \SI{85}{A} de pico.
 
 \begin{figure}[!t]
     \centering
-    \includegraphics[width=\columnwidth, trim=0 136 0 136, clip]{Tensoes.pdf}
+    \includegraphics[width=\columnwidth, trim=20 298 20 298, clip]{Tensoes.pdf}
     \caption{Resultados da Simulação para tensões.}
     \label{fig:tensoes}
 \end{figure}
@@ -24,14 +24,20 @@ as correntes são senoidais e com cerca de \SI{85}{A} de pico.
 
 Para verificar se o modelo proposto suportava um PFC, o FP foi variado de 1 para
 0,95 indutivo (\SI{0,4}{s}) e depois para 0,95 (\SI{0,6}{s}) capacitivo em carga nominal. Sendo os
-resultados apresentados na Fig.~\ref{fig:potencia}.
+resultados apresentados na Fig.~\ref{fig:potencia} e na Tabela~\ref{tab:res}.
 
 Para o fator de potência em 0,95 indutivo, nota-se que o referencial é seguido com e sem limitador,
-com uma potência reativa de \SI{7}{kvar}. Nessa situação, é apresentado um THD de \SI{0,2}{\percent}. Já para um FP de
-0,95 capacitivo, nota-se que sem limitador, o conversor não é capaz de sintetizar a corrente
-e o THD passa de \SI{20}{\percent}. Isso ocorre, devido a presença de harmônicos das fases que se somam no neutro. Com o limitador,
-a operação segue conforme o esperado. Por fim, para um fator de potência unitário em carga nominal, da simulação
-pode-se obter um FP de 0,992 com THD de \SI{1,7}{\percent}.
+com uma potência reativa de \SI{7}{kvar}. Nessa situação, é apresentado um THD de \SI{0,2}{\percent}. 
+
+Já para um FP de 0,95 capacitivo, nota-se que sem limitador, o conversor não é capaz de sintetizar a corrente, uma vez
+que conforme discutido na Seção~\ref{sec:modelo}, a tensão necessária teria sinal oposto ao da 
+corrente necessária durante cada semiciclo, com isso as razões cíclicas saturam e a corrente se distorce
+na passagem por zero
+e o THD passa de \SI{20}{\percent}. As harmônicas geradas por essa distorção estão em fase nas três fases e se somam no neutro, elevando
+a corrente no neutro e o reativo obtido é menor que o esperado. Com o limitador,
+a operação é levada ao limite da janela de operação do retificador ($\varphi \approx \ang{7}$ indutivo), com isso a corrente permanece senoidal, mas o FP medido vai para 0,99 indutivo
+conforme é observado na Fig.~\ref{fig:potencia} após \SI{0,6}{s}. A diferença entre o $\FP^*$ e o FP medido é esperada, tendo
+em vista que o pedido está fora da região de operação da topologia.
 
 Além disso, pode-se notar também, que em todos os degraus, a potência aparente e a tensão do
 barramento CC praticamente não se alteram, o que confirma o desacoplamento previsto anteriormente
@@ -44,3 +50,13 @@ em \eqref{eq:decomp}.
     \label{fig:potencia}
 \end{figure}
 
+\begin{table}[!t]\centering\setlength{\tabcolsep}{4pt}
+\caption{Valores de regime nos degraus de FP (carga nominal)}\label{tab:res}
+\begin{tabular}{@{}ccccc@{}}\toprule
+ & & \multicolumn{2}{c}{Com limitador} & Sem limitador\\
+\cmidrule(lr){3-4}\cmidrule(l){5-5}
+Intervalo & $\mathrm{FP}^*$ & $Q$ [kvar] & FP medido & $Q$ [kvar]\\\midrule
+0,3--0,4~s & 1 & 2,3 & 0,99 ind. & $\approx0$\\
+0,4--0,6~s & 0,95 ind. & 6,8 & 0,96 ind. & 6,8\\
+0,6--0,8~s & 0,95 cap. & 2,3 & 0,99 ind. & $-2{,}2$\\\bottomrule
+\end{tabular}\end{table}

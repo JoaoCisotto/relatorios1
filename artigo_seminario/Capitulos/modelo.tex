@@ -2,22 +2,63 @@
 \label{sec:modelo}
 
 \begin{figure}[!t]
-    \centering
-    \includegraphics[width=\columnwidth]{figure-3-phase-wire-vienna-rectifier.jpeg}
-    \caption{Braço do Vienna de 4 fios.}
-    \label{fig:braco_vienna}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[font=\LARGE]
+	% Paths, nodes and wires:
+	\draw (6, 4.75) to[empty diode] (6, 6);
+	\draw (6, 8) to[empty diode] (6, 9.25);
+	\draw (3, 7) to[cute inductor] (3.75, 7);
+	\draw (2, 6) to[sinusoidal voltage source] (2, 4.75);
+	\draw (2, 6) -| (2, 7) -- (3, 7);
+	\draw (3.75, 7) -- (6, 7) -| (6, 8);
+	\draw (6, 7) -| (6, 6);
+	\node[ground] at (2, 2.25){};
+	\draw (2, 3) -| (2, 2.25);
+	\node[Lpigbt, rotate=90] at (9.75, 7){};
+	\node[Lnigbt, rotate=-90] at (12.48, 7){};
+	\draw (14, 9) to[capacitor] (14, 8);
+	\draw (14, 6) to[capacitor] (14, 5);
+	\draw (16, 7.5) to[european resistor] (16, 6.5);
+	\draw (6, 9.25) -| (6, 10) -- (14, 10) -| (14, 9);
+	\draw (14, 10) -- (16, 10) -- (16, 7.5);
+	\draw (6, 4.75) -| (6, 4) -- (14, 4) -| (14, 5);
+	\draw (14, 8) -| (14, 6);
+	\draw (13.25, 7) -- (14, 7);
+	\draw (10.52, 7) -- (11.71, 7);
+	\draw (6, 7) -- (9, 7);
+	\draw (16, 6.5) -- (16, 4) |- (14, 4);
+	\draw (14, 7) -- (15, 7) -| (15, 3) |- (3, 3) -- (2, 3) -| (2, 4.75);
+	\node[circ] at (14, 7){};
+	\node[circ] at (2, 3){};
+	\node[circ] at (6, 7){};
+	\node[inputarrow] at (2.5, 7){};
+	\node[currarrow, xscale=-1, yscale=-1] at (9.5, 3){};
+	% Rótulos
+	\node[right] at (16.25, 7) {$R_L$};
+	\node[right] at (2.3, 5.375) {$v_k$};
+	\node[above] at (3.375, 7.1) {$L$};
+	\node[right] at (14.3, 8.5) {$C_1$};
+	\node[right] at (14.3, 5.5) {$C_2$};
+	\node[above] at (2.5, 7.05) {$i_k$};
+	\node[below] at (9.5, 2.95) {$i_N$};
+\end{tikzpicture}}
+\caption{Braço do retificador de Vienna a quatro fios.}
+\label{fig:braco_vienna}
 \end{figure}
 
 A Fig.~\ref{fig:braco_vienna} mostra o braço do retificador de Vienna de quatro fios,
 a tensão aplicada à fase é a tensão de polo $v_{kM}$, e cada fase $k \in \{a,b,c\}$ é descrita de forma independente, como apresentado na equação~\eqref{eq:modelo_vienna4}.
 
 \begin{equation}
-    L\frac{di_k}{dt} = v_k - R i_k - v_{kM}, \qquad
-    v_{kM} =
-    \begin{cases}
-        (1-d_k)V_{C1},  & i_k > 0\\
-        -(1-d_k)V_{C2}, & i_k < 0
-    \end{cases}
+    \begin{gathered}
+        L\frac{di_k}{dt} = v_k - R i_k - v_{kM},\\
+        v_{kM} =
+        \begin{cases}
+            (1-d_k)V_{C1},  & i_k > 0\\
+            -(1-d_k)V_{C2}, & i_k < 0
+        \end{cases}
+    \end{gathered}
     \label{eq:modelo_vienna4}
 \end{equation}
 
@@ -42,7 +83,7 @@ Além disso, em regime permanente, o conversor deve sintetizar uma tensão, que 
 
 Na equação~\eqref{eq:fasor}, $\varphi>0$ representa uma corrente atrasada. Caso $\fasor{V}_{\sub{conv}}$ e $\fasor{I}$ não estejam em fase,
 então para cada semiciclo, existe um intervalo em que a tensão necessária tem o sinal oposto ao da corrente
-e, dessa forma, a corrente irá se distorcer em decorrência da saturação de $d_k$. Desconsideranto $R$ na equação~\eqref{eq:fasor}, o alinhamento
+e, dessa forma, a corrente irá se distorcer em decorrência da saturação de $d_k$. Desconsiderando $R$ na equação~\eqref{eq:fasor}, o alinhamento
 entre a corrente e a tensão do conversor exige que $V_{\sub{pk}}\sin\varphi = \omega_{0}LA$, ou seja, a corrente de linha é atrasada em relação à tensão do conversor.
 Tendo isso em vista, tem-se a equação~\eqref{eq:phi}.
 

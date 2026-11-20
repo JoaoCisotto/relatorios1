@@ -108,130 +108,6 @@
       \field{pages}{861\bibrangedash 878}
       \range{pages}{18}
     \endentry
-    \entry{alahuhtala2006fourwire}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=7a1d9b636a388211d8e2dd27c16a80f0}{%
-           family={Alahuhtala},
-           familyi={A\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=04001c8ffe14f0e0494a39e1bbef0052}{%
-           family={Tuusa},
-           familyi={T\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-      }
-      \strng{namehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{fullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{fullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{bibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{authorbibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{authornamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{authorfullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \strng{authorfullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proc. IEEE IECON}
-      \field{title}{Four-Wire Unidirectional Three-Phase/Level/Switch ({VIENNA}) Rectifier}
-      \field{year}{2006}
-      \field{pages}{2420\bibrangedash 2425}
-      \range{pages}{6}
-    \endentry
-    \entry{schafmeister2021transformerless}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=09203fdd55d92d50c0cc1d81df7be7f5}{%
-           family={Schafmeister},
-           familyi={S\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{fullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{fullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{bibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{authorbibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{authornamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{authorfullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \strng{authorfullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{Power Systems Design}
-      \field{month}{12}
-      \field{title}{Transformerless {OBCs} with Three- and Single-Phase Operation}
-      \field{year}{2021}
-    \endentry
-    \entry{liao2026nonunity}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=85e0c69bc62c31c5e1c581de946ab348}{%
-           family={Liao},
-           familyi={L\bibinitperiod},
-           given={Y.-H.},
-           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
-        {{hash=55c73f6ff1bd94a1c6dfc884e9392877}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={J.-S.},
-           giveni={J\bibinithyphendelim S\bibinitperiod}}}%
-      }
-      \strng{namehash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{fullhash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{fullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{bibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{authorbibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{authornamehash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{authorfullhash}{7e15abbff19fb5eef1af5630b51480d5}
-      \strng{authorfullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Power Electronics}
-      \field{month}{5}
-      \field{number}{5}
-      \field{title}{Nonunity Power Factor Current Optimization for Three-Phase {Vienna} Rectifiers Under Unbalanced Grid and Unbalanced {DC}-Link Voltage Conditions}
-      \field{volume}{41}
-      \field{year}{2026}
-      \field{pages}{7635\bibrangedash 7650}
-      \range{pages}{16}
-    \endentry
-    \entry{kolar2013essence}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=78cc164754bb3d7c91e078b91c63481c}{%
-           family={Kolar},
-           familyi={K\bibinitperiod},
-           given={Johann\bibnamedelima W.},
-           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=76120846954ca3c3deb06b177f07e499}{%
-           family={Friedli},
-           familyi={F\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{fullhash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{fullhashraw}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{bibnamehash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{authorbibnamehash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{authornamehash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{authorfullhash}{42b847fc25e744ad8567fc2bc3423794}
-      \strng{authorfullhashraw}{42b847fc25e744ad8567fc2bc3423794}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Power Electronics}
-      \field{month}{1}
-      \field{number}{1}
-      \field{title}{The Essence of Three-Phase {PFC} Rectifier Systems---Part {I}}
-      \field{volume}{28}
-      \field{year}{2013}
-      \field{pages}{176\bibrangedash 198}
-      \range{pages}{23}
-    \endentry
     \entry{safayatullah2022comprehensive}{article}{}{}
       \name{author}{5}{}{%
         {{hash=fa0de6b0cc092d7f16f83a2923dfa148}{%
@@ -268,8 +144,8 @@
       \strng{authornamehash}{372b05eba9c4cc043b3ef8efb688e09b}
       \strng{authorfullhash}{372b05eba9c4cc043b3ef8efb688e09b}
       \strng{authorfullhashraw}{372b05eba9c4cc043b3ef8efb688e09b}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
@@ -278,6 +154,130 @@
       \field{year}{2022}
       \field{pages}{40753\bibrangedash 40793}
       \range{pages}{41}
+    \endentry
+    \entry{alahuhtala2006fourwire}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=7a1d9b636a388211d8e2dd27c16a80f0}{%
+           family={Alahuhtala},
+           familyi={A\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=04001c8ffe14f0e0494a39e1bbef0052}{%
+           family={Tuusa},
+           familyi={T\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{fullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{fullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{bibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorbibnamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authornamehash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorfullhash}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \strng{authorfullhashraw}{9267dc9b759ac0ef03aef4f43c2dbd5c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. IEEE IECON}
+      \field{title}{Four-Wire Unidirectional Three-Phase/Level/Switch ({VIENNA}) Rectifier}
+      \field{year}{2006}
+      \field{pages}{2420\bibrangedash 2425}
+      \range{pages}{6}
+    \endentry
+    \entry{schafmeister2021transformerless}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=09203fdd55d92d50c0cc1d81df7be7f5}{%
+           family={Schafmeister},
+           familyi={S\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{fullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{fullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{bibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorbibnamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authornamehash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorfullhash}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \strng{authorfullhashraw}{09203fdd55d92d50c0cc1d81df7be7f5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Power Systems Design}
+      \field{month}{12}
+      \field{title}{Transformerless {OBCs} with Three- and Single-Phase Operation}
+      \field{year}{2021}
+    \endentry
+    \entry{liao2026nonunity}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=85e0c69bc62c31c5e1c581de946ab348}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Y.-H.},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=55c73f6ff1bd94a1c6dfc884e9392877}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={J.-S.},
+           giveni={J\bibinithyphendelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{fullhash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{fullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{bibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorbibnamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authornamehash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorfullhash}{7e15abbff19fb5eef1af5630b51480d5}
+      \strng{authorfullhashraw}{7e15abbff19fb5eef1af5630b51480d5}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Electronics}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{Nonunity Power Factor Current Optimization for Three-Phase {Vienna} Rectifiers Under Unbalanced Grid and Unbalanced {DC}-Link Voltage Conditions}
+      \field{volume}{41}
+      \field{year}{2026}
+      \field{pages}{7635\bibrangedash 7650}
+      \range{pages}{16}
+    \endentry
+    \entry{kolar2013essence}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=78cc164754bb3d7c91e078b91c63481c}{%
+           family={Kolar},
+           familyi={K\bibinitperiod},
+           given={Johann\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=76120846954ca3c3deb06b177f07e499}{%
+           family={Friedli},
+           familyi={F\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{fullhash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{fullhashraw}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{bibnamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorbibnamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authornamehash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorfullhash}{42b847fc25e744ad8567fc2bc3423794}
+      \strng{authorfullhashraw}{42b847fc25e744ad8567fc2bc3423794}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Power Electronics}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{The Essence of Three-Phase {PFC} Rectifier Systems---Part {I}}
+      \field{volume}{28}
+      \field{year}{2013}
+      \field{pages}{176\bibrangedash 198}
+      \range{pages}{23}
     \endentry
     \entry{kolar1997novel}{article}{}{}
       \name{author}{2}{}{%
@@ -338,6 +338,45 @@
       \field{volume}{27}
       \field{year}{2025}
     \endentry
+    \entry{kwon2017line}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=2b4526ad39e04877b155a51b21d7a74a}{%
+           family={Kwon},
+           familyi={K\bibinitperiod},
+           given={Y.-D.},
+           giveni={Y\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=b35cb364e874c5a224f2599dcb5289e9}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={J.-H.},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=23f9a8e5d6833943c7e70bd20ace9ac4}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={K.\bibnamedelimi M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1ea16ea6e6fde5ec6f6b03ba664cc216}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={K.-B.},
+           giveni={K\bibinithyphendelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{fullhash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{fullhashraw}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{bibnamehash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{authorbibnamehash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{authornamehash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{authorfullhash}{4490f20f3548b72bd7624a08333b0dc6}
+      \strng{authorfullhashraw}{4490f20f3548b72bd7624a08333b0dc6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{artigo de conferência IEEE}
+      \field{title}{Line Current Improvement of Three-Phase Four-Wire {Vienna} Rectifier Using Dead-Beat Control}
+      \field{year}{2017}
+    \endentry
     \entry{alonso2018distributed}{thesis}{}{}
       \name{author}{1}{}{%
         {{hash=07256ed4bc52c35ba84d0d47bd55ee5f}{%
@@ -366,6 +405,12 @@
       \field{year}{2018}
     \endentry
   \enddatalist
+  \missing{alonso}
+  \missing{aula}
+  \missing{kolar2013}
+  \missing{lee}
+  \missing{liao}
+  \missing{molligoda}
 \endrefsection
 \endinput
 
