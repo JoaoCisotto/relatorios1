@@ -2,36 +2,37 @@
 \label{sec:revisao}
 
 \subsection{Arquiteturas de recarga de veículos elétricos}
-Os carregadores de veículos elétricos podem ser classificados em embarcados (\textit{on-board}, OBC) que operam até cerca de 20 kW e a externos (\textit{off-board})
-de dezenas a centenas de kW \cite{yilmaz2013review,tu2019extreme}. Ambos tipos 
+Os carregadores de veículos elétricos podem ser classificados em embarcados (\textit{on-board}, OBC) que operam até cerca de \SI{20}{kW}, e externos (\textit{off-board}),
+de dezenas a centenas de kW~\cite{yilmaz2013review,tu2019extreme}. Ambos os tipos
 apresentam dois estágios, o primeiro é um retificador PFC que é responsável por regular 
 o barramento CC intermediário e o segundo é um conversor CC-CC isolado que adapta a tensão do barramento CC à tensão da bateria (tipicamente entre \SI{400}{V} e \SI{800}{V}). 
 
 Estações de recarga rápidas apresentam o estágio CA-CC formado por módulos idênticos em paralelo para diminuir o esforço das chaves dos retificadores, sendo a escolha da 
 topologia utilizada dependente da eficiência, densidade de potência e qualidade de energia necessária. Como os 
 OBCs podem operar tanto em redes monofásicas quanto em redes trifásicas, topologias com
-o ponto médio do barramento ligado ao neutro da rede são empregadas \cite{schafmeister2021transformerless}.
+o ponto médio do barramento ligado ao neutro da rede são empregadas~\cite{schafmeister2021transformerless}.
+
 \subsection{Topologias de retificadores trifásicos}
 
 Existem diversas topologias de retificadores trifásicos, entre elas podem ser destacadas algumas características. 
 
-As pontes de diodos com conversor boost são simples e necessitam de apenas uma chave, por conta dessa particularidade, apresentam
+As pontes de diodos com conversor \textit{boost} são simples e necessitam de apenas uma chave; por conta dessa particularidade, apresentam
 apenas um nível de tensão e um fluxo de corrente unidirecional, não sendo possível controlar o FP, o que provoca
 uma corrente de linha distorcida. As topologias de retificador com PWM de dois níveis apresentam seis chaves e são bidirecionais, além de apresentarem
-dois níveis de tensão, permitindo o controle completo do fator de potência e da corrente de linha, porém apresentam uma maior complexidade de controle e suas chaves bloqueiam a tensão do barramento, assim ficam sob um estresse maior \cite{kolar2013essence}. 
+dois níveis de tensão, permitindo o controle completo do fator de potência e da corrente de linha, porém apresentam uma maior complexidade de controle e suas chaves bloqueiam a tensão do barramento, assim ficam sob um estresse maior~\cite{kolar2013essence}. 
 
-Já as topologias NPC/tipo-T apresentam doze chaves e 3 níveis de tensão, além de permitirem um fluxo de corrente
+Já as topologias NPC/tipo-T apresentam doze chaves e três níveis de tensão, além de permitirem um fluxo de corrente
 bidirecional, o que torna possível a operação em modo de recarga e de injeção de energia na rede. Apesar de reduzirem os esforços sobre cada chave, seu custo é maior
-tendo em vista a necessidade de doze chaves \cite{safayatullah2022comprehensive}. O retificador de Vienna de três fios \cite{kolar1997novel} é a versão unidirecional do 
+tendo em vista a necessidade de doze chaves~\cite{safayatullah2022comprehensive}. O retificador de Vienna de três fios~\cite{kolar1997novel} é a versão unidirecional do 
 tipo-T, ele apresenta três chaves bidirecionais e seis diodos rápidos que produzem três níveis de tensão, com bloqueio de tensão em $V_{\sub{dc}}/2$. Esse comportamento garante uma alta eficiência e alta densidade de potência, porém não permite a operação bidirecional 
-e o controle de fator de potência é limitado. O retificador de Vienna de 4 fios foi proposto, especialmente no contexto de carregamento de veículos elétricos, tendo em vista sua aplicação em estações de recarga rápidas fora do veículo \cite{senthilkumar2025iipq} e
-para carregadores embarcados sem transformador \cite{schafmeister2021transformerless}. Assim como o retificador de Vienna de três fios, o retificador de Vienna de quatro fios apresenta três níveis de tensão, porém com a adição de um quarto fio, o neutro da rede, é possível controlar o fator de potência da rede, seu fluxo de corrente é unidirecional e apresenta 3 níveis de tensão.
+e o controle de fator de potência é limitado. O retificador de Vienna de quatro fios foi proposto, especialmente no contexto de carregamento de veículos elétricos, tendo em vista sua aplicação em estações de recarga rápidas fora do veículo~\cite{senthilkumar2025iipq} e
+para carregadores embarcados sem transformador~\cite{schafmeister2021transformerless}. Assim como o retificador de Vienna de três fios, o retificador de Vienna de quatro fios apresenta três níveis de tensão e fluxo de corrente unidirecional. A adição de um quarto fio, o neutro da rede, desacopla as fases e permite operar com redes desequilibradas ou monofásicas, porém elimina a tensão de modo comum, o que restringe a faixa de FP viável (Seção~\ref{sec:modelo}).
 
 \subsection{Estratégias de controle}
 
 Para um retificador de Vienna de quatro fios, os mecanismos de controle, de forma geral, se concentram em três malhas, uma para a corrente de entrada,
-uma para a tensão do barramento CC e uma para o equilíbrio do ponto médio do barramento CC. A malha de corrente de entrada é responsável por controlar a corrente de linha, garantindo que ela siga uma referência senoidal em fase com a tensão da rede, o que permite o controle do fator de potência. A malha de tensão do barramento CC regula a tensão do barramento intermediário, garantindo que ela permaneça dentro dos limites especificados para a operação segura do conversor. Por fim, a malha de equilíbrio do ponto médio do barramento CC assegura que as tensões nos capacitores do barramento permaneçam equilibradas, evitando sobrecargas em um dos capacitores e garantindo a estabilidade do sistema.
-Como alternativa ao controle linear, \cite{kwon2017line} emprega um controle \textit{dead-beat} por fase para reduzir a distorção da corrente de linha do Vienna a quatro fios. Além disso, em \cite{liao2026nonunity} é discutido o caso em que o FP é não unitário e mostrado que parte das referências pedidas não pode ser sintetizada pela topologia, devendo ser ajustadas. Neste trabalho adota-se o controle PR por fase~\cite{alonso2018distributed}, que segue referências senoidais sem transformação de coordenadas.
+uma para a tensão do barramento CC e uma para o equilíbrio do ponto médio do barramento CC. A malha de corrente de entrada é responsável por controlar a corrente de linha, garantindo que ela siga uma referência senoidal sincronizada com a tensão da rede; a amplitude define a potência ativa e o ângulo, o FP. A malha de tensão do barramento CC regula a tensão do barramento intermediário, garantindo que ela permaneça dentro dos limites especificados para a operação segura do conversor. Por fim, a malha de equilíbrio do ponto médio do barramento CC assegura que as tensões nos capacitores do barramento permaneçam equilibradas, evitando sobrecargas em um dos capacitores e garantindo a estabilidade do sistema.
+Como alternativa ao controle linear, Kwon \textit{et al.}~\cite{kwon2017line} empregam um controle \textit{dead-beat} por fase para reduzir a distorção da corrente de linha do Vienna a quatro fios. Além disso, em~\cite{liao2026nonunity} é discutido o caso em que o FP é não unitário e mostrado que parte das referências pedidas não pode ser sintetizada pela topologia, devendo ser ajustadas. Neste trabalho adota-se o controle PR por fase~\cite{alonso2018distributed}, que segue referências senoidais sem transformação de coordenadas.
 
-Para o retificador destacado anteriormente, o equilíbrio é realizado com um termo aditivo na amplitude da referência, com sinal dependente do semiciclo \cite{alahuhtala2006fourwire}.
+Para o retificador destacado anteriormente, o equilíbrio é realizado com um termo aditivo na amplitude da referência, com sinal dependente do semiciclo~\cite{alahuhtala2006fourwire}.
 

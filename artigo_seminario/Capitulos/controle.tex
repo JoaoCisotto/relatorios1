@@ -2,7 +2,7 @@
 \label{sec:controle}
 
 A Fig.~\ref{fig:controle} demonstra um resumo da estrutura de controle implementada, nela todos
-os sinais estão normalizados para p.u., e o controle é amostrado na frequência de 
+os sinais estão normalizados em pu, e o controle é amostrado na frequência de 
 chaveamento.
 
 \begin{figure}[!t]
@@ -27,7 +27,7 @@ chaveamento.
 \draw[->] (piv)--(lim);
 \draw[->] (ref)--node[pos=0.4,above]{$i_k^*$}(s3); \draw[->] (ik)--node[pos=0.8,right]{\scriptsize$-$}(s3); \draw[->] (s3)--(pr); \draw[->] (pr)--(ff); \draw[->] (ff)--node[right]{$d_k$}(pwm);
 \end{tikzpicture}
-\caption{Estrutura de controle por fase ($k\in\{a,b,c\}$). O bloco ``$\times$sgn + \textit{f.f.}'' aplica $d_k = D_{\mathrm{ff},k}+\operatorname{sgn}(i_k^*)\,u_{PR,k}$, com $D_{\mathrm{ff},k}$ dado por \eqref{eq:razão_ciclíca}.}
+\caption{Estrutura de controle por fase ($k\in\{a,b,c\}$). O bloco ``$\times$sgn + \textit{f.f.}'' aplica $d_k = D_{\mathrm{ff},k}+\operatorname{sgn}(i_k^*)\,u_{\mathrm{PR},k}$, com $D_{\mathrm{ff},k}$ dado por \eqref{eq:razão_ciclíca}.}
 \label{fig:controle}
 \end{figure}
 
@@ -87,7 +87,8 @@ indica o tipo ($\FP^*>0$ indutivo, $\FP^*<0$ capacitivo):
 Antes de ser aplicado, $\varphi^*$ passa por dois limitadores em série:
 \begin{enumerate}
     \item \textit{Janela de quatro fios}: $\varphi\in[\psi_0-\Delta,\ \psi_0+\Delta]$,
-    com $\psi_0=\arcsin(K_xI_{\sub{pk}})$, $K_x=\omega_0LI_b/V_{\sub{pk}}$ e $\Delta=\ang{8}$.
+    com $\psi_0=\arcsin(K_xI_{\sub{pk}})$, $K_x=\omega_0LI_b/V_{\sub{pk}}$ e $\Delta=\ang{8}$, escolhido por simulação para
+    manter o THD abaixo de \SI{5}{\percent} entre \SI{25}{\percent} e \SI{100}{\percent} da carga.
     Fora dessa faixa a tensão que o conversor precisaria sintetizar teria sinal
     oposto ao da corrente, o que distorce a corrente
     (Seção~\ref{sec:modelo}, equação~\eqref{eq:phi}).
@@ -102,6 +103,11 @@ Antes de ser aplicado, $\varphi^*$ passa por dois limitadores em série:
     \end{equation}
 \end{enumerate}
 
+Um pedido fora da região viável não é perseguido: é levado à borda mais próxima. Em
+carga nominal, $\psi_0\approx\ang{15}$ e a janela vai de cerca de \ang{7} a \ang{23}
+(FP de 0,99 a 0,92 indutivo); por isso, um pedido de FP unitário resulta em
+$\varphi\approx\ang{7}$, e qualquer pedido capacitivo é levado ao mesmo valor.
+
 Por fim, o termo $I_{\sub{bias}}\lvert\cos(\theta_k-\varphi)\rvert$ de
 \eqref{eq:corrente_fase} vem do PI de equilíbrio~\cite{alahuhtala2006fourwire}. Como
 $\lvert\cos\rvert=\operatorname{sgn}(\cos)\cos$, ele aumenta a amplitude de um
@@ -111,16 +117,16 @@ mantém $V_{C1}=V_{C2}$.
 
 \subsection{Malha de corrente com controladores PR}
 
-O retificador de Vienna a quatro fios desenvolvido, possui suas fases desacopladas e a
+O retificador de Vienna a quatro fios desenvolvido possui suas fases desacopladas e a
 planta por fase, em pu, pode ser descrita por:
 
 \begin{equation}
-    G_i(s) = \frac{K_iV_{\sub{dc}}}{2(Ls+R)},
+    G_i(s) = \frac{K_iV_{\sub{dc}}}{2(Ls+R)}.
     \label{eq:planta_corrente}
 \end{equation}
 
 Na equação~\eqref{eq:planta_corrente}, $K_i = 1/I_b$. Considerando um ganho proporcional com frequência de cruzamento a
-1/10 da frequência de chaveamento ($f_c=f_{\sub{sw}}/10$), $\lvert K_pG_i(j\omega_c)\rvert=1$. Então $K_p$, pode
+1/10 da frequência de chaveamento ($f_c=f_{\sub{sw}}/10$), $\lvert K_pG_i(j\omega_c)\rvert=1$. Então $K_p$ pode
 ser calculado pela equação~\eqref{eq:Kp_corrente}:
 
 \begin{equation}
@@ -129,7 +135,7 @@ ser calculado pela equação~\eqref{eq:Kp_corrente}:
 \end{equation}
 
 O controlador ressonante pode ser representado por $2K_{Ih}s/(s^2+\omega_0^2)$, com $K_{Ih} = 2{,}2K_p/(n_{oh}T_0)$, o
-que resulta em um tempo de subida de $n_{oh}=0{,}9$ ciclo \cite{alonso2018distributed}. Ao implementá-lo por Tustin,
+que resulta em um tempo de subida de $n_{oh}=0{,}9$ ciclo~\cite{alonso2018distributed}. Ao implementá-lo por Tustin,
 ele pode ser equacionado por:
 \begin{equation}
     r(k) = a_h\left[e(k)- e(k-2)\right]+b_h\,r(k-1)-r(k-2),
@@ -144,19 +150,20 @@ com
     \label{eq:tustin_coef}
 \end{equation}
 
-A saída do PR é então, somada, a uma ação \textit{feedforward} que fornece a razão
-cíclica de regime permanente, de modo que PR corrige apenas o erro. Dessa forma, de 
-\eqref{eq:modelo_vienna4}, desconsiderando R, tem-se as seguintes equações:
+A saída do PR é, então, somada a uma ação \textit{feedforward} que fornece a razão
+cíclica de regime permanente, de modo que o PR corrige apenas o erro. Dessa forma, de
+\eqref{eq:modelo_vienna4}, desconsiderando $R$, tem-se as seguintes equações:
 
 \begin{equation}
     D_{\sub{ff},k} =1 - \frac{\lvert v^*_{\sub{conv},k}\rvert}{V_{Ci}}, \qquad v^*_{\sub{conv},k} = v_k-L\frac{di^*_k}{dt}
     \label{eq:razão_ciclíca}
 \end{equation}
 
-Na equação~\eqref{eq:razão_ciclíca} $V_{Ci}$ é a tensão sobre o capacitor 1 ou 2, dependendo
-do semiciclo de referência \cite{alahuhtala2006fourwire}. A razão cíclica final é $d_k=D_{\sub{ff},k}+\operatorname{sgn}(i_k^*)\,u_{PR,k}$.
-O sinal presente no equacionamento da razão cíclica final é necessário, pois ao aumentar $d_k$ no semiciclo negativo, 
+Na equação~\eqref{eq:razão_ciclíca}, $V_{Ci}$ é a tensão sobre o capacitor 1 ou 2, dependendo
+do semiciclo de referência~\cite{alahuhtala2006fourwire}. A razão cíclica final é $d_k=D_{\sub{ff},k}+\operatorname{sgn}(i_k^*)\,u_{\sub{PR},k}$.
+O sinal presente no equacionamento da razão cíclica final é necessário, pois, ao aumentar $d_k$ no semiciclo negativo,
 a tensão na fase controlada $v_{kM}$ se torna menos negativa.
+
 \subsection{Malha de tensão total e de equilíbrio}
 
 Do balanço de potência nos capacitores, considerando $C_{\sub{eq}}=C/2$, então a planta considerada pode
@@ -185,7 +192,7 @@ Como $p_b$ é nulo em vazio, o PI de equilíbrio é projetado nessa condição, 
 os ganhos proporcional e integral pela equação~\eqref{eq:ganhos_equilibrio}.
 
 \begin{equation}
-    K_{b,p} = \frac{\omega^2_{cb}}{K_b\sqrt{\omega^2_{cb}+(\omega_{cb}/4)^2}}
+    K_{p,b} = \frac{\omega^2_{cb}}{K_b\sqrt{\omega^2_{cb}+(\omega_{cb}/4)^2}}, \qquad K_{i,b} = K_{p,b}\frac{\omega_{cb}}{4}
     \label{eq:ganhos_equilibrio}
 \end{equation}
 
