@@ -9,6 +9,7 @@
 \usepackage{microtype}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -22,11 +23,16 @@
 \graphicspath{{./images/}}
 \addbibresource{relatorio.bib}
 
+% Macros auxiliares (\TODO e \figsim)
+\input{Capitulos/macros}
+
 % Ajuste de rótulos para o português
 \renewcommand{\figurename}{Figura}
 \renewcommand{\tablename}{Tabela}
-
 \def\figureautorefname{Figura}
+
+% Quebra automática de equações longas em coluna dupla
+\allowdisplaybreaks[4]
 
 % Listagens de código (mantidas do modelo original)
 \lstset{
@@ -36,60 +42,38 @@
     {ô}{{\^o}}1 {õ}{{\~o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1
 }
 
-% ---------- Título e autores ----------
-\title{Relatório 1: Eletrificação veicular%
-\thanks{Fundamentos em eletrificação veicular -- SEL0466. Prof. Ricardo Quadros Machado.}}
-
-\author{%
-    \IEEEauthorblockN{Vitor Gabriel Saturnino de Melo}
-    \IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
-    N° USP: 14611599}
-    \and
-    \IEEEauthorblockN{João Pedro Muto Cisotto}
-    \IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
-    N° USP: 14761684}
-}
+% ---------- Numeração de páginas ----------
+\pagestyle{plain}
 
 \begin{document}
 
+\title{Relatório 1: Eletrificação veicular}
+\author{\IEEEauthorblockN{Vitor Gabriel Saturnino de Melo}
+\IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
+N° USP: 14611599}
+\and
+\IEEEauthorblockN{João Pedro Muto Cisotto}
+\IEEEauthorblockA{Escola de Engenharia de São Carlos -- USP\\
+N° USP: 14761684}}
+
 \maketitle
+\thispagestyle{plain}
 
-% ---------- Resumo ----------
 \begin{abstract}
-Este trabalho apresenta a resolução de um problema de eletrificação veicular envolvendo uma unidade de energia composta por dois conjuntos de baterias e um ultracapacitor, conectados a um barramento CC por conversores que operam em modo de condução contínua. São analisados todos os estados de condução do circuito e suas formas de onda, e os componentes são dimensionados de acordo com critérios de ondulação e parâmetros de projeto adotados de forma plausível. O sistema é então representado por um modelo no espaço de estados, cuja equivalência com o circuito é verificada por simulações em três etapas. Para obter uma resposta mais precisa e controlada, implementa-se um controle em dupla malha, com PI de corrente e malha externa de tensão do tipo droop, testado em simulação e comparado ao sistema sem controle. Por fim, calcula-se a resposta em frequência da impedância vista pela carga e o comportamento dos autovalores, evidenciando a influência do controle sobre a impedância e sobre a estabilidade
-
-
-
+Este trabalho apresenta a resolução de um problema de eletrificação veicular envolvendo uma unidade de energia composta por dois conjuntos de baterias e um ultracapacitor, conectados a um barramento CC por conversores que operam em modo de condução contínua. São analisados todos os estados de condução do circuito e suas formas de onda, e os componentes são dimensionados de acordo com critérios de ondulação e parâmetros de projeto adotados de forma plausível. O sistema é então representado por um modelo no espaço de estados, cuja equivalência com o circuito é verificada por simulações em três etapas. Para obter uma resposta mais precisa e controlada, o circuito é implementado em Simulink e cada conversor é analisado isoladamente e em conjunto, e implementa-se um controle em dupla malha, com PI de corrente e malha externa de tensão do tipo \textit{droop}, comparado ao sistema sem controle. Por fim, calcula-se a resposta em frequência da impedância vista pela carga e o comportamento dos autovalores, evidenciando a influência do controle sobre a impedância e sobre a estabilidade.
 \end{abstract}
 
 \begin{IEEEkeywords}
 Eletrificação veicular, Unidade de energia, Controlador DROOP
 \end{IEEEkeywords}
 
-% ---------- Seções ----------
-% Introdução
 \input{Capitulos/introducao}
-
-% Definição do problema
+\input{Capitulos/circuitos_analisados}
 \input{Capitulos/definicao_problema}
-
-% Solução do problema (opcional)
-%\input{Capitulos/solucao_problema}
-
-% Resultados de implementação
+\input{Capitulos/implementacao_simulink}
 \input{Capitulos/resultados_implementacao}
-
-% Análise dos resultados (opcional)
-%\input{Capitulos/analise_resultados}
-
-% Conclusões (opcional)
 \input{Capitulos/conclusoes}
 
-% ---------- Referências ----------
-\printbibliography
-
-% ---------- Anexos (opcional) ----------
-%\appendices
-%\input{Capitulos/anexos}
+% \printbibliography   % descomente se houver referências citadas
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  17 NOV 2026 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  22 NOV 2026 18:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -316,6 +316,22 @@ File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen196
 \Gin@req@width=\dimen197
+) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count311
@@ -384,23 +400,7 @@ File: csquotes.cfg
 -- Package: `mcode' 2.5 <2014/03/06> --
 Package: mcode 2014/03/06 2.5
  - settings optimized for display (colour formating)
-(C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
- (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1365.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+(C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count323
 \lst@gtempboxa=\box60
 \lst@token=\toks31
@@ -687,12 +687,12 @@ Package biblatex Info: ... and expl3
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-))
+)) (Capitulos/macros.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (Main.aux
@@ -701,29 +701,29 @@ Package babel Info: 'portuguese' activates 'portuges' shorthands.
 )
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 -- Lines per column: 56 (exact).
-LaTeX Info: Redefining \microtypecontext on input line 53.
-Package microtype Info: Applying patch `item' on input line 53.
-Package microtype Info: Applying patch `toc' on input line 53.
-Package microtype Info: Applying patch `eqnum' on input line 53.
-Package microtype Info: Applying patch `footnote' on input line 53.
-Package microtype Info: Applying patch `verbatim' on input line 53.
-LaTeX Info: Redefining \microtypesetup on input line 53.
+LaTeX Info: Redefining \microtypecontext on input line 48.
+Package microtype Info: Applying patch `item' on input line 48.
+Package microtype Info: Applying patch `toc' on input line 48.
+Package microtype Info: Applying patch `eqnum' on input line 48.
+Package microtype Info: Applying patch `footnote' on input line 48.
+Package microtype Info: Applying patch `verbatim' on input line 48.
+LaTeX Info: Redefining \microtypesetup on input line 48.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -758,14 +758,14 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 53.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
+LaTeX Info: Redefining \celsius on input line 48.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 48.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 53.
-Package gensymb Info: Using \Omega for \ohm on input line 53.
+LaTeX Info: Redefining \ohm on input line 48.
+Package gensymb Info: Using \Omega for \ohm on input line 48.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -783,14 +783,12 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Main.bbl' found.
  (Main.bbl)
-Package biblatex Info: Reference section=0 on input line 53.
-Package biblatex Info: Reference segment=0 on input line 53.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 55.
+Package biblatex Info: Reference section=0 on input line 48.
+Package biblatex Info: Reference segment=0 on input line 48.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 59.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-** WARNING: \thanks is locked out when in conference mode (line 55).
-(Capitulos/introducao.tex
+) (Capitulos/introducao.tex
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -837,32 +835,50 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)) (Capitulos/definicao_problema.tex
+)) (Capitulos/circuitos_analisados.tex
+
+LaTeX Warning: Reference `fig:fig:diagrama' on page 1 undefined on input line 6.
+
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
+(Font)              <10> on input line 6.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
- [1{C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+(Font)              <7> on input line 6.
+[1{C:/Users/Samsung/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
 
 
-{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./images/diagrama.png>]
-<images/fig_ondas.png, id=27, 1706.375pt x 1194.4625pt>
+{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc} <./images/diagrama.png>]
+
+LaTeX Warning: Reference `sec:desenvolvimento' on page 2 undefined on input line 69.
+
+) (Capitulos/definicao_problema.tex [2{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<images/fig_ondas.png, id=34, 1706.375pt x 1194.4625pt>
 File: images/fig_ondas.png Graphic file (type png)
 <use images/fig_ondas.png>
 Package pdftex.def Info: images/fig_ondas.png  used on input line 49.
 (pdftex.def)             Requested size: 252.0pt x 176.39128pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 79.
- [2 <./images/fig_ondas.png (PNG copy)>]
-<images/fig_diagrama_blocos.png, id=36, 624.08156pt x 352.31625pt>
+ [3 <./images/fig_ondas.png (PNG copy)>]
+<images/fig_diagrama_blocos.png, id=42, 1541.76pt x 1027.84pt>
 File: images/fig_diagrama_blocos.png Graphic file (type png)
 <use images/fig_diagrama_blocos.png>
 Package pdftex.def Info: images/fig_diagrama_blocos.png  used on input line 149.
-(pdftex.def)             Requested size: 226.79846pt x 128.03258pt.
+(pdftex.def)             Requested size: 226.79846pt x 151.18947pt.
 
 Underfull \vbox (badness 3108) has occurred while \output is active []
 
- [3{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./images/fig_diagrama_blocos.png>]) (Capitulos/resultados_implementacao.tex
+ [4{C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc} <./images/fig_diagrama_blocos.png (PNG copy)>]) (Capitulos/implementacao_simulink.tex
+<images/fig_simulink_circuito.png, id=50, 654.94687pt x 215.30438pt>
+File: images/fig_simulink_circuito.png Graphic file (type png)
+<use images/fig_simulink_circuito.png>
+Package pdftex.def Info: images/fig_simulink_circuito.png  used on input line 7.
+(pdftex.def)             Requested size: 252.0pt x 82.8415pt.
+<images/fig_simulink_controle.png, id=51, 501.37312pt x 270.25969pt>
+File: images/fig_simulink_controle.png Graphic file (type png)
+<use images/fig_simulink_controle.png>
+Package pdftex.def Info: images/fig_simulink_controle.png  used on input line 14.
+(pdftex.def)             Requested size: 252.0pt x 135.8388pt.
+) (Capitulos/resultados_implementacao.tex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5.
  (C:\Users\Samsung\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -871,36 +887,42 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images/fig_equiv.png, id=45, 1706.375pt x 1365.1pt>
+<images/fig_equiv.png, id=52, 1706.375pt x 1365.1pt>
 File: images/fig_equiv.png Graphic file (type png)
 <use images/fig_equiv.png>
 Package pdftex.def Info: images/fig_equiv.png  used on input line 17.
 (pdftex.def)             Requested size: 252.0pt x 201.59004pt.
- [4 <./images/fig_equiv.png (PNG copy)>]
-<images/fig_degrau.png, id=51, 1706.375pt x 1279.78125pt>
-File: images/fig_degrau.png Graphic file (type png)
-<use images/fig_degrau.png>
-Package pdftex.def Info: images/fig_degrau.png  used on input line 50.
-(pdftex.def)             Requested size: 252.0pt x 188.99066pt.
+
+Underfull \vbox (badness 6078) has occurred while \output is active []
+
+ [5 <./images/fig_simulink_circuito.png> <./images/fig_simulink_controle.png>]
+<images/Grafico_Conversor.pdf, id=59, 744.7825pt x 490.83376pt>
+File: images/Grafico_Conversor.pdf Graphic file (type pdf)
+<use images/Grafico_Conversor.pdf>
+Package pdftex.def Info: images/Grafico_Conversor.pdf  used on input line 51.
+(pdftex.def)             Requested size: 252.0pt x 166.07239pt.
+
+Underfull \vbox (badness 4595) has occurred while \output is active []
 
 
-LaTeX Warning: Reference `fig:zoom' on page 5 undefined on input line 55.
 
-<images/fig_Z.png, id=52, 1535.7375pt x 1194.4625pt>
+LaTeX Warning: Reference `fig:zoom' on page 6 undefined on input line 56.
+
+[6 <./images/fig_equiv.png (PNG copy)> <./images/Grafico_Conversor.pdf>]
+<images/fig_Z.png, id=120, 1535.7375pt x 1194.4625pt>
 File: images/fig_Z.png Graphic file (type png)
 <use images/fig_Z.png>
-Package pdftex.def Info: images/fig_Z.png  used on input line 90.
+Package pdftex.def Info: images/fig_Z.png  used on input line 91.
 (pdftex.def)             Requested size: 252.0pt x 195.98424pt.
-[5 <./images/fig_degrau.png (PNG copy)> <./images/fig_Z.png (PNG copy)>]
-<images/fig_eig.png, id=57, 1365.1pt x 989.6975pt>
+<images/fig_eig.png, id=121, 1365.1pt x 989.6975pt>
 File: images/fig_eig.png Graphic file (type png)
 <use images/fig_eig.png>
-Package pdftex.def Info: images/fig_eig.png  used on input line 117.
+Package pdftex.def Info: images/fig_eig.png  used on input line 118.
 (pdftex.def)             Requested size: 252.0pt x 182.69853pt.
-) (Capitulos/conclusoes.tex)
+) (Capitulos/conclusoes.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Empty bibliography on input line 89.
-
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -912,9 +934,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
-
- <./images/fig_eig.png (PNG copy)>] (Main.aux)
+[7 <./images/fig_Z.png (PNG copy)> <./images/fig_eig.png (PNG copy)>] (Main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -928,17 +948,17 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19577 strings out of 467871
- 355364 string characters out of 5417408
- 1250058 words of memory out of 5000000
- 47964 multiletter control sequences out of 15000+600000
- 850307 words of font info for 264 fonts, out of 8000000 for 9000
+ 19658 strings out of 467871
+ 357509 string characters out of 5417408
+ 1249968 words of memory out of 5000000
+ 48011 multiletter control sequences out of 15000+600000
+ 851882 words of font info for 277 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,13n,76p,1124b,1607s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Main.pdf (6 pages, 1205429 bytes).
+ 63i,13n,66p,1223b,1607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Main.pdf (7 pages, 2903827 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 254 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51748 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 55854 words of extra memory for PDF output out of 61914 (max. 10000000)
 

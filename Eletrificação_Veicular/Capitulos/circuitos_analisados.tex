@@ -1,0 +1,91 @@
+\section{Circuitos analisados}
+\label{sec:circuitos}
+
+\subsection{Ramos conversores}
+
+Antes de estudar a unidade de geração completa, é fundamental decompô-la em seus ramos, de modo que o comportamento de cada elemento seja compreendido e isolado. O sistema da Figura~\ref{fig:fig:diagrama} é formado por três ramos conversores, cada um composto por uma fonte, um indutor e um par de chaves complementares, os quais se ligam em paralelo ao barramento $C_{dc}$ com a carga $R$. A Tabela~\ref{tab:ramos} resume os ramos e os valores adotados.
+
+\begin{table}[H]
+\centering
+\caption{Ramos conversores do sistema}
+\label{tab:ramos}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcccc}
+\toprule
+Ramo & Fonte & $V_k$ [V] & $L_k$ [mH] & Chaves & $d_k$ \\
+\midrule
+$b$ & bateria de 1ª vida & 200 & 3,4 & $Q_1,Q_2$ & 0,5 \\
+$pv$ & bateria de 2ª vida & 250 & 6,0 & $Q_3,Q_4$ & 0,375 \\
+$c$ & ultracapacitor & 300 & 3,8 & $Q_5,Q_6$ & 0,25 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Quando um ramo $k$ opera sozinho, o seu comportamento é o de um conversor elevador síncrono. Durante o intervalo $d_kT_s$, em que a chave inferior conduz, o indutor é submetido a $V_k$, a corrente cresce com inclinação $V_k/L_k$ e o capacitor $C_{dc}$ alimenta a carga. No intervalo restante, a chave superior conduz, o indutor é submetido a $V_k-v_{dc}$, a corrente decresce e o capacitor é recarregado. Em regime periódico, o balanço de tensão no indutor e de corrente no capacitor leva a
+\begin{align}
+V_{dc}&=\frac{V_k}{1-d_k},\label{eq:ramo_ganho}\\
+I_k&=\frac{V_{dc}\,I_{out}}{V_k},\qquad I_{out}=\frac{V_{dc}}{R},\label{eq:ramo_I}\\
+\Delta i_k&=\frac{V_k\,d_k}{L_k\,f_s},\label{eq:ramo_di}\\
+\Delta V_{dc}&=\frac{I_{out}\,d_k}{C_{dc}\,f_s}.\label{eq:ramo_dv}
+\end{align}
+Nota-se que $\Delta i_k$ depende apenas de $V_k$, $d_k$, $L_k$ e $f_s$, e não da carga, ao passo que $\Delta V_{dc}$ depende da corrente de saída.
+
+\subsection{Casos de análise}
+
+Sendo assim, a investigação foi dividida em cinco casos, resumidos na Tabela~\ref{tab:casos}. Os três primeiros isolam um ramo de cada vez, e as cargas foram escolhidas para que cada ramo opere próximo do seu ponto nominal, com $V_{dc}=400$ V. O quarto reúne os três ramos em malha aberta, e o quinto fecha as malhas de controle e aplica o degrau de carga.
+
+\begin{table}[H]
+\centering
+\caption{Casos analisados}
+\label{tab:casos}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{clccc}
+\toprule
+Caso & Ramos ativos & $R$ [$\Omega$] & Razão cíclica & Controle \\
+\midrule
+1 & $b$ & 40 & $d_b=0{,}5$ & aberta \\
+2 & $pv$ & 40 & $d_{pv}=0{,}375$ & aberta \\
+3 & $c$ & 53,3 & $d_c=0{,}25$ & aberta \\
+4 & $b,c,pv$ & 20 & (0,5; 0,25; 0,375) & aberta \\
+5 & $b,c,pv$ & 20 $\to$ 16 & PI + \textit{droop} & fechada \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Caso 1: bateria de primeira vida.} Apenas o ramo $b$ alimenta o barramento. Com $d_b=0{,}5$ e $R=40\ \Omega$, as equações \eqref{eq:ramo_ganho} a \eqref{eq:ramo_dv} dão $V_{dc}=400$ V, $I_{out}=10$ A, $I_b=20$ A, $\Delta i_b=1{,}47$ A e $\Delta V_{dc}=0{,}25$ V. O ramo alterna entre as linhas 111 e 011 da Tabela~\ref{tab:estados}.
+
+\textbf{Caso 2: bateria de segunda vida.} Apenas o ramo $pv$ está ativo. Com $d_{pv}=0{,}375$ e $R=40\ \Omega$, obtêm-se $V_{dc}=400$ V, $I_{pv}=16$ A, $\Delta i_{pv}=0{,}781$ A e $\Delta V_{dc}=0{,}1875$ V. Como o indutor é maior e a razão cíclica é menor, tanto a ondulação de corrente quanto a de tensão são menores que as do caso 1. As linhas visitadas da Tabela~\ref{tab:estados} são a 111 e a 110.
+
+\textbf{Caso 3: ultracapacitor.} O ramo $c$ opera com $d_c=0{,}25$ e $R=53{,}3\ \Omega$, que correspondem a 3 kW. Resultam $V_{dc}=400$ V, $I_{out}=7{,}5$ A, $I_c=10$ A, $\Delta i_c=0{,}987$ A e $\Delta V_{dc}=0{,}094$ V. Diferentemente dos casos anteriores, a fonte é o próprio ultracapacitor, cuja tensão decresce à taxa $\dot v_c=-I_c/C=-100$ V/s. Como a razão cíclica é fixa, $V_{dc}=v_c/(1-d_c)$ também decresce, razão pela qual este caso é simulado em janela curta. As linhas visitadas são a 111 e a 101.
+
+\textbf{Caso 4: três ramos em malha aberta.} Com $R=20\ \Omega$ e as razões cíclicas $(0{,}5;\,0{,}25;\,0{,}375)$, o equilíbrio é $I_b=20$ A, $I_c=0$ e $I_{pv}=16$ A. Em cada período, os estados se sucedem na ordem 111, 101, 100 e 000 da Tabela~\ref{tab:estados}, nas frações 0,25, 0,125, 0,125 e 0,5 do período, e a corrente no capacitor $C_{dc}$ vale, respectivamente, $-20$, $-20$, $-4$ e $+16$ A. Consequentemente,
+\begin{equation}
+\Delta V_{dc}=\frac{(20\cdot0{,}25+20\cdot0{,}125+4\cdot0{,}125)\,T_s}{C_{dc}}=0{,}40\ \text{V},
+\end{equation}
+e as ondulações das correntes dos indutores permanecem as dos casos 1 a 3, pois independem dos demais ramos. A corrente $i_c$ oscila em torno de zero, o que é possível porque a operação é síncrona.
+
+\textbf{Caso 5: malha fechada.} O mesmo circuito do caso 4 é controlado pela dupla malha de PI de corrente e \textit{droop} de tensão projetada na Seção~\ref{sec:desenvolvimento}, e submetido ao degrau de carga de 20~$\Omega$ para 16~$\Omega$ em $t=0{,}1$ s. Para esse caso, o ponto de equilíbrio previsto pelo \textit{droop} é $V_f=395{,}294$ V.
+
+\subsection{Valores esperados}
+
+A Tabela~\ref{tab:esperado} reúne os valores previstos para os casos 1 a 4, que servem de referência para a comparação com as simulações.
+
+\begin{table}[H]
+\centering
+\caption{Valores previstos para os casos em malha aberta}
+\label{tab:esperado}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{ccccc}
+\toprule
+Caso & $V_{dc}$ [V] & $I_k$ [A] & $\Delta i_k$ [A] & $\Delta V_{dc}$ [V] \\
+\midrule
+1 & 400 & $I_b=20$ & 1,47 & 0,25 \\
+2 & 400 & $I_{pv}=16$ & 0,781 & 0,1875 \\
+3 & 400 & $I_c=10$ & 0,987 & 0,094 \\
+4 & 400 & (20; 0; 16) & (1,47; 0,987; 0,781) & 0,40 \\
+\bottomrule
+\end{tabular}
+\end{table}

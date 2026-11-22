@@ -1,0 +1,58 @@
+\section{Circuitos analisados}
+\label{sec:circuitos}
+
+A análise parte de cinco casos (Tabela~\ref{tab:casos}): os três ramos isolados, o conjunto em malha aberta e o conjunto em malha fechada. Em cada circuito, as chaves são substituídas por contatos fechados ou abertos, conforme o estado de condução.
+
+\subsection{Ramo isolado (casos 1 a 3)}
+
+Com um único ramo $k$ ativo, o circuito é um conversor elevador síncrono. A Figura~\ref{fig:ramo} mostra os dois circuitos possíveis: com a chave inferior fechada, o indutor é submetido a $V_k$, a corrente cresce e $C_{dc}$ alimenta a carga; com a superior fechada, o indutor é submetido a $V_k-v_{dc}$, a corrente decresce e $C_{dc}$ é recarregado. Em regime periódico,
+\begin{align}
+V_{dc}&=\frac{V_k}{1-d_k}, & I_k&=\frac{V_{dc}\,I_{out}}{V_k},\label{eq:ramo_ganho}\\
+\Delta i_k&=\frac{V_k\,d_k}{L_k\,f_s}, & \Delta V_{dc}&=\frac{I_{out}\,d_k}{C_{dc}\,f_s},\label{eq:ramo_di}
+\end{align}
+com $I_{out}=V_{dc}/R$. O caso 3 difere por $v_c$ não ser constante: $\dot v_c=-I_c/C=-100$ V/s, e por isso ele é simulado em janela curta.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{fig_ramo_estados.pdf}
+\caption{Circuitos de um ramo isolado: (a) chave inferior fechada e superior aberta; (b) o inverso.}
+\label{fig:ramo}
+\end{figure}
+
+\subsection{Três ramos em malha aberta (caso 4)}
+
+Com os três ramos ativos e as razões cíclicas $(0{,}5;\,0{,}25;\,0{,}375)$, cada período percorre os quatro circuitos da Figura~\ref{fig:estados}, nas frações 0,25, 0,125, 0,125 e 0,5 do período. No equilíbrio, a corrente em $C_{dc}$ vale $-20$, $-20$, $-4$ e $+16$ A nesses trechos, o que dá
+\begin{equation}
+\Delta V_{dc}=\frac{(20\cdot0{,}25+20\cdot0{,}125+4\cdot0{,}125)\,T_s}{C_{dc}}=0{,}40\ \text{V}.
+\end{equation}
+As ondulações de corrente permanecem as dos casos isolados, pois não dependem dos demais ramos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{fig_estados_caso4.pdf}
+\caption{Circuitos do caso 4 em cada trecho do período (estados $s_bs_cs_{pv}$).}
+\label{fig:estados}
+\end{figure}
+
+\subsection{Malha fechada (caso 5)}
+
+O circuito do caso 4 é controlado pela dupla malha da Seção~\ref{sec:desenvolvimento} e submetido ao degrau de carga de 20~$\Omega$ para 16~$\Omega$ em $t=0{,}1$ s.
+
+\begin{table}[H]
+\centering
+\caption{Casos analisados e valores previstos}
+\label{tab:casos}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{clcccc}
+\toprule
+Caso & Ramos & $R$ [$\Omega$] & $I_k$ [A] & $\Delta i_k$ [A] & $\Delta V_{dc}$ [V] \\
+\midrule
+1 & $b$ & 40 & 20 & 1,47 & 0,25 \\
+2 & $pv$ & 40 & 16 & 0,781 & 0,1875 \\
+3 & $c$ & 53,3 & 10 & 0,987 & 0,094 \\
+4 & $b,c,pv$ & 20 & 20; 0; 16 & 1,47; 0,987; 0,781 & 0,40 \\
+5 & $b,c,pv$ & 20 $\to$ 16 & \multicolumn{3}{c}{PI + \textit{droop}, $V_f=395{,}29$ V} \\
+\bottomrule
+\end{tabular}
+\end{table}

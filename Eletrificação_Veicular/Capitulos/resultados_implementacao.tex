@@ -43,12 +43,13 @@ Com o controle projetado, aplicou-se o degrau de carga de 20~$\Omega$ para 16~$\
 \begin{equation}
 V_f=400-1\cdot\left(\frac{V_f}{16}-20\right)\ \Rightarrow\ V_f=395{,}294\ \text{V},
 \end{equation}
-valor atingido pelo modelo em regime, como mostra a Figura~\ref{fig:degrau}. Observa-se que o ultracapacitor responde primeiro ao degrau, com pico de corrente de 5,74 A, enquanto o filtro de demanda transfere gradualmente a potência adicional às baterias, de modo que $i_c$ retorna a zero e $i_b$ e $i_{pv}$ convergem para 24,4 A e 19,5 A, respectivamente. Em consequência, a tensão $v_c$ decresce cerca de 5 V, de 300 V para aproximadamente 295 V. A tensão do barramento apresenta afundamento máximo de 394,16 V, ao passo que, sem o controle, ela oscila entre 391,5 V e 406,9 V com amortecimento pouco expressivo, o que evidencia o benefício da malha fechada.
+
+O valor atingido pelo modelo em regime, como mostra a Figura~\ref{fig:degrau}. Observa-se que o ultracapacitor responde primeiro ao degrau, com pico de corrente de 5,74 A, enquanto o filtro de demanda transfere gradualmente a potência adicional às baterias, de modo que $i_c$ retorna a zero e $i_b$ e $i_{pv}$ convergem para 24,4 A e 19,5 A, respectivamente. Em consequência, a tensão $v_c$ decresce cerca de 5 V, de 300 V para aproximadamente 295 V. A tensão do barramento apresenta afundamento máximo de 394,16 V, ao passo que, sem o controle, ela oscila entre 391,5 V e 406,9 V com amortecimento pouco expressivo, como visto na figura \ref{fig:equiv}, o que evidencia o benefício da malha fechada.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{images/fig_degrau.png}
-\caption{Resposta ao degrau de carga com PI e \textit{droop}, comparada ao sistema sem controle.}
+\includegraphics[width=\columnwidth]{images/Grafico_Conversor.pdf}
+\caption{Resposta ao degrau de carga com PI e \textit{droop}}
 \label{fig:degrau}
 \end{figure}
 

@@ -12,48 +12,68 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Parâmetros e escopo do projeto}{1}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Parâmetros adotados para o projeto demonstrativo}}{1}{}\protected@file@percent }
 \newlabel{tab:parametros}{{I}{1}{}{table.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Desenvolvimento}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Estados de condução e formas de onda}{1}{}\protected@file@percent }
-\newlabel{eq:vL}{{1}{1}{}{equation.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Topologias de condução ($s_bs_cs_{pv}$)}}{2}{}\protected@file@percent }
-\newlabel{tab:estados}{{II}{2}{}{table.2}{}}
-\newlabel{eq:ganho}{{2}{2}{}{equation.2}{}}
-\newlabel{eq:dI}{{3}{2}{}{equation.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comandos das chaves inferiores, correntes nos indutores e tensão do barramento em três períodos PWM.}}{2}{}\protected@file@percent }
-\newlabel{fig:ondas}{{2}{2}{}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Dimensionamento dos componentes}{2}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Componentes adotados e ondulações obtidas}}{2}{}\protected@file@percent }
-\newlabel{tab:dim}{{III}{2}{}{table.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Modelo de espaço de estados}{2}{}\protected@file@percent }
-\newlabel{eq:chav}{{9}{2}{}{equation.9}{}}
-\newlabel{eq:Amat}{{10}{3}{}{equation.10}{}}
-\newlabel{eq:Bmat}{{11}{3}{}{equation.11}{}}
-\newlabel{eq:lin}{{13}{3}{}{equation.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Projeto do controlador \textit  {droop}}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura do controle em dupla malha.}}{3}{}\protected@file@percent }
-\newlabel{fig:blocos}{{3}{3}{}{figure.3}{}}
-\newlabel{eq:pi}{{14}{3}{}{equation.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Ganhos da malha interna de corrente}}{3}{}\protected@file@percent }
-\newlabel{tab:ganhos}{{IV}{3}{}{table.4}{}}
-\newlabel{eq:refs}{{20}{4}{}{equation.20}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Resultados}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Implementação e simulação em Simulink}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Verificação da equivalência por simulação em 3 etapas}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}}{4}{}\protected@file@percent }
-\newlabel{fig:equiv}{{4}{4}{}{figure.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Erros entre as etapas de simulação}}{4}{}\protected@file@percent }
-\newlabel{tab:erros}{{V}{4}{}{table.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Resposta em malha fechada}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Resposta ao degrau de carga com PI e \textit  {droop}, comparada ao sistema sem controle.}}{5}{}\protected@file@percent }
-\newlabel{fig:degrau}{{5}{5}{}{figure.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Impedância, admitância e autovalores}{5}{}\protected@file@percent }
-\newlabel{eq:Y}{{25}{5}{}{equation.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Módulo e fase de $Z_{out}$ com razões cíclicas fixas e com PI--\textit  {droop}.}}{5}{}\protected@file@percent }
-\newlabel{fig:Z}{{6}{5}{}{figure.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces $|Z_{out}|$ em malha aberta (razões cíclicas fixas) e em malha fechada}}{5}{}\protected@file@percent }
-\newlabel{tab:Z}{{VI}{5}{}{table.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Autovalores dos modelos linearizados em malha aberta (5 estados) e fechada (10 estados).}}{6}{}\protected@file@percent }
-\newlabel{fig:eig}{{7}{6}{}{figure.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusão}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Circuitos analisados}{1}{}\protected@file@percent }
+\newlabel{sec:circuitos}{{II}{1}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Ramos conversores}{1}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Ramos conversores do sistema}}{1}{}\protected@file@percent }
+\newlabel{tab:ramos}{{II}{1}{}{table.2}{}}
+\newlabel{eq:ramo_ganho}{{1}{2}{}{equation.1}{}}
+\newlabel{eq:ramo_I}{{2}{2}{}{equation.2}{}}
+\newlabel{eq:ramo_di}{{3}{2}{}{equation.3}{}}
+\newlabel{eq:ramo_dv}{{4}{2}{}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Casos de análise}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Casos analisados}}{2}{}\protected@file@percent }
+\newlabel{tab:casos}{{III}{2}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Valores esperados}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Valores previstos para os casos em malha aberta}}{2}{}\protected@file@percent }
+\newlabel{tab:esperado}{{IV}{2}{}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Desenvolvimento}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Estados de condução e formas de onda}{2}{}\protected@file@percent }
+\newlabel{eq:vL}{{6}{2}{}{equation.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Topologias de condução ($s_bs_cs_{pv}$)}}{3}{}\protected@file@percent }
+\newlabel{tab:estados}{{V}{3}{}{table.5}{}}
+\newlabel{eq:ganho}{{7}{3}{}{equation.7}{}}
+\newlabel{eq:dI}{{8}{3}{}{equation.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comandos das chaves inferiores, correntes nos indutores e tensão do barramento em três períodos PWM.}}{3}{}\protected@file@percent }
+\newlabel{fig:ondas}{{2}{3}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Dimensionamento dos componentes}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Componentes adotados e ondulações obtidas}}{3}{}\protected@file@percent }
+\newlabel{tab:dim}{{VI}{3}{}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Modelo de espaço de estados}{3}{}\protected@file@percent }
+\newlabel{eq:chav}{{14}{3}{}{equation.14}{}}
+\newlabel{eq:Amat}{{15}{4}{}{equation.15}{}}
+\newlabel{eq:Bmat}{{16}{4}{}{equation.16}{}}
+\newlabel{eq:lin}{{18}{4}{}{equation.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Projeto do controlador \textit  {droop}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura do controle em dupla malha.}}{4}{}\protected@file@percent }
+\newlabel{fig:blocos}{{3}{4}{}{figure.3}{}}
+\newlabel{eq:pi}{{19}{4}{}{equation.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Ganhos da malha interna de corrente}}{4}{}\protected@file@percent }
+\newlabel{tab:ganhos}{{VII}{4}{}{table.7}{}}
+\newlabel{eq:refs}{{25}{5}{}{equation.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Implementação em Simulink}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Circuito implementado em Simulink.}}{5}{}\protected@file@percent }
+\newlabel{fig:simcirc}{{4}{5}{}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Subsistema de controle em Simulink.}}{5}{}\protected@file@percent }
+\newlabel{fig:simctrl}{{5}{5}{}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Resultados}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Implementação e simulação em Simulink}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Verificação da equivalência por simulação em 3 etapas}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}}{6}{}\protected@file@percent }
+\newlabel{fig:equiv}{{6}{6}{}{figure.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {VIII}{\ignorespaces Erros entre as etapas de simulação}}{6}{}\protected@file@percent }
+\newlabel{tab:erros}{{VIII}{6}{}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Resposta em malha fechada}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Resposta ao degrau de carga com PI e \textit  {droop}}}{6}{}\protected@file@percent }
+\newlabel{fig:degrau}{{7}{6}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Impedância, admitância e autovalores}{6}{}\protected@file@percent }
+\newlabel{eq:Y}{{30}{6}{}{equation.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Módulo e fase de $Z_{out}$ com razões cíclicas fixas e com PI--\textit  {droop}.}}{7}{}\protected@file@percent }
+\newlabel{fig:Z}{{8}{7}{}{figure.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IX}{\ignorespaces $|Z_{out}|$ em malha aberta (razões cíclicas fixas) e em malha fechada}}{7}{}\protected@file@percent }
+\newlabel{tab:Z}{{IX}{7}{}{table.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Autovalores dos modelos linearizados em malha aberta (5 estados) e fechada (10 estados).}}{7}{}\protected@file@percent }
+\newlabel{fig:eig}{{9}{7}{}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusão}{7}{}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{E75D7E0DB03F09D45B25DF2F538BB294}
-\gdef \@abspage@last{6}
+\gdef \@abspage@last{7}

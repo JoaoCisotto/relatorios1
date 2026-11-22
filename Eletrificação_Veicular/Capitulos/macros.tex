@@ -1,0 +1,10 @@
+% Macros auxiliares (carregar no preâmbulo: \input{Capitulos/macros})
+\RequirePackage{xcolor}
+% Marca em vermelho o que ainda precisa ser preenchido com o resultado do Simulink.
+% Para achar tudo que falta: procure por "TODO" nos arquivos .tex.
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{[#1]}}}
+% Insere a figura se o arquivo existir em images/; senão mostra uma caixa vermelha.
+\newcommand{\figsim}[2]{%
+  \IfFileExists{images/#1}%
+    {\includegraphics[width=#2\columnwidth]{#1}}%
+    {\fbox{\parbox[c][2.5cm][c]{\dimexpr#2\columnwidth-2\fboxsep-2\fboxrule\relax}{\centering\small\textcolor{red}{Inserir \texttt{\detokenize{#1}}}}}}}
