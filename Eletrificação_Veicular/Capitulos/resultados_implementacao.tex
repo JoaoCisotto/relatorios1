@@ -8,59 +8,70 @@ Sendo assim, três execuções foram realizadas a partir do mesmo modelo: a prim
 
 \subsection{Verificação da equivalência por simulação em 3 etapas}
 
-A verificação foi conduzida a partir do ponto transitório $\mathbf{x}(0)=(15\,\mathrm{A},\,10\,\mathrm{A},\,8\,\mathrm{A},\,400\,\mathrm{V},\,300\,\mathrm{V})$, com razões cíclicas constantes e janela de observação de 80 ms. Na primeira etapa, simulou-se o circuito a partir das leis de Kirchhoff para cada estado de condução; na segunda, aplicaram-se às equações \eqref{eq:chav} as mesmas sequências de chaveamento, com propagação exata do modelo linear em cada intervalo; e, na terceira, resolveu-se o modelo médio, inicializado com o valor médio do primeiro período PWM, comparando-o à média por período do circuito.
+Em ambos os casos, a verificação comparou três etapas: o circuito chaveado (etapa 1), as equações chaveadas submetidas aos mesmos sinais PWM (etapa 2) e o modelo médio (etapa 3), este último comparado à média por período do circuito. Como as etapas 2 e 3 recebem apenas as razões cíclicas aplicadas, sem possuir malhas de controle próprias, eventuais diferenças em relação ao circuito decorrem da implementação das equações, das condições iniciais e dos métodos de integração, e não da ação do controlador. O primeiro período de chaveamento foi desconsiderado nas comparações envolvendo o modelo médio, pois a média móvel ainda está se formando.
 
-A Figura~\ref{fig:equiv} apresenta as quatro curvas, e a Tabela~\ref{tab:erros} quantifica as diferenças. Entre as duas primeiras etapas, os erros máximos são da ordem de $10^{-10}$, o que demonstra que as equações chaveadas reproduzem o circuito. Entre a média por período e o modelo médio, os erros quadráticos médios permanecem pequenos e decorrem da aproximação por médias e da frequência PWM finita. Cabe ressaltar que a comparação de uma amostra instantânea com a média de um período introduz erro adicional de fase e de ondulação, razão pela qual a comparação foi feita entre grandezas médias.
+\textbf{Sem controle.} As razões cíclicas calculadas, $d_b=0{,}5$, $d_c=0{,}25$ e $d_{pv}=0{,}375$, são mantidas constantes, a resistência de carga vale $20~\Omega$ e a simulação parte da condição inicial $\mathbf{x}(0)=(15~\mathrm{A},\,10~\mathrm{A},\,8~\mathrm{A},\,400~\mathrm{V},\,300~\mathrm{V})$. A janela de simulação é de $0{,}45$ s. Como não há regulação da tensão do barramento, $v_{dc}$ apresenta oscilações decorrentes da dinâmica dos indutores e do capacitor $C_{dc}$, enquanto as correntes dos indutores evoluem livremente, sem uma ação de controle que promova sua estabilização. A Figura~\ref{fig:equiv1} apresenta a comparação entre as etapas de simulação, enquanto a Figura~\ref{fig:scope1} apresenta os sinais originais registrados no \textit{Scope}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{images/fig_equiv.png}
-\caption{Circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}
-\label{fig:equiv}
+\includegraphics[width=\columnwidth]{images/fig_equiv1.pdf}
+\caption{Sem controle: circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}
+\label{fig:equiv1}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/Dados_semcontrole.pdf}
+\caption{Sem controle: sinais do \textit{Scope} ($v_{dc}$, correntes dos indutores e $v_c$).}
+\label{fig:scope1}
+\end{figure}
+
+ A simulação com controle parte do ponto de equilíbrio $\mathbf{x}(0)=(20~\mathrm{A},\,0~\mathrm{A},\,16~\mathrm{A},\,400~\mathrm{V},\,300~\mathrm{V})$ e, em $t=0{,}1$ s, a resistência de carga passa de $20~\Omega$ para $16~\Omega$. Nesse caso, o degrau provoca um aumento na corrente de carga, dada por $i_R=v_{dc}/R$, e, consequentemente, modifica a referência de tensão do barramento por meio da característica de \textit{droop}:
+
+\begin{equation}
+v_{dc}^{\star}=400-r_d(i_R-20),
+\end{equation}
+
+que passa de $400$ V para $V_f=395{,}294$ V. Assim, a ação do controlador modifica a dinâmica do sistema e a impedância de saída vista pela carga, ao passo que, no caso sem controle, as razões cíclicas permanecem fixas e não há uma referência de tensão a ser seguida. A Figura~\ref{fig:equiv2} apresenta a comparação entre as etapas de simulação, enquanto a Figura~\ref{fig:scope2} apresenta os sinais registrados no \textit{Scope}, incluindo a tensão do barramento e sua referência.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{images/fig_equiv.pdf}
+\caption{Com controle: circuito (etapa 1), equações chaveadas (etapa 2), média por período e modelo médio (etapa 3) para $i_b$, $i_c$ e $v_{dc}$.}
+\label{fig:equiv2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{Grafico_Conversor.pdf}
+\caption{Com controle: sinais do \textit{Scope} ($v_{dc}$, $v_{dc}^{\star}$, correntes dos indutores e $v_c$).}
+\label{fig:scope2}
+\end{figure}
+
+A Tabela~\ref{tab:erros} quantifica as diferenças entre as etapas 1 e 2 nos dois casos, por meio do erro máximo absoluto e do erro quadrático médio (RMS). A proximidade entre as curvas dessas duas etapas evidencia que as equações chaveadas reproduzem adequadamente o comportamento do circuito, tanto em malha aberta quanto em malha fechada, inclusive durante o degrau de carga.
+
+Na comparação entre a média por período do circuito e o modelo médio, observa-se uma boa correspondência entre as componentes de baixa frequência. As diferenças são decorrentes da aproximação por médias e da frequência PWM finita, uma vez que o modelo médio não reproduz as ondulações de alta frequência associadas ao chaveamento. No caso sem controle, as etapas apresentam comportamentos oscilatórios semelhantes, acompanhando a dinâmica natural do sistema. Já no caso com controle, observa-se a convergência de $v_{dc}$ para a referência imposta pelo \textit{droop}, enquanto a corrente do ultracapacitor atende predominantemente à demanda transitória e retorna gradualmente a zero. Simultaneamente, as baterias aumentam suas contribuições de corrente, assumindo progressivamente o fornecimento de potência em regime permanente. Dessa forma, os resultados confirmam a equivalência entre as representações do sistema e o funcionamento esperado da estratégia de controle.
 
 \begin{table}[H]
 \centering
-\caption{Erros entre as etapas de simulação}
+\caption{Erros entre as etapas de simulação, sem e com controle.}
 \label{tab:erros}
-\small
-\begin{tabular}{lcc}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc}
 \toprule
-Grandeza & Máx. etapas 1--2 & RMS média--modelo \\
+& \multicolumn{2}{c}{Sem controle} & \multicolumn{2}{c}{Com controle} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Grandeza & Máx. 1--2 & RMS média-modelo & Máx. 1--2 & RMS média-modelo \\
 \midrule
-$i_b$ [A] & $1{,}2\cdot10^{-10}$ & 0,165 \\
-$i_c$ [A] & $1{,}2\cdot10^{-10}$ & 0,071 \\
-$i_{pv}$ [A] & $4{,}7\cdot10^{-11}$ & 0,061 \\
-$v_{dc}$ [V] & $8{,}7\cdot10^{-12}$ & 0,0115 \\
-$v_c$ [V] & $1{,}6\cdot10^{-11}$ & 0,0281 \\
+$i_b$ [A]    & 1,3653 & 1,200 & 0,5385 & 0,927 \\
+$i_c$ [A]    & 0,5528 & 0,573 & 0,1149 & 0,388 \\
+$i_{pv}$ [A] & 0,8140 & 0,883 & 0,4367 & 0,682 \\
+$v_{dc}$ [V] & 0,1258 & 0,476 & 0,0629 & 0,459 \\
+$v_c$ [V]    & 0,1469 & 0,153 & 0,0599 & 0,105 \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-\subsection{Resposta em malha fechada}
-
-Com o controle projetado, aplicou-se o degrau de carga de 20~$\Omega$ para 16~$\Omega$ em $t=0{,}1$ s. A referência de equilíbrio do \textit{droop} satisfaz
-\begin{equation}
-V_f=400-1\cdot\left(\frac{V_f}{16}-20\right)\ \Rightarrow\ V_f=395{,}294\ \text{V},
-\end{equation}
-
-O valor atingido pelo modelo em regime, como mostra a Figura~\ref{fig:degrau}. Observa-se que o ultracapacitor responde primeiro ao degrau, com pico de corrente de 5,74 A, enquanto o filtro de demanda transfere gradualmente a potência adicional às baterias, de modo que $i_c$ retorna a zero e $i_b$ e $i_{pv}$ convergem para 24,4 A e 19,5 A, respectivamente. Em consequência, a tensão $v_c$ decresce cerca de 5 V, de 300 V para aproximadamente 295 V. A tensão do barramento apresenta afundamento máximo de 394,16 V, ao passo que, sem o controle, ela oscila entre 391,5 V e 406,9 V com amortecimento pouco expressivo, como visto na figura \ref{fig:equiv}, o que evidencia o benefício da malha fechada.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{images/Grafico_Conversor.pdf}
-\caption{Resposta ao degrau de carga com PI e \textit{droop}}
-\label{fig:degrau}
-\end{figure}
-
-Para avaliar o efeito do chaveamento, a malha fechada também foi simulada com PWM, sendo a Figura~\ref{fig:zoom} um detalhe do instante do degrau. Nota-se que as razões cíclicas se ajustam em poucos períodos de chaveamento, que as correntes mantêm a ondulação triangular projetada e que a média de $v_{dc}$ segue o valor previsto pelo modelo médio, com diferença quadrática média de 0,021 V ao longo da simulação. Ademais, as correntes alcançam os valores de regime sem violar as saturações das razões cíclicas, o que dispensa a atuação do anti-\textit{windup}.
-
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=\columnwidth]{images/fig_chaveado_zoom.png}
-%\caption{Detalhe do degrau de carga na simulação com PWM: tensão do barramento, correntes e razões cíclicas.}
-%\label{fig:zoom}
-%\end{figure}
 
 \subsection{Impedância, admitância e autovalores}
 

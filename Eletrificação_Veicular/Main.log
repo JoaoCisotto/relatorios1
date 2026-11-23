@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  22 NOV 2026 18:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.5)  23 NOV 2026 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,42 +887,50 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images/fig_equiv.png, id=52, 1706.375pt x 1365.1pt>
-File: images/fig_equiv.png Graphic file (type png)
-<use images/fig_equiv.png>
-Package pdftex.def Info: images/fig_equiv.png  used on input line 17.
-(pdftex.def)             Requested size: 252.0pt x 201.59004pt.
+<images/fig_equiv1.pdf, id=52, 217.81375pt x 273.02pt>
+File: images/fig_equiv1.pdf Graphic file (type pdf)
+<use images/fig_equiv1.pdf>
+Package pdftex.def Info: images/fig_equiv1.pdf  used on input line 17.
+(pdftex.def)             Requested size: 252.0pt x 315.87022pt.
 
-Underfull \vbox (badness 6078) has occurred while \output is active []
+Underfull \vbox (badness 1024) has occurred while \output is active []
 
  [5 <./images/fig_simulink_circuito.png> <./images/fig_simulink_controle.png>]
-<images/Grafico_Conversor.pdf, id=59, 744.7825pt x 490.83376pt>
-File: images/Grafico_Conversor.pdf Graphic file (type pdf)
-<use images/Grafico_Conversor.pdf>
-Package pdftex.def Info: images/Grafico_Conversor.pdf  used on input line 51.
+<images/Dados_semcontrole.pdf, id=59, 744.7825pt x 490.83376pt>
+File: images/Dados_semcontrole.pdf Graphic file (type pdf)
+<use images/Dados_semcontrole.pdf>
+Package pdftex.def Info: images/Dados_semcontrole.pdf  used on input line 24.
+(pdftex.def)             Requested size: 252.0pt x 166.07239pt.
+<images/fig_equiv.pdf, id=60, 217.81375pt x 268.00125pt>
+File: images/fig_equiv.pdf Graphic file (type pdf)
+<use images/fig_equiv.pdf>
+Package pdftex.def Info: images/fig_equiv.pdf  used on input line 39.
+(pdftex.def)             Requested size: 252.0pt x 310.06377pt.
+<./images/Grafico_Conversor.pdf, id=61, 744.7825pt x 490.83376pt>
+File: ./images/Grafico_Conversor.pdf Graphic file (type pdf)
+<use ./images/Grafico_Conversor.pdf>
+Package pdftex.def Info: ./images/Grafico_Conversor.pdf  used on input line 46.
 (pdftex.def)             Requested size: 252.0pt x 166.07239pt.
 
-Underfull \vbox (badness 4595) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `fig:zoom' on page 6 undefined on input line 56.
-
-[6 <./images/fig_equiv.png (PNG copy)> <./images/Grafico_Conversor.pdf>]
-<images/fig_Z.png, id=120, 1535.7375pt x 1194.4625pt>
-File: images/fig_Z.png Graphic file (type png)
-<use images/fig_Z.png>
-Package pdftex.def Info: images/fig_Z.png  used on input line 91.
-(pdftex.def)             Requested size: 252.0pt x 195.98424pt.
-<images/fig_eig.png, id=121, 1365.1pt x 989.6975pt>
-File: images/fig_eig.png Graphic file (type png)
-<use images/fig_eig.png>
-Package pdftex.def Info: images/fig_eig.png  used on input line 118.
-(pdftex.def)             Requested size: 252.0pt x 182.69853pt.
-) (Capitulos/conclusoes.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
+ [6 <./images/fig_equiv1.pdf> <./images/Dados_semcontrole.pdf> <./images/fig_equiv.pdf>]
+Overfull \hbox (28.87926pt too wide) in paragraph at lines 61--74
+ [][] 
+ []
+
+<images/fig_Z.png, id=213, 1535.7375pt x 1194.4625pt>
+File: images/fig_Z.png Graphic file (type png)
+<use images/fig_Z.png>
+Package pdftex.def Info: images/fig_Z.png  used on input line 102.
+(pdftex.def)             Requested size: 252.0pt x 195.98424pt.
+[7 <./images/Grafico_Conversor.pdf> <./images/fig_Z.png (PNG copy)>]
+<images/fig_eig.png, id=274, 1365.1pt x 989.6975pt>
+File: images/fig_eig.png Graphic file (type png)
+<use images/fig_eig.png>
+Package pdftex.def Info: images/fig_eig.png  used on input line 129.
+(pdftex.def)             Requested size: 252.0pt x 182.69853pt.
+) (Capitulos/conclusoes.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -934,7 +942,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7 <./images/fig_Z.png (PNG copy)> <./images/fig_eig.png (PNG copy)>] (Main.aux)
+[8 <./images/fig_eig.png (PNG copy)>] (Main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -948,17 +956,17 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19658 strings out of 467871
- 357509 string characters out of 5417408
- 1249968 words of memory out of 5000000
- 48011 multiletter control sequences out of 15000+600000
- 851882 words of font info for 277 fonts, out of 8000000 for 9000
+ 19691 strings out of 467871
+ 358281 string characters out of 5417408
+ 1250016 words of memory out of 5000000
+ 48028 multiletter control sequences out of 15000+600000
+ 852651 words of font info for 285 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,13n,66p,1223b,1607s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/Samsung/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Main.pdf (7 pages, 2903827 bytes).
+Output written on Main.pdf (8 pages, 6668002 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
+ 407 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 55854 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 55864 words of extra memory for PDF output out of 61914 (max. 10000000)
 
